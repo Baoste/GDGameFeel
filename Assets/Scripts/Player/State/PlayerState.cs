@@ -22,6 +22,8 @@ public class PlayerState
 
     public virtual void Update()
     {
+        if (controller.isFire && player.arrow)
+            stateMachine.ChangeState(player.fireState);
     }
 
     public virtual void FixedUpdate()

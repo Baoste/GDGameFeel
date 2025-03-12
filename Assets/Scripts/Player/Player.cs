@@ -20,12 +20,17 @@ public class Player : MonoBehaviour
     public PlayerDashInState dashInState;
     public PlayerDashingState dashingState;
     public PlayerDashOutState dashOutState;
+    public PlayerAimState aimState;
+    public PlayerFireState fireState;
     #endregion
 
     public Animator animator {  get; private set; }
     public CinemachineImpulseSource impulseSource { get; private set; }
-
     public PlayerController controller { get; private set; }
+
+    #region Arrow
+    public Arrow arrow;
+    #endregion
 
     private void Awake()
     {
@@ -38,6 +43,8 @@ public class Player : MonoBehaviour
         dashInState = new PlayerDashInState(stateMachine, this, "isDash");
         dashingState = new PlayerDashingState(stateMachine, this, "isDash");
         dashOutState = new PlayerDashOutState(stateMachine, this, "isDash");
+        aimState = new PlayerAimState(stateMachine, this, "isAim");
+        fireState = new PlayerFireState(stateMachine, this, "isFire");
     }
     void Start()
     {
@@ -50,9 +57,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         stateMachine.currentState.Update();
+        arrow = GetComponentInChildren<Arrow>();
     }
+
     private void FixedUpdate()
     {
         stateMachine.currentState.FixedUpdate();
     }
+
 }

@@ -5,10 +5,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb {  get; private set; }
+    private PlayerInput playerInput;
+    private InputControls inputActions;
 
     #region Move
     [Header("Move")]
@@ -43,25 +46,76 @@ public class PlayerController : MonoBehaviour
         }
     }
     private float dashTrigger = 0;
+    private Vector2 recentInputVec = Vector2.right;
     #endregion
 
-    private Vector2 recentInputVec = Vector2.right;
+    #region Aim
+    public Vector2 aimVec { get; private set; }
+    #endregion
+    
+    #region File
+    public bool isFire
+    {
+        get
+        {
+            bool v = fireTrigger > 0;
+            fireTrigger = 0;
+            return v;
+        }
+        private set
+        {
+            fireTrigger = value ? 1 : 0;
+        }
+    }
+    private float fireTrigger = 0;
+    #endregion
+
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        inputActions = new InputControls();
+        if (playerInput.defaultActionMap == "Player1")
+        {
+            inputActions.Player1.Enable();
+            inputActions.Player1.Move.performed += OnMove;
+            inputActions.Player1.Dash.performed += OnDash;
+            inputActions.Player1.Aim.performed += OnAim;
+            inputActions.Player1.Fire.canceled += OnFireCanceled;
+        }
+        else if (playerInput.defaultActionMap == "Player2")
+        {
+            inputActions.Player2.Enable();
+            inputActions.Player2.Move.performed += OnMove;
+            inputActions.Player2.Move.canceled += OnMoveCanceled;
+            inputActions.Player2.Dash.performed += OnDash;
+            inputActions.Player2.Aim.performed += OnAim;
+            inputActions.Player2.Fire.canceled += OnFireCanceled;
+        }
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void OnDestroy()
+    {
+        if (playerInput.defaultActionMap == "Player1")
+            inputActions.Player1.Disable();
+        else if (playerInput.defaultActionMap == "Player2")
+            inputActions.Player2.Disable();
+    }
+
+    #region MoveFunc
     public bool isMoving()
     {
-        if (inputVec.magnitude > 0.01f)
+        if (inputVec.magnitude > 0.1f)
             return true;
         return false;
     }
 
     public void PlayerMove()
     {
-        // Move
         Vector2 targetSpeed = moveSpeed * inputVec;
         Vector2 speedDif = targetSpeed - rb.velocity;
         float speedDist = speedDif.sqrMagnitude;
@@ -70,6 +124,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speedDif.normalized);
         //rb.velocity = targetSpeed;
     }
+    #endregion
 
     public void PlayerIdle()
     {
@@ -82,6 +137,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
     }
 
+    #region DashFunc
     public void PlayerDashIn()
     {
         Vector2 direction = rb.velocity.normalized;
@@ -105,16 +161,42 @@ public class PlayerController : MonoBehaviour
         float dashAmount = Mathf.Pow(Mathf.Abs(dashDist) * dashDec, dashPower);
         rb.AddForce(dashAmount * dashDif.normalized);
     }
+    #endregion
 
-    private void OnMove(InputValue value)
+
+
+    private void OnMove(InputAction.CallbackContext context)
     {
-        inputVec = value.Get<Vector2>();
+        inputVec = context.ReadValue<Vector2>();
         if (inputVec.magnitude > 0.1f)
             recentInputVec = inputVec;
     }
 
-    private void OnDash(InputValue value)
+    private void OnMoveCanceled(InputAction.CallbackContext context)
     {
-        dashTrigger = value.Get<float>();
+        inputVec = Vector2.zero;
+    }
+
+    private void OnDash(InputAction.CallbackContext context)
+    {
+        dashTrigger = context.ReadValue<float>();
+    }
+    private void OnAim(InputAction.CallbackContext context)
+    {
+        aimVec = context.ReadValue<Vector2>();
+        if (playerInput.defaultActionMap == "Player2")
+        {
+            Vector2 p = GetComponentInParent<Player>().transform.position;
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = Camera.main.nearClipPlane;
+            Vector3 Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector2 Worldpos2D = new Vector2(Worldpos.x, Worldpos.y);
+            aimVec = (Worldpos2D- p).normalized;
+        }
+    }
+
+    private void OnFireCanceled(InputAction.CallbackContext context)
+    {
+        fireTrigger = 1;
     }
 }
