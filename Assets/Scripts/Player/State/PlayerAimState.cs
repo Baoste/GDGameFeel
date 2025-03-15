@@ -21,10 +21,13 @@ public class PlayerAimState : PlayerState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        controller.PlayerAim();
     }
 
     public override void Update()
     {
         base.Update();
+        if (controller.isFire)
+            stateMachine.ChangeState(player.fireState);
     }
 }

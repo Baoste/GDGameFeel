@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8675636313536084022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018f8aaea5834154e8510fafbd69722d, type: 3}
-  m_Name: PixelPostProcessFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  settings:
-    blitMaterial: {fileID: 2100000, guid: 82e3d4121b735244fa953ee096ae47a2, type: 2}
-    passEvent: 1000
 --- !u!114 &-2049194115305553784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,14 +26,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11145981673336645838492a2d98e247, type: 3}
-  m_Name: Renderer2D
+  m_Name: Renderer2DReverse
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: -8675636313536084022}
-  m_RendererFeatureMap: cac73303bdf29987
+  - {fileID: 1477513680764669071}
+  m_RendererFeatureMap: 8f0cc24cdd2e8114
   m_UseNativeRenderPass: 0
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
@@ -94,3 +78,19 @@ MonoBehaviour:
   m_DefaultLitMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_DefaultUnlitMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_DefaultMaskMaterial: {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+--- !u!114 &1477513680764669071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018f8aaea5834154e8510fafbd69722d, type: 3}
+  m_Name: PixelPostProcessFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    blitMaterial: {fileID: 2100000, guid: f5d9634572180bf4c967e59536eda7de, type: 2}
+    passEvent: 1000

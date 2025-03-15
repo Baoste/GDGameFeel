@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Xml;
 using Unity.VisualScripting;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
     public PlayerDashOutState dashOutState;
     public PlayerAimState aimState;
     public PlayerFireState fireState;
+    public PlayerDeadState deadState;
     #endregion
 
     public Animator animator {  get; private set; }
@@ -30,6 +32,12 @@ public class Player : MonoBehaviour
 
     #region Arrow
     public Arrow arrow;
+    #endregion
+
+    #region Combine
+    [Header("Need Combine")]
+    public StainGenerator stainGenerator;
+    public GameObject shadow;
     #endregion
 
     private void Awake()
@@ -45,6 +53,7 @@ public class Player : MonoBehaviour
         dashOutState = new PlayerDashOutState(stateMachine, this, "isDash");
         aimState = new PlayerAimState(stateMachine, this, "isAim");
         fireState = new PlayerFireState(stateMachine, this, "isFire");
+        deadState = new PlayerDeadState(stateMachine, this, "isDead");
     }
     void Start()
     {
@@ -65,4 +74,8 @@ public class Player : MonoBehaviour
         stateMachine.currentState.FixedUpdate();
     }
 
+    public void GenerateShadow()
+    {
+        Instantiate(shadow, transform.position, Quaternion.identity);
+    }
 }

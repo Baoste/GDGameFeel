@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pixelate
-  m_Shader: {fileID: 4800000, guid: a875302521f5f054983e364cafb36223, type: 3}
+  m_Name: Reverse
+  m_Shader: {fileID: 4800000, guid: 6c5605744bd8ab94dac26b3851847287, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -44,7 +44,6 @@ Material:
     - _Columns: 256
     - _EnableExternalAlpha: 0
     - _Rows: 256
-    - _ScreenHeight: 512
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

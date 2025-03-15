@@ -15,9 +15,11 @@ public class ArrowFireState : ArrowState
         arrow.transform.parent = arrow.player.transform.parent;
         arrow.player = null;
         flyTime = 0;
+
         arrow.rb.simulated = true;
         arrow.col.isTrigger = false;
-        float amount = 40f;
+
+        float amount = 50f;
         arrow.rb.AddForce(amount * arrow.aimDirection, ForceMode2D.Impulse);
     }
 

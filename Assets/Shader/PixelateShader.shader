@@ -3,9 +3,7 @@ Shader "Custom/PixelateShader"
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white" {}
-		_Columns("Pixel Columns",Float) = 64
-		_Rows("Pixel Rows",Float) = 64
-
+		_ScreenHeight("Screen Height", Float) = 64
 	}
 	SubShader
 	{
@@ -41,19 +39,55 @@ Shader "Custom/PixelateShader"
 			}
 
 			sampler2D _MainTex;
-			float _Columns;
-			float _Rows;
+			float _ScreenHeight;
 
 			fixed4 frag(v2f i) : SV_Target
 			{
 				float2 uv = i.uv;
-				uv.x *= _Columns;
-				uv.y *= _Rows;
-				uv.x = round(uv.x);
-				uv.y = round(uv.y);
-				uv.x /= _Columns;
-				uv.y /= _Rows;
-				fixed4 col = tex2D(_MainTex, uv);
+
+				float range = 0.02;
+				float a = range / ((range - 0.5) * (range - 0.5));
+				float2 newUV;
+				if (uv.x < 0.5 && uv.y < 0.5)
+				{
+					float ty = a*(uv.x-0.5)*(uv.x-0.5);
+					float tx = a*(uv.y-0.5)*(uv.y-0.5);
+					if (uv.y < ty || uv.x < tx)
+						newUV = 0;
+					else
+						newUV = uv + float2(-tx*2*abs(uv.x-0.5), -ty*2*abs(uv.y-0.5));
+				}
+				else if (uv.x > 0.5 && uv.y < 0.5)
+				{
+					float ty = a*(uv.x-0.5)*(uv.x-0.5);
+					float tx = -a*(uv.y-0.5)*(uv.y-0.5) + 1;
+					if (uv.y < ty || uv.x > tx)
+						newUV = 0;
+					else
+						newUV = uv + float2((1-tx)*2*abs(uv.x-0.5), -ty*2*abs(uv.y-0.5));
+				}
+				else if (uv.x < 0.5 && uv.y > 0.5)
+				{
+					float ty = -a*(uv.x-0.5)*(uv.x-0.5) + 1;
+					float tx = a*(uv.y-0.5)*(uv.y-0.5);
+					if (uv.y > ty || uv.x < tx)
+						newUV = 0;
+					else
+						newUV = uv + float2(-tx*2*abs(uv.x-0.5), (1-ty)*2*abs(uv.y-0.5));
+				}
+				else
+				{
+					float ty = -a*(uv.x-0.5)*(uv.x-0.5) + 1;
+					float tx = -a*(uv.y-0.5)*(uv.y-0.5) + 1;
+					if (uv.y > ty || uv.x > tx)
+						newUV = 0;
+					else
+						newUV = uv + float2((1-tx)*2*abs(uv.x-0.5), (1-ty)*2*abs(uv.y-0.5));
+				}
+				fixed4 col = tex2D(_MainTex, newUV);
+				//col.rb *= (sin(uv.y * _ScreenHeight)+1) * 0.5 + 1;
+				//col.g *= (cos(uv.y * _ScreenHeight)+1) * 0.5 + 1;
+				col.rgb *= step(0, sin(newUV.y * _ScreenHeight)) * 0.1 + 0.9;
 				return col;
 			}
 			ENDCG

@@ -20,18 +20,18 @@ public class PlayerState
         player.animator.SetBool(animatorName, true);
     }
 
-    public virtual void Update()
+
+    public virtual void Exit()
     {
-        if (controller.isFire && player.arrow)
-            stateMachine.ChangeState(player.fireState);
+        player.animator.SetBool(animatorName, false);
     }
 
     public virtual void FixedUpdate()
     {
     }
-
-    public virtual void Exit()
+    public virtual void Update()
     {
-        player.animator.SetBool(animatorName, false);
+        if (controller.isFiring && player.arrow)
+            stateMachine.ChangeState(player.aimState);
     }
 }

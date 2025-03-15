@@ -1,8 +1,4 @@
-using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -21,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float velPower = 0.87f;
     [SerializeField] private float frictionAmount = 0.22f;
     private Vector2 inputVec;
+    private float moveDeadArea = 0.25f;
+    private Gamepad gamepad;
     #endregion
 
     #region Dash
@@ -37,7 +35,8 @@ public class PlayerController : MonoBehaviour
         get
         {
             bool v = dashTrigger > 0;
-            dashTrigger = 0;
+            if (v)
+                dashTrigger = 0;
             return v;
         }
         private set
@@ -51,15 +50,33 @@ public class PlayerController : MonoBehaviour
 
     #region Aim
     public Vector2 aimVec { get; private set; }
+    private Vector2 recentAimVec = Vector2.up;
     #endregion
-    
+
     #region File
+    public bool isFiring
+    {
+        get
+        {
+            bool v = fireReady > 0;
+            return v;
+        }
+        private set
+        {
+            fireReady = value ? 1 : 0;
+        }
+    }
+    private float fireReady = 0;
     public bool isFire
     {
         get
         {
             bool v = fireTrigger > 0;
-            fireTrigger = 0;
+            if (v)
+            {
+                fireReady = 0;
+                fireTrigger = 0;
+            }
             return v;
         }
         private set
@@ -74,12 +91,14 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         inputActions = new InputControls();
+
         if (playerInput.defaultActionMap == "Player1")
         {
             inputActions.Player1.Enable();
             inputActions.Player1.Move.performed += OnMove;
             inputActions.Player1.Dash.performed += OnDash;
             inputActions.Player1.Aim.performed += OnAim;
+            inputActions.Player1.Fire.performed += OnFirePerformed;
             inputActions.Player1.Fire.canceled += OnFireCanceled;
         }
         else if (playerInput.defaultActionMap == "Player2")
@@ -89,6 +108,7 @@ public class PlayerController : MonoBehaviour
             inputActions.Player2.Move.canceled += OnMoveCanceled;
             inputActions.Player2.Dash.performed += OnDash;
             inputActions.Player2.Aim.performed += OnAim;
+            inputActions.Player2.Fire.performed += OnFirePerformed;
             inputActions.Player2.Fire.canceled += OnFireCanceled;
         }
     }
@@ -96,6 +116,18 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gamepad = Gamepad.current;
+    }
+
+    private void Update()
+    {
+        // make sure stick will read zero
+        if (playerInput.defaultActionMap == "Player1")
+        {
+            Vector2 leftStick = gamepad.leftStick.ReadValue();
+            if (leftStick.magnitude < 0.1f)
+                inputVec = Vector2.zero;
+        }
     }
 
     private void OnDestroy()
@@ -109,7 +141,7 @@ public class PlayerController : MonoBehaviour
     #region MoveFunc
     public bool isMoving()
     {
-        if (inputVec.magnitude > 0.1f)
+        if (inputVec.magnitude > moveDeadArea)
             return true;
         return false;
     }
@@ -119,7 +151,7 @@ public class PlayerController : MonoBehaviour
         Vector2 targetSpeed = moveSpeed * inputVec;
         Vector2 speedDif = targetSpeed - rb.velocity;
         float speedDist = speedDif.sqrMagnitude;
-        float accelRate = (targetSpeed.magnitude > 0.01f) ? acceleration : deceleration;
+        float accelRate = (targetSpeed.magnitude > moveDeadArea) ? acceleration : deceleration;
         float movement = Mathf.Pow(speedDist * accelRate, velPower);
         rb.AddForce(movement * speedDif.normalized);
         //rb.velocity = targetSpeed;
@@ -163,12 +195,31 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    #region Aim & Fire
+    public void PlayerAim()
+    {
+        Vector2 speedDif = - rb.velocity;
+        float speedDist = speedDif.sqrMagnitude;
+        float movement = Mathf.Pow(speedDist * 28, 0.82f);
+        rb.AddForce(movement * speedDif.normalized);
+    }
+    public void PlayerFire()
+    {
+        Arrow arrow = GetComponent<Player>().arrow;
+        if (arrow)
+            recentAimVec = arrow.aimDirection;
+        Vector2 speedDif = -10f * recentAimVec - rb.velocity;
+        float speedDist = speedDif.sqrMagnitude;
+        float movement = Mathf.Pow(speedDist * 38, 0.82f);
+        rb.AddForce(movement * speedDif.normalized);
+    }
+    #endregion
 
 
     private void OnMove(InputAction.CallbackContext context)
     {
         inputVec = context.ReadValue<Vector2>();
-        if (inputVec.magnitude > 0.1f)
+        if (inputVec.magnitude > moveDeadArea)
             recentInputVec = inputVec;
     }
 
@@ -183,7 +234,9 @@ public class PlayerController : MonoBehaviour
     }
     private void OnAim(InputAction.CallbackContext context)
     {
-        aimVec = context.ReadValue<Vector2>();
+        Vector2 tmp = context.ReadValue<Vector2>();
+        if (tmp.magnitude > 0.5f)
+            aimVec = tmp;
         if (playerInput.defaultActionMap == "Player2")
         {
             Vector2 p = GetComponentInParent<Player>().transform.position;
@@ -195,6 +248,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnFirePerformed(InputAction.CallbackContext context)
+    {
+        fireReady = context.ReadValue<float>();
+    }
     private void OnFireCanceled(InputAction.CallbackContext context)
     {
         fireTrigger = 1;
