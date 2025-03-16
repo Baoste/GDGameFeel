@@ -36,7 +36,10 @@ public class ArrowAimState : ArrowState
     public override void Update()
     {
         base.Update();
-        ArrowRotate();
+        if (arrow.player != null)
+        {
+            ArrowRotate();
+        }
     }
 
     private void ArrowRotate()
@@ -46,13 +49,13 @@ public class ArrowAimState : ArrowState
             float len = 1.1f;
             arrow.aimDirection = controller.aimVec.normalized;
             Vector3 rotatedPos = new Vector3(
-            len * arrow.aimDirection.x,
-            len * arrow.aimDirection.y,
+                len * arrow.aimDirection.x,
+                len * arrow.aimDirection.y,
                 0
             );
             arrow.transform.localPosition = rotatedPos;
             float angle = Mathf.Atan2(arrow.aimDirection.y, arrow.aimDirection.x) * Mathf.Rad2Deg;
-            arrow.transform.localRotation = Quaternion.Euler(0, 0, angle + 30);
+            arrow.transform.localRotation = Quaternion.Euler(0, 0, angle - 45);
         }
     }
 }

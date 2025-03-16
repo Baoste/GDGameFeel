@@ -16,6 +16,7 @@ public class ArrowStopState : ArrowState
     public override void Exit()
     {
         base.Exit();
+        arrow.trailRenderer.enabled = false;
     }
 
     public override void FixedUpdate()

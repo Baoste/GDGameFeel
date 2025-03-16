@@ -30,5 +30,6 @@ public class PlayerDashState : PlayerState
     public override void Update()
     {
         base.Update();
+        player.animator.SetFloat("velocity", controller.rb.velocity.x * player.spriteTrans.localScale.x);
     }
 }

@@ -43,8 +43,8 @@ Material:
     m_Floats:
     - _Columns: 256
     - _EnableExternalAlpha: 0
-    - _Rows: 256
-    - _ScreenHeight: 512
+    - _Rows: 250
+    - _ScreenHeight: 480
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

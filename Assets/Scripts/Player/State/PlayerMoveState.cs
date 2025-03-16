@@ -11,11 +11,13 @@ public class PlayerMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.dustEffect.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.dustEffect.Stop();
     }
 
     public override void FixedUpdate()

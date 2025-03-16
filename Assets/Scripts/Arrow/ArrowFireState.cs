@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.InputSystem;
 
 public class ArrowFireState : ArrowState
 {
@@ -12,6 +14,8 @@ public class ArrowFireState : ArrowState
     public override void Enter()
     {
         base.Enter();
+        arrow.trailRenderer.enabled = true;
+
         arrow.transform.parent = arrow.player.transform.parent;
         arrow.player = null;
         flyTime = 0;
@@ -36,8 +40,16 @@ public class ArrowFireState : ArrowState
     public override void Update()
     {
         base.Update();
+        ArrowRotate();
         flyTime += Time.deltaTime;
         if (flyTime > .8f)
             stateMachine.ChangeState(arrow.stopState);
+    }
+
+    private void ArrowRotate()
+    {
+        Vector2 dirction = arrow.rb.velocity;
+        float angle = Mathf.Atan2(dirction.y, dirction.x) * Mathf.Rad2Deg;
+        arrow.transform.localRotation = Quaternion.Euler(0, 0, angle - 45);
     }
 }

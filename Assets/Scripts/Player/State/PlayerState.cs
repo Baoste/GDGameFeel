@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class PlayerState
 {
     public PlayerStateMachine stateMachine;
@@ -31,7 +33,20 @@ public class PlayerState
     }
     public virtual void Update()
     {
+        FlipSprite();
         if (controller.isFiring && player.arrow)
             stateMachine.ChangeState(player.aimState);
+    }
+
+    private void FlipSprite()
+    {
+        if (controller.aimVec.x > 0)
+        {
+            player.spriteTrans.localScale = new Vector3(1, 1, 1);
+        }
+        else if (controller.aimVec.x < 0)
+        {
+            player.spriteTrans.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }

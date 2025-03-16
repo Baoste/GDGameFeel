@@ -18,6 +18,7 @@ public class Arrow : MonoBehaviour
 
     public Rigidbody2D rb;
     public Collider2D col;
+    public TrailRenderer trailRenderer { get; private set; }
 
     public Player player;
     private Player hit;
@@ -26,6 +27,7 @@ public class Arrow : MonoBehaviour
 
     [Header("Combine")]
     public GameObject hitRing;
+    public WaveGenerator waveGenerator;
 
     public CinemachineImpulseSource impulseSource { get; private set; }
 
@@ -45,6 +47,7 @@ public class Arrow : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        trailRenderer = GetComponentInChildren<TrailRenderer>();
 
         stateMachine.Initialize(aimState);
     }
@@ -86,16 +89,19 @@ public class Arrow : MonoBehaviour
             Vector3 pos = contact.point;
             //Instantiate(hitRing, pos, Quaternion.identity);
             Instantiate(hitRing, pos, Quaternion.Euler(new Vector3(0, 0, 10f)));
+            waveGenerator.transform.position = pos;
+            waveGenerator.CallShockWave();
             StartCoroutine(WaitToStop(.2f));
         }
         // player dead
         hit = collision.gameObject.GetComponent<Player>();
-        if (hit != null)
+        if (hit != null && hit.stateMachine.currentState != hit.deadState)
         {
             var cameraData = Camera.main.GetUniversalAdditionalCameraData();
             // 设置需要使用的 Renderer 索引
             cameraData.SetRenderer(1);
-            StartCoroutine(TimeFreeze(1));
+            Vector3 pos = collision.contacts[0].point;
+            StartCoroutine(TimeFreeze(1, pos));
         }
     }
     private IEnumerator WaitToStop(float t)
@@ -104,10 +110,14 @@ public class Arrow : MonoBehaviour
         stateMachine.ChangeState(stopState);
     }
 
-    private IEnumerator TimeFreeze(float t)
+    private IEnumerator TimeFreeze(float t, Vector3 pos)
     {
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(t);
+
+        waveGenerator.transform.position = pos;
+        waveGenerator.CallShockWave();
+
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         cameraData.SetRenderer(0);
         hit.stateMachine.ChangeState(hit.deadState);

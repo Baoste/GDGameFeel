@@ -180,6 +180,8 @@ public class PlayerController : MonoBehaviour
     public void PlayerDashTime()
     {
         Vector2 direction = recentInputVec;
+        if (rb.velocity.sqrMagnitude > 0.5f)
+            direction = rb.velocity.normalized;
         float dashDif = dashMaxSpeed - rb.velocity.sqrMagnitude;
         float dashAmount = Mathf.Pow(Mathf.Abs(dashDif) * dashAcc, dashPower) * Mathf.Sign(dashDif);
         rb.AddForce(dashAmount * direction);

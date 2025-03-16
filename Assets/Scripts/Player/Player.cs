@@ -1,15 +1,6 @@
 using Cinemachine;
-using DG.Tweening.Core.Easing;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-using System.Xml;
-using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
+
 
 public class Player : MonoBehaviour
 {
@@ -36,8 +27,11 @@ public class Player : MonoBehaviour
 
     #region Combine
     [Header("Need Combine")]
-    public StainGenerator stainGenerator;
-    public GameObject shadow;
+    public Transform spriteTrans;
+    public GameObject shadowRight;
+    public GameObject shadowLeft;
+    public GameObject blood;
+    public ParticleSystem dustEffect;
     #endregion
 
     private void Awake()
@@ -57,7 +51,7 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
 
         stateMachine.Initialize(idleState);
@@ -76,6 +70,20 @@ public class Player : MonoBehaviour
 
     public void GenerateShadow()
     {
-        Instantiate(shadow, transform.position, Quaternion.identity);
+        if (controller.rb.velocity.x * spriteTrans.localScale.x < 0 )
+            Instantiate(shadowLeft, transform.position, Quaternion.identity).transform.localScale = spriteTrans.localScale;
+        else if (controller.rb.velocity.x * spriteTrans.localScale.x > 0)
+            Instantiate(shadowRight, transform.position, Quaternion.identity).transform.localScale = spriteTrans.localScale;
+    }
+
+    public void GenerateBlood()
+    {
+        GameObject ps = Instantiate(blood, transform.position, Quaternion.identity);
+
+        Vector3 impulseDir = Vector3.one;
+        impulseSource.m_DefaultVelocity = impulseDir * 2f;
+        impulseSource.GenerateImpulse();
+
+        Destroy(ps, 5f);
     }
 }

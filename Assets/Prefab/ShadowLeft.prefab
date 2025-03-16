@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8717069954627256054}
   - component: {fileID: 6068966029871800615}
   m_Layer: 0
-  m_Name: Shadow1
+  m_Name: ShadowLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.25882354, b: 0.25882354, a: 0.46666667}
+  m_Sprite: {fileID: -1763665148, guid: fd9894d1af2c16e43ae965f7675a9cc5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.46666667}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
