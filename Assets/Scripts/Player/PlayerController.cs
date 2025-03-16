@@ -234,6 +234,7 @@ public class PlayerController : MonoBehaviour
     {
         dashTrigger = context.ReadValue<float>();
     }
+
     private void OnAim(InputAction.CallbackContext context)
     {
         Vector2 tmp = context.ReadValue<Vector2>();

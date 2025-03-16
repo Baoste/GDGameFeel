@@ -12,8 +12,11 @@ public class PlayerDeadState : PlayerState
     {
         base.Enter();
         player.GenerateBlood();
-        player.arrow.stateMachine.ChangeState(player.arrow.stopState);
-        player.arrow.transform.parent = player.transform.parent;
+        if (player.arrow)
+        {
+            player.arrow.transform.parent = player.transform.parent;
+            player.arrow.stateMachine.ChangeState(player.arrow.stopState);
+        }
     }
 
     public override void Exit()

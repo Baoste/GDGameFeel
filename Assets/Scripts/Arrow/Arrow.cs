@@ -80,6 +80,16 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // player dead
+        hit = collision.gameObject.GetComponent<Player>();
+        if (hit != null && hit.stateMachine.currentState != hit.deadState)
+        {
+            var cameraData = Camera.main.GetUniversalAdditionalCameraData();
+            // 设置需要使用的 Renderer 索引
+            cameraData.SetRenderer(1);
+            Vector3 pos = collision.contacts[0].point;
+            StartCoroutine(TimeFreeze(1, pos));
+        }
         // arrow coliider
         Arrow arrow = collision.gameObject.GetComponent<Arrow>();
         if (arrow != null)
@@ -93,15 +103,13 @@ public class Arrow : MonoBehaviour
             waveGenerator.CallShockWave();
             StartCoroutine(WaitToStop(.2f));
         }
-        // player dead
-        hit = collision.gameObject.GetComponent<Player>();
-        if (hit != null && hit.stateMachine.currentState != hit.deadState)
+        // Ifragile
+        IFragile fragile = collision.gameObject.GetComponent<IFragile>();
+        if (fragile != null)
         {
-            var cameraData = Camera.main.GetUniversalAdditionalCameraData();
-            // 设置需要使用的 Renderer 索引
-            cameraData.SetRenderer(1);
+            impulseSource.GenerateImpulse();
             Vector3 pos = collision.contacts[0].point;
-            StartCoroutine(TimeFreeze(1, pos));
+            fragile.Destroy(pos);
         }
     }
     private IEnumerator WaitToStop(float t)
@@ -115,12 +123,12 @@ public class Arrow : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(t);
 
+        Time.timeScale = 1;
         waveGenerator.transform.position = pos;
         waveGenerator.CallShockWave();
 
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         cameraData.SetRenderer(0);
         hit.stateMachine.ChangeState(hit.deadState);
-        Time.timeScale = 1;
     }
 }
