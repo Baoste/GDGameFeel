@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WaveGenerator : MonoBehaviour
@@ -32,5 +30,6 @@ public class WaveGenerator : MonoBehaviour
             material.SetFloat(wavDistFromCenter, lerpAmount);
             yield return null;
         }
+        material.SetFloat(wavDistFromCenter, -0.1f);
     }
 }

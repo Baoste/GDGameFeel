@@ -13,12 +13,14 @@ public class PlayerFireState : PlayerState
     {
         base.Enter();
         fireTime = 0;
+        player.audioManager.PlaySfx(player.audioManager.fire);
         player.arrow.stateMachine.ChangeState(player.arrow.fireState);
     }
 
     public override void Exit()
     {
         base.Exit();
+        controller.recoil = 3f;
     }
 
     public override void FixedUpdate()

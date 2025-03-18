@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.U2D;
+
 
 public class PlayerDashingState : PlayerDashState
 {
@@ -14,11 +12,13 @@ public class PlayerDashingState : PlayerDashState
     public override void Enter()
     {
         base.Enter();
+        player.audioManager.PlaySfx(player.audioManager.dash);
+
         player.GenerateShadow();
         generateDeltime = controller.dashTime / 3;
 
         Vector3 impulseDir = controller.rb.velocity.normalized;
-        player.impulseSource.m_DefaultVelocity = impulseDir * 0.1f;
+        player.impulseSource.m_DefaultVelocity = impulseDir * 0.15f;
         player.impulseSource.GenerateImpulse();
     }
 

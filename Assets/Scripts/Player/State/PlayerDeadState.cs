@@ -11,6 +11,8 @@ public class PlayerDeadState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.audioManager.PlaySfx(player.audioManager.hitPlayer);
+        player.endMenu.SetActive(true);
         player.GenerateBlood();
         if (player.arrow)
         {
@@ -26,11 +28,10 @@ public class PlayerDeadState : PlayerState
 
     public override void FixedUpdate()
     {
-        Vector2 targetSpeed = Vector2.zero;
-        Vector2 dashDif = targetSpeed - controller.rb.velocity;
-        float dashDist = dashDif.sqrMagnitude;
-        float dashAmount = Mathf.Pow(Mathf.Abs(dashDist) * 24f, 0.9f);
-        controller.rb.AddForce(dashAmount * dashDif.normalized);
+        Vector2 speedDif = Vector2.zero - controller.rb.velocity;
+        float speedDist = speedDif.sqrMagnitude;
+        float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
+        controller.rb.AddForce(speedAmount * speedDif.normalized);
     }
 
     public override void Update()

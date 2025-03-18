@@ -1,13 +1,13 @@
 
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb {  get; private set; }
     private PlayerInput playerInput;
     private InputControls inputActions;
+    private Player player;
 
     #region Move
     [Header("Move")]
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     #region Dash
     [Header("Dash")]
     [SerializeField] private float dashMaxSpeed = 800f;
+    [SerializeField] private float dashInDcc = 150f;
     [SerializeField] private float dashAcc = 28f;
     [SerializeField] private float dashDec = 24f;
     [SerializeField] private float dashPower = 0.9f;
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     private float fireTrigger = 0;
+    public float recoil = 3f;
     #endregion
 
     private void Awake()
@@ -116,6 +118,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
         gamepad = Gamepad.current;
     }
 
@@ -173,7 +176,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerDashIn()
     {
         Vector2 direction = rb.velocity.normalized;
-        float dashAmount = Mathf.Pow(rb.velocity.sqrMagnitude * dashAcc, velPower);
+        float dashAmount = Mathf.Pow(rb.velocity.sqrMagnitude * dashInDcc, dashPower);
         rb.AddForce(dashAmount * -direction);
     }
 
@@ -204,13 +207,14 @@ public class PlayerController : MonoBehaviour
         float speedDist = speedDif.sqrMagnitude;
         float movement = Mathf.Pow(speedDist * 28, 0.82f);
         rb.AddForce(movement * speedDif.normalized);
-    }
-    public void PlayerFire()
-    {
+
         Arrow arrow = GetComponent<Player>().arrow;
         if (arrow)
             recentAimVec = arrow.aimDirection;
-        Vector2 speedDif = -10f * recentAimVec - rb.velocity;
+    }
+    public void PlayerFire()
+    {
+        Vector2 speedDif = -recoil * recentAimVec - rb.velocity;
         float speedDist = speedDif.sqrMagnitude;
         float movement = Mathf.Pow(speedDist * 38, 0.82f);
         rb.AddForce(movement * speedDif.normalized);
@@ -253,10 +257,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnFirePerformed(InputAction.CallbackContext context)
     {
+        fireTrigger = 0;
         fireReady = context.ReadValue<float>();
     }
     private void OnFireCanceled(InputAction.CallbackContext context)
     {
+        fireReady = 0;
         fireTrigger = 1;
+        player.canAim = true;
     }
 }

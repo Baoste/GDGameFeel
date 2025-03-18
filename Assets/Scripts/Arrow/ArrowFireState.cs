@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.InputSystem;
+
 
 public class ArrowFireState : ArrowState
 {
@@ -22,14 +20,13 @@ public class ArrowFireState : ArrowState
 
         arrow.rb.simulated = true;
         arrow.col.isTrigger = false;
-
-        float amount = 50f;
-        arrow.rb.AddForce(amount * arrow.aimDirection, ForceMode2D.Impulse);
+        arrow.rb.AddForce(arrow.fireForce * arrow.aimDirection, ForceMode2D.Impulse);
     }
 
     public override void Exit()
     {
         base.Exit();
+        arrow.InitArrow();
     }
 
     public override void FixedUpdate()
@@ -42,7 +39,7 @@ public class ArrowFireState : ArrowState
         base.Update();
         ArrowRotate();
         flyTime += Time.deltaTime;
-        if (flyTime > .8f)
+        if (flyTime > arrow.flyTime)
             stateMachine.ChangeState(arrow.stopState);
     }
 

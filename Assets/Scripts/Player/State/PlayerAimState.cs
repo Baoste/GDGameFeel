@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAimState : PlayerState
 {
+    private float aimTime;
     public PlayerAimState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -11,11 +12,14 @@ public class PlayerAimState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        aimTime = 0;
+        player.audioManager.PlayLoopSfx(player.audioManager.lightningReady);
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.audioManager.StopLoopSfx();
     }
 
     public override void FixedUpdate()
@@ -26,8 +30,18 @@ public class PlayerAimState : PlayerState
 
     public override void Update()
     {
-        base.Update();
+        // base.Update();
+        aimTime += Time.deltaTime;
+        player.arrow.ChargeUp(aimTime);
+
         if (controller.isFire)
             stateMachine.ChangeState(player.fireState);
+        // dash stop aiming
+        if (controller.isDashing)
+        {
+            player.arrow.InitArrow();
+            player.canAim = false;
+            stateMachine.ChangeState(player.dashInState);
+        }
     }
 }

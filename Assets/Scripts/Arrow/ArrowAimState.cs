@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.UIElements;
 
 public class ArrowAimState : ArrowState
 {
@@ -46,11 +42,10 @@ public class ArrowAimState : ArrowState
     {
         if (controller.aimVec.magnitude > 0.5f)
         {
-            float len = 1.1f;
             arrow.aimDirection = controller.aimVec.normalized;
             Vector3 rotatedPos = new Vector3(
-                len * arrow.aimDirection.x,
-                len * arrow.aimDirection.y,
+                arrow.lenToPlayer * arrow.aimDirection.x,
+                arrow.lenToPlayer * arrow.aimDirection.y,
                 0
             );
             arrow.transform.localPosition = rotatedPos;

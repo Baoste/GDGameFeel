@@ -34,8 +34,10 @@ public class PlayerState
     public virtual void Update()
     {
         FlipSprite();
-        if (controller.isFiring && player.arrow)
+        if (player.canAim && controller.isFiring && player.arrow)
+        {
             stateMachine.ChangeState(player.aimState);
+        }
     }
 
     private void FlipSprite()

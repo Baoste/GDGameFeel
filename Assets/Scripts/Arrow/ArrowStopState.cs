@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class ArrowStopState : ArrowState
@@ -22,11 +21,11 @@ public class ArrowStopState : ArrowState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        Vector2 targetSpeed = Vector2.zero;
-        Vector2 dashDif = targetSpeed - arrow.rb.velocity;
-        float dashDist = dashDif.sqrMagnitude;
-        float dashAmount = Mathf.Pow(Mathf.Abs(dashDist) * 10f, 0.8f);
-        arrow.rb.AddForce(dashAmount * dashDif.normalized);
+
+        Vector2 speedDif = Vector2.zero - arrow.rb.velocity;
+        float speedDist = speedDif.sqrMagnitude;
+        float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 5f, 0.8f);
+        arrow.rb.AddForce(speedAmount * speedDif.normalized);
         if (arrow.rb.velocity.sqrMagnitude < 0.2f)
             arrow.col.isTrigger = true;
     }

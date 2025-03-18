@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.SocialPlatforms;
 
 public class ColRingAnim : MonoBehaviour
 {
     public GameObject ring;
     public GameObject tail;
-    
+
+    public float intensity = 8f;
+
     private Light2D ringLight;
     private Light2D tailLight;
 
@@ -20,13 +21,14 @@ public class ColRingAnim : MonoBehaviour
         amount = 1.8f;
         ringLight = ring.GetComponent<Light2D>();
         tailLight = tail.GetComponent<Light2D>();
+        ringLight.intensity = intensity;
+        tailLight.intensity = intensity;
     }
 
     void Update()
     {
-        amount -= 3.3f * Time.deltaTime;
+        amount -= 3.3f * 8f / intensity * Time.deltaTime;
         timeScale = Mathf.Pow(2.5f, amount);
-        Debug.Log(timeScale);
 
         transform.Rotate(Vector3.forward, timeScale * 30f * Time.deltaTime);
 

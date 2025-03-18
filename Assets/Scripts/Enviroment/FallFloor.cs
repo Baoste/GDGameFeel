@@ -3,17 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public class FallFloor : MonoBehaviour
 {
     public Tilemap floorTilemap;
+    public Transform upCol;
+    public Transform downCol;
+    public Transform leftCol;
+    public Transform rightCol;
+
     private Tilemap[] tilemaps;
     private List<Vector3Int> outerRingPositions;
     private BoundsInt bounds;
 
     private float fallDelTime;
     private float fallTime;
+
+    private float moveDel = 1.6f;
 
     private void Start()
     {
@@ -35,6 +41,7 @@ public class FallFloor : MonoBehaviour
                 foreach (Tilemap tilemap in tilemaps)
                     DestroyTile(1f, tilemap, pos);
             }
+            StartCoroutine(MoveColWall(4f));
             fallDelTime = 0f;
         }
     }
@@ -86,7 +93,8 @@ public class FallFloor : MonoBehaviour
         seq.Join(
             DOTween.Shake(
                 getter: () => offset,
-                setter: (Vector3 newOffset) => {
+                setter: (Vector3 newOffset) =>
+                {
                     offset = newOffset;
                     var newMatrix = originalMatrix * Matrix4x4.Translate(offset);
                     tilemap.SetTransformMatrix(pos, newMatrix);
@@ -97,7 +105,8 @@ public class FallFloor : MonoBehaviour
                 randomness: 90f,
                 fadeOut: true
             )
-            .OnComplete(() => {
+            .OnComplete(() =>
+            {
                 float scale = 1f;
                 DOTween.To(
                     () => scale,
@@ -111,10 +120,21 @@ public class FallFloor : MonoBehaviour
                     1f  // duration
                 )
                 .SetEase(Ease.InCubic)
-                .OnComplete(() => {
+                .OnComplete(() =>
+                {
                     tilemap.SetTile(pos, null);
+                    tilemap.DOKill(true);
                 });
             })
         );
+    }
+
+    private IEnumerator MoveColWall(float t)
+    {
+        yield return new WaitForSeconds(t);
+        upCol.position += Vector3.down * moveDel;
+        downCol.position += Vector3.up * moveDel;
+        leftCol.position += Vector3.right * moveDel;
+        rightCol.position += Vector3.left * moveDel;
     }
 }

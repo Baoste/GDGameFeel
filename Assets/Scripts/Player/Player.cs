@@ -1,10 +1,11 @@
 using Cinemachine;
+using System.Security.Claims;
 using UnityEngine;
 
 
 public class Player : MonoBehaviour
 {
-    #region State
+    #region StateMachine
     public PlayerStateMachine stateMachine;
     public PlayerIdleState idleState;
     public PlayerMoveState moveState;
@@ -15,18 +16,25 @@ public class Player : MonoBehaviour
     public PlayerAimState aimState;
     public PlayerFireState fireState;
     public PlayerDeadState deadState;
+    public PlayerFallState fallState;
     #endregion
 
     public Animator animator {  get; private set; }
     public CinemachineImpulseSource impulseSource { get; private set; }
     public PlayerController controller { get; private set; }
+    public AudioManager audioManager { get; private set; }
 
     #region Arrow
     public Arrow arrow;
     #endregion
 
+    #region State
+    public bool canAim;
+    #endregion
+
     #region Combine
     [Header("Need Combine")]
+    public GameObject endMenu;
     public Transform spriteTrans;
     public GameObject shadowRight;
     public GameObject shadowLeft;
@@ -48,11 +56,15 @@ public class Player : MonoBehaviour
         aimState = new PlayerAimState(stateMachine, this, "isAim");
         fireState = new PlayerFireState(stateMachine, this, "isFire");
         deadState = new PlayerDeadState(stateMachine, this, "isDead");
+        fallState = new PlayerFallState(stateMachine, this, "isFall");
     }
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        audioManager = FindObjectOfType<AudioManager>();
+
+        canAim = true;
 
         stateMachine.Initialize(idleState);
     }
@@ -70,10 +82,17 @@ public class Player : MonoBehaviour
 
     public void GenerateShadow()
     {
+        GameObject shadow = null;
         if (controller.rb.velocity.x * spriteTrans.localScale.x < 0 )
-            Instantiate(shadowLeft, transform.position, Quaternion.identity).transform.localScale = spriteTrans.localScale;
-        else if (controller.rb.velocity.x * spriteTrans.localScale.x > 0)
-            Instantiate(shadowRight, transform.position, Quaternion.identity).transform.localScale = spriteTrans.localScale;
+            shadow = Instantiate(shadowLeft, transform.position, Quaternion.identity);
+        else
+            shadow = Instantiate(shadowRight, transform.position, Quaternion.identity);
+        shadow.transform.localScale = spriteTrans.localScale;
+        SpriteRenderer shadowSp = shadow.GetComponent<SpriteRenderer>();
+        float alpha = shadowSp.color.a;
+        Color color = spriteTrans.GetComponent<SpriteRenderer>().color;
+        color.a = alpha;
+        shadowSp.color = color;
     }
 
     public void GenerateBlood()
@@ -86,4 +105,5 @@ public class Player : MonoBehaviour
 
         Destroy(ps, 5f);
     }
+
 }
