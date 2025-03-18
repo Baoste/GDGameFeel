@@ -12,13 +12,9 @@ public class ArrowWall : MonoBehaviour
     {
         if (collision != null)
         {
-            Arrow arrow = collision.gameObject.GetComponent<Arrow>();
-            if (arrow != null)
-            {
-                sp.DOFade(1f, 0.2f)
-                    .SetLoops(2, LoopType.Yoyo)
-                    .SetEase(Ease.InCubic);
-            }
+            sp.DOFade(1f, 0.2f)
+                .SetLoops(2, LoopType.Yoyo)
+                .SetEase(Ease.InCubic);
         }
     }
 }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,8 +32,19 @@ public class PlayerAimState : PlayerState
     public override void Update()
     {
         // base.Update();
-        aimTime += Time.deltaTime;
-        player.arrow.ChargeUp(aimTime);
+        if (player.arrow)
+        {
+            aimTime += Time.deltaTime;
+            player.arrow.ChargeUp(aimTime);
+            if (aimTime > 4f)
+            {
+                player.arrow.stateMachine.ChangeState(player.arrow.brokenState);
+            }
+        }
+        else
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
 
         if (controller.isFire)
             stateMachine.ChangeState(player.fireState);

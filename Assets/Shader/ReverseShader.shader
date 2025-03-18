@@ -42,9 +42,15 @@ Shader "Custom/ReverseShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                // just invert the colors
-                col.rgb = 1 - col.rgb;
-                return col;
+
+                fixed gray = dot(col.rgb, fixed3(0.299, 0.587, 0.114));
+                fixed3 grayscaleColor = fixed3(gray, gray, gray);
+                //float factor = _ElapsedTime * 5;
+                fixed4 finalColor = col;
+                //finalColor.rgb = lerp(col.rgb, grayscaleColor, factor);
+                finalColor.rgb = grayscaleColor;
+
+                return finalColor;
             }
             ENDCG
         }

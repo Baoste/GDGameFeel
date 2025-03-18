@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArrowFireState : ArrowState
 {
     private float flyTime;
+    private Vector3 firePos;
     public ArrowFireState(ArrowStateMachine stateMachine, Arrow arrow, string animatorName) : base(stateMachine, arrow, animatorName)
     {
     }
@@ -14,6 +15,7 @@ public class ArrowFireState : ArrowState
         base.Enter();
         arrow.trailRenderer.enabled = true;
 
+        firePos = arrow.transform.position;
         arrow.transform.parent = arrow.player.transform.parent;
         arrow.player = null;
         flyTime = 0;
@@ -26,7 +28,11 @@ public class ArrowFireState : ArrowState
     public override void Exit()
     {
         base.Exit();
-        arrow.InitArrow();
+        if (arrow.isFast)
+        {
+            arrow.arrowGenerator.DestroyArrow(arrow.gameObject, firePos);
+            arrow.InitArrow();
+        }
     }
 
     public override void FixedUpdate()
@@ -47,6 +53,6 @@ public class ArrowFireState : ArrowState
     {
         Vector2 dirction = arrow.rb.velocity;
         float angle = Mathf.Atan2(dirction.y, dirction.x) * Mathf.Rad2Deg;
-        arrow.transform.localRotation = Quaternion.Euler(0, 0, angle - 45);
+        arrow.transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 }

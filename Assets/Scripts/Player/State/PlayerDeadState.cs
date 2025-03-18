@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDeadState : PlayerState
 {
+    private float deadPushTime;
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -11,9 +12,11 @@ public class PlayerDeadState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.audioManager.PlaySfx(player.audioManager.hitPlayer);
-        player.endMenu.SetActive(true);
+
+        deadPushTime = 0f;
+
         player.GenerateBlood();
+        // drop arrow
         if (player.arrow)
         {
             player.arrow.transform.parent = player.transform.parent;
@@ -28,10 +31,17 @@ public class PlayerDeadState : PlayerState
 
     public override void FixedUpdate()
     {
-        Vector2 speedDif = Vector2.zero - controller.rb.velocity;
-        float speedDist = speedDif.sqrMagnitude;
-        float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
-        controller.rb.AddForce(speedAmount * speedDif.normalized);
+        deadPushTime += Time.fixedDeltaTime;
+        if (deadPushTime > 0.4f)
+        {
+            Vector2 speedDif = Vector2.zero - controller.rb.velocity;
+            float speedDist = speedDif.sqrMagnitude;
+            float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
+            controller.rb.AddForce(speedAmount * speedDif.normalized);
+        }
+        if (deadPushTime > 2f)
+            player.endMenu.SetActive(true);
+
     }
 
     public override void Update()

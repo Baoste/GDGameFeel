@@ -1,12 +1,14 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class ArrowAimState : ArrowState
+
+public class ArrowBrokenState : ArrowState
 {
-    
+    private float destroyTime = 0f;
     private PlayerController controller;
-
-    public ArrowAimState(ArrowStateMachine stateMachine, Arrow arrow, string animatorName) : base(stateMachine, arrow, animatorName)
+    public ArrowBrokenState(ArrowStateMachine stateMachine, Arrow arrow, string animatorName) : base(stateMachine, arrow, animatorName)
     {
     }
 
@@ -14,15 +16,6 @@ public class ArrowAimState : ArrowState
     {
         base.Enter();
         controller = arrow.player.controller;
-        arrow.aimDirection = Vector2.up;
-        arrow.rb.simulated = false;
-        arrow.col.isTrigger = true;
-
-        // init rotate
-        Vector3 rotatedPos = Vector3.up * arrow.lenToPlayer;
-        arrow.transform.localPosition = rotatedPos;
-        float angle = Mathf.Atan2(arrow.aimDirection.y, arrow.aimDirection.x) * Mathf.Rad2Deg;
-        arrow.transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     public override void Exit()
@@ -33,14 +26,20 @@ public class ArrowAimState : ArrowState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        
     }
 
     public override void Update()
     {
         base.Update();
-        if (arrow.player != null)
+        ArrowRotate();
+        destroyTime += Time.deltaTime;
+        if (destroyTime >= 1f)
         {
-            ArrowRotate();
+            destroyTime = 0f;
+            arrow.waveGenerator.transform.position = arrow.transform.position;
+            arrow.waveGenerator.CallShockWave();
+            arrow.arrowGenerator.DestroyArrow(arrow.gameObject, arrow.transform.position);
         }
     }
 
@@ -54,7 +53,7 @@ public class ArrowAimState : ArrowState
                 arrow.lenToPlayer * arrow.aimDirection.y,
                 0
             );
-            arrow.transform.localPosition = rotatedPos;
+            arrow.transform.localPosition = rotatedPos + Vector3.up * Random.Range(-.1f, .1f);
             float angle = Mathf.Atan2(arrow.aimDirection.y, arrow.aimDirection.x) * Mathf.Rad2Deg;
             arrow.transform.localRotation = Quaternion.Euler(0, 0, angle);
         }

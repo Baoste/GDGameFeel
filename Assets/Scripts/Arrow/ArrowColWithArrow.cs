@@ -22,7 +22,7 @@ public class ArrowColWithArrow : MonoBehaviour
             //Instantiate(hitRing, pos, Quaternion.identity);
             float angle = Random.Range(0f, 20f);
             ColRingAnim ring = Instantiate(arrow.hitRing, pos, Quaternion.Euler(new Vector3(0, 0, angle))).GetComponent<ColRingAnim>();
-            ring.intensity = 8f + arrow.lerpAmount * 12f;
+            ring.intensity = 8f + arrow.lerpAmount * 8f;
             arrow.waveGenerator.transform.position = pos;
             arrow.waveGenerator.CallShockWave();
             StartCoroutine(WaitToStop(.1f));
@@ -32,6 +32,12 @@ public class ArrowColWithArrow : MonoBehaviour
     private IEnumerator WaitToStop(float t)
     {
         yield return new WaitForSeconds(t);
+        if (arrow.stateMachine.currentState == arrow.fallState)
+        {
+            arrow.GetComponent<SpriteRenderer>().sprite = arrow.normal;
+            arrow.arrowLight.lightCookieSprite = arrow.normal;
+            arrow.arrowLight.intensity = 0f;
+        }
         arrow.stateMachine.ChangeState(arrow.stopState);
     }
 }

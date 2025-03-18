@@ -1,6 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
 using System.Collections;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -11,20 +12,24 @@ public class Arrow : MonoBehaviour
 
     #region stateMachine
     public ArrowStateMachine stateMachine;
+    public ArrowFallState fallState;
     public ArrowAimState aimState;
     public ArrowFireState fireState;
     public ArrowStopState stopState;
+    public ArrowBrokenState brokenState;
     #endregion
 
     public Rigidbody2D rb;
     public Collider2D col;
     public TrailRenderer trailRenderer { get; private set; }
-    private Light2D arrowLight;
+    public Light2D arrowLight;
+    private float fixedDeltaTime;
 
     #region state
     public Player player;
     public Player getArrowPlayer;
     private Player hit;
+    private Player hitPlayer;
     public Vector2 aimDirection;
     public float lenToPlayer { get; private set; }
     public float fireForce { get; private set; }
@@ -51,14 +56,21 @@ public class Arrow : MonoBehaviour
         }
     }
     private bool _isFast;
-    private ParticleSystem lightParticle;
+    public ParticleSystem lightParticle { get; private set; }
+    public ArrowGenerator arrowGenerator { get; private set; }
     #endregion
 
     [Header("Combine")]
+    #region GenerateFall
+    public Sprite onfloor;
+    public Sprite normal;
+    public GameObject shadow;
+    #endregion
+
     public GameObject hitRing;
-    public WaveGenerator waveGenerator;
     public GameObject lightning;
-    public Volume lightningVol;
+    public Volume lightningVol { get; private set; }
+    public WaveGenerator waveGenerator { get; private set; }
     public AudioManager audioManager { get; private set; }
     public CinemachineImpulseSource impulseSource { get; private set; }
 
@@ -67,10 +79,11 @@ public class Arrow : MonoBehaviour
         player = GetComponentInParent<Player>();
 
         stateMachine = new ArrowStateMachine();
+        fallState = new ArrowFallState(stateMachine, this, "isFall");
         aimState = new ArrowAimState(stateMachine, this, "isAim");
         fireState = new ArrowFireState(stateMachine, this, "isFire");
         stopState = new ArrowStopState(stateMachine, this, "isStop");
-
+        brokenState = new ArrowBrokenState(stateMachine, this, "isBroken");
     }
 
     void Start()
@@ -83,19 +96,24 @@ public class Arrow : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        impulseSource = GetComponent<CinemachineImpulseSource>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
         arrowLight = GetComponentInChildren<Light2D>();
         lightParticle = GetComponentInChildren<ParticleSystem>();
-        audioManager = FindObjectOfType<AudioManager>();
+        arrowGenerator = FindObjectOfType<ArrowGenerator>();
 
-        stateMachine.Initialize(aimState);
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+        audioManager = FindObjectOfType<AudioManager>();
+        waveGenerator = FindObjectOfType<WaveGenerator>();
+        lightningVol = GameObject.FindGameObjectWithTag("GlobalVol").GetComponent<Volume>();
+
+        stateMachine.Initialize(fallState);
     }
 
     void Update()
     {
         stateMachine.currentState.Update();
     }
+
     private void FixedUpdate()
     {
         stateMachine.currentState.FixedUpdate();
@@ -105,14 +123,23 @@ public class Arrow : MonoBehaviour
     {
         hit = collision.gameObject.GetComponent<Player>();
         Arrow arrow = collision.gameObject.GetComponent<Arrow>();
+
         // player dead
         if (hit != null && hit.stateMachine.currentState != hit.deadState)
         {
+            hitPlayer = hit;
+
+            audioManager.PlaySfx(audioManager.hitPlayer);
             var cameraData = Camera.main.GetUniversalAdditionalCameraData();
-            // 设置需要使用的 Renderer 索引
             cameraData.SetRenderer(1);
+
+            // hit player move back
             Vector3 pos = collision.contacts[0].point;
-            StartCoroutine(TimeFreeze(1, pos));
+            Vector2 dir = (hitPlayer.transform.position - pos).normalized;
+            float force = 50f + lerpAmount * 70f;
+            hitPlayer.controller.rb.AddForce(dir * force, ForceMode2D.Impulse);
+
+            StartCoroutine(TimeFreeze(2f, pos));
         }
         
         // Ifragile
@@ -146,16 +173,25 @@ public class Arrow : MonoBehaviour
 
     private IEnumerator TimeFreeze(float t, Vector3 pos)
     {
-        Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(t);
+        fixedDeltaTime = Time.fixedDeltaTime;
+        Time.timeScale = 0.1f;
+        Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
 
-        Time.timeScale = 1;
+        hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
         waveGenerator.transform.position = pos;
         waveGenerator.CallShockWave();
 
+        yield return new WaitForSecondsRealtime(t);
+
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = fixedDeltaTime;
+
+        //audioManager.SfxAudio.enabled = false;
+        impulseSource.m_DefaultVelocity = Vector3.one * 2f;
+        impulseSource.GenerateImpulse();
+
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         cameraData.SetRenderer(0);
-        hit.stateMachine.ChangeState(hit.deadState);
     }
 
     public void ChargeUp(float t)
@@ -185,7 +221,7 @@ public class Arrow : MonoBehaviour
         // player.controller.recoil recovery is in PlayerFireState.cs
     }
 
-    private void GenerateLightning()
+    public void GenerateLightning()
     {
         audioManager.PlaySfx(audioManager.lightning);
 
@@ -209,4 +245,12 @@ public class Arrow : MonoBehaviour
         );
     }
 
+    public void GenerateShadow(Vector3 pos)
+    {
+        GameObject shadowObj = Instantiate(shadow, pos, Quaternion.identity);
+        shadowObj.transform.localScale = Vector3.zero;
+        shadowObj.transform.DOScaleX(1f, 0.9f).SetEase(Ease.InQuad);
+        shadowObj.transform.DOScaleY(0.6f, 0.9f).SetEase(Ease.InQuad);
+        Destroy(shadowObj, 1f);
+    }
 }

@@ -98,11 +98,6 @@ public class Player : MonoBehaviour
     public void GenerateBlood()
     {
         GameObject ps = Instantiate(blood, transform.position, Quaternion.identity);
-
-        Vector3 impulseDir = Vector3.one;
-        impulseSource.m_DefaultVelocity = impulseDir * 2f;
-        impulseSource.GenerateImpulse();
-
         Destroy(ps, 5f);
     }
 

@@ -31,7 +31,7 @@ public class PlayerDashingState : PlayerDashState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        dashDuring += Time.deltaTime;
+        dashDuring += Time.fixedDeltaTime;
         if (dashDuring > controller.dashTime)
             stateMachine.ChangeState(player.dashOutState);
         else
