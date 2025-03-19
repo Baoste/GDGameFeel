@@ -8,13 +8,16 @@ public class WaveGenerator : MonoBehaviour
     private Coroutine waveCoroutine;
     private Material material;
     private static int wavDistFromCenter = Shader.PropertyToID("_WaveDistFromCenter");
+    private SpriteRenderer sp;
 
     private void Awake()
     {
         material = GetComponent<SpriteRenderer>().material;
+        sp = GetComponent<SpriteRenderer>();
     }
     public void CallShockWave()
     {
+        sp.sortingOrder = 2;
         waveCoroutine = StartCoroutine(ShockWaveAction(-0.1f, 1f));
     }
 
@@ -31,5 +34,6 @@ public class WaveGenerator : MonoBehaviour
             yield return null;
         }
         material.SetFloat(wavDistFromCenter, -0.1f);
+        sp.sortingOrder = 0;
     }
 }

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShockWaveMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: c54ba868411e9c64aad81a97330208c9, type: 3}
+  m_Name: ShockTwistMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 1e32c7d13e495ca41946845d45dc76ef, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -54,8 +54,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _ShockWaveStrength: -0.2
-    - _Size: 0.03
+    - _ShockWaveStrength: -0.1
+    - _Size: 0
     - _WaveDistFromCenter: -0.1
     - _XSizeRatio: 1.777778
     m_Colors:
@@ -64,7 +64,7 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _RingSpawnPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6926057974673599781
+--- !u!114 &6535923392748185352
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

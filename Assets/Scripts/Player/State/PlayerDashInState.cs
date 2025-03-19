@@ -1,5 +1,7 @@
 
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerDashInState : PlayerDashState
 {
@@ -15,6 +17,7 @@ public class PlayerDashInState : PlayerDashState
     public override void Exit()
     {
         base.Exit();
+        player.DashFreeze();
     }
 
     public override void FixedUpdate()

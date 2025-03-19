@@ -11,12 +11,14 @@ public class PlayerMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.forceField.enabled = true;
         player.dustEffect.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.forceField.enabled = false;
         player.dustEffect.Stop();
     }
 

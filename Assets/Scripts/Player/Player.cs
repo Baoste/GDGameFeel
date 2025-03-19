@@ -1,6 +1,8 @@
 using Cinemachine;
+using System.Collections;
 using System.Security.Claims;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 
 public class Player : MonoBehaviour
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour
     public CinemachineImpulseSource impulseSource { get; private set; }
     public PlayerController controller { get; private set; }
     public AudioManager audioManager { get; private set; }
+    private float fixedDeltaTime;
+    private TwistGenerator twistGenerator;
 
     #region Arrow
     public Arrow arrow;
@@ -40,6 +44,7 @@ public class Player : MonoBehaviour
     public GameObject shadowLeft;
     public GameObject blood;
     public ParticleSystem dustEffect;
+    public ParticleSystemForceField forceField;
     #endregion
 
     private void Awake()
@@ -63,8 +68,10 @@ public class Player : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         audioManager = FindObjectOfType<AudioManager>();
+        twistGenerator = FindObjectOfType<TwistGenerator>();
 
         canAim = true;
+        forceField.enabled = false;
 
         stateMachine.Initialize(idleState);
     }
@@ -89,6 +96,7 @@ public class Player : MonoBehaviour
             shadow = Instantiate(shadowRight, transform.position, Quaternion.identity);
         shadow.transform.localScale = spriteTrans.localScale;
         SpriteRenderer shadowSp = shadow.GetComponent<SpriteRenderer>();
+        shadowSp.sprite = spriteTrans.GetComponent<SpriteRenderer>().sprite;
         float alpha = shadowSp.color.a;
         Color color = spriteTrans.GetComponent<SpriteRenderer>().color;
         color.a = alpha;
@@ -96,9 +104,27 @@ public class Player : MonoBehaviour
     }
 
     public void GenerateBlood()
-    {
-        GameObject ps = Instantiate(blood, transform.position, Quaternion.identity);
-        Destroy(ps, 5f);
+    {       
+        Instantiate(blood, transform.position, Quaternion.identity);
     }
 
+    public void DashFreeze()
+    {
+        StartCoroutine(TimeFreeze(0.05f));
+    }
+    
+    private IEnumerator TimeFreeze(float t)
+    {
+        fixedDeltaTime = Time.fixedDeltaTime;
+        Time.timeScale = 0.1f;
+        Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
+
+        yield return new WaitForSecondsRealtime(t);
+
+        twistGenerator.transform.position = transform.position;
+        twistGenerator.CallShockTwist();
+
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = fixedDeltaTime;
+    }
 }

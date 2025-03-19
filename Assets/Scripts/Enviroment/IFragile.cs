@@ -3,5 +3,5 @@ using UnityEngine;
 
 public interface IFragile
 {
-    void Destroy(Vector3 pos);
+    bool Destroy(Vector3 pos);
 }

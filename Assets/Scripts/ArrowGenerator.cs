@@ -14,6 +14,8 @@ public class ArrowGenerator : MonoBehaviour
         GenerateArrow(pos);
         pos.x = 10;
         GenerateArrow(pos);
+        pos.x = 0;
+        GenerateArrow(pos);
     }
 
     // Update is called once per frame

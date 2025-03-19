@@ -12,19 +12,23 @@ public class PlayerDashingState : PlayerDashState
     public override void Enter()
     {
         base.Enter();
-        player.audioManager.PlaySfx(player.audioManager.dash);
-
-        player.GenerateShadow();
-        generateDeltime = controller.dashTime / 3;
+        player.forceField.enabled = true;
 
         Vector3 impulseDir = controller.rb.velocity.normalized;
         player.impulseSource.m_DefaultVelocity = impulseDir * 0.15f;
         player.impulseSource.GenerateImpulse();
+
+        player.audioManager.PlaySfx(player.audioManager.dash);
+        
+        //player.GenerateShadow();
+        generateDeltime = controller.dashTime / 4;
+
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.forceField.enabled = false;
         player.GenerateShadow();
     }
 
@@ -44,7 +48,7 @@ public class PlayerDashingState : PlayerDashState
         if (dashDuring > generateDeltime)
         {
             player.GenerateShadow();
-            generateDeltime += controller.dashTime / 3;
+            generateDeltime += controller.dashTime / 4;
         }
     }
 

@@ -1,10 +1,11 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb {  get; private set; }
+    public Rigidbody2D rb { get; private set; }
     private PlayerInput playerInput;
     private InputControls inputActions;
     private Player player;

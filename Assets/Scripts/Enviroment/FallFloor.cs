@@ -23,7 +23,7 @@ public class FallFloor : MonoBehaviour
 
     private void Start()
     {
-        fallTime = 10f;
+        fallTime = 1000f;
 
         fallDelTime = 0f;
         outerRingPositions = new List<Vector3Int>();

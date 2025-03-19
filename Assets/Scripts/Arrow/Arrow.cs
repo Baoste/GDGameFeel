@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -89,7 +90,7 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         lenToPlayer = 1.5f;
-        fireForce = 30f;
+        fireForce = 60f;
         lerpAmount = 0f;
         flyTime = 0.5f;
         isFast = false;
@@ -128,6 +129,7 @@ public class Arrow : MonoBehaviour
         if (hit != null && hit.stateMachine.currentState != hit.deadState)
         {
             hitPlayer = hit;
+            hit = null;
 
             audioManager.PlaySfx(audioManager.hitPlayer);
             var cameraData = Camera.main.GetUniversalAdditionalCameraData();
@@ -152,34 +154,34 @@ public class Arrow : MonoBehaviour
 
             float offsetX = 0.25f;
             float offsetY = 0.25f;
-            Vector3 pos1 = new Vector3(hitPos.x + offsetX, hitPos.y, 0f);
-            fragile.Destroy(pos1);
-            Vector3 pos2 = new Vector3(hitPos.x - offsetX, hitPos.y, 0f);
-            fragile.Destroy(pos2);
-            Vector3 pos3 = new Vector3(hitPos.x, hitPos.y + offsetY, 0f);
-            fragile.Destroy(pos3);
-            Vector3 pos4 = new Vector3(hitPos.x, hitPos.y - offsetY, 0f);
-            fragile.Destroy(pos4);
-            Vector3 pos5 = new Vector3(hitPos.x + offsetX, hitPos.y + offsetY, 0f);
-            fragile.Destroy(pos5);
-            Vector3 pos6 = new Vector3(hitPos.x + offsetX, hitPos.y - offsetY, 0f);
-            fragile.Destroy(pos6);
-            Vector3 pos7 = new Vector3(hitPos.x - offsetX, hitPos.y + offsetY, 0f);
-            fragile.Destroy(pos7);
-            Vector3 pos8 = new Vector3(hitPos.x - offsetX, hitPos.y - offsetY, 0f);
-            fragile.Destroy(pos8);
+
+            Vector3[] poses = new Vector3[8];
+            poses[0] = new Vector3(hitPos.x + offsetX, hitPos.y, 0f);
+            poses[1] = new Vector3(hitPos.x - offsetX, hitPos.y, 0f);
+            poses[2] = new Vector3(hitPos.x, hitPos.y + offsetY, 0f);
+            poses[3] = new Vector3(hitPos.x, hitPos.y - offsetY, 0f);
+            poses[4] = new Vector3(hitPos.x + offsetX, hitPos.y + offsetY, 0f);
+            poses[5] = new Vector3(hitPos.x + offsetX, hitPos.y - offsetY, 0f);
+            poses[6] = new Vector3(hitPos.x - offsetX, hitPos.y + offsetY, 0f);
+            poses[7] = new Vector3(hitPos.x - offsetX, hitPos.y - offsetY, 0f);
+
+            foreach (Vector3 pos in poses)
+            {
+                if (fragile.Destroy(pos))
+                    break;
+            }
         }
     }
 
     private IEnumerator TimeFreeze(float t, Vector3 pos)
     {
-        fixedDeltaTime = Time.fixedDeltaTime;
-        Time.timeScale = 0.1f;
-        Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
-
         hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
         waveGenerator.transform.position = pos;
         waveGenerator.CallShockWave();
+
+        fixedDeltaTime = Time.fixedDeltaTime;
+        Time.timeScale = 0.1f;
+        Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
 
         yield return new WaitForSecondsRealtime(t);
 
@@ -205,7 +207,7 @@ public class Arrow : MonoBehaviour
         lerpAmount = Mathf.Pow(t, 2);
 
         lenToPlayer = 1.5f - lerpAmount;
-        fireForce = 40f + lerpAmount * 60f;
+        fireForce = 60f + lerpAmount * 50f;
         arrowLight.intensity = lerpAmount * 0.5f;
         flyTime = 0.5f + lerpAmount * 0.3f;
         player.controller.recoil = 3f + lerpAmount * 18f;
@@ -215,7 +217,7 @@ public class Arrow : MonoBehaviour
     {
         DOTween.To(() => lenToPlayer, x => lenToPlayer = x, 1.5f, .5f);
         DOTween.To(() => arrowLight.intensity, x => arrowLight.intensity = x, 0f, .5f);
-        fireForce = 30f;
+        fireForce = 60f;
         flyTime = 0.5f;
         isFast = false;
         // player.controller.recoil recovery is in PlayerFireState.cs
