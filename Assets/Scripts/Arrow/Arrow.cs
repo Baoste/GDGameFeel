@@ -23,6 +23,7 @@ public class Arrow : MonoBehaviour
     public TrailRenderer trailRenderer { get; private set; }
     public Light2D arrowLight;
     private float fixedDeltaTime;
+    private Coroutine timeFreezeCoroutine;
 
     #region state
     public Player player;
@@ -131,6 +132,7 @@ public class Arrow : MonoBehaviour
         if (hit != null && hit.stateMachine.currentState != hit.deadState)
         {
             hitPlayer = hit;
+            hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
             hit = null;
 
             audioManager.PlaySfx(audioManager.hitPlayer);
@@ -143,7 +145,8 @@ public class Arrow : MonoBehaviour
             float force = 50f + lerpAmount * 70f;
             hitPlayer.controller.rb.AddForce(dir * force, ForceMode2D.Impulse);
 
-            StartCoroutine(TimeFreeze(2f, pos));
+            if (timeFreezeCoroutine == null)
+                timeFreezeCoroutine = StartCoroutine(TimeFreeze(2f, pos));
         }
         
         // Ifragile
@@ -177,7 +180,6 @@ public class Arrow : MonoBehaviour
 
     private IEnumerator TimeFreeze(float t, Vector3 pos)
     {
-        hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
         waveGenerator.transform.position = pos;
         waveGenerator.CallShockWave();
 

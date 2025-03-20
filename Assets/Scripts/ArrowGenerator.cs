@@ -31,7 +31,7 @@ public class ArrowGenerator : MonoBehaviour
 
     public void DestroyArrow(GameObject obj, Vector3 pos)
     {
-        Destroy(obj);
+        Destroy(obj, 1f);
         StartCoroutine(GenerateAfterDestroy(pos));
     }
 
