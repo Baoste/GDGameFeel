@@ -1,7 +1,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class PlayerDashInState : PlayerDashState
 {
@@ -12,6 +11,7 @@ public class PlayerDashInState : PlayerDashState
     public override void Enter()
     {
         base.Enter();
+        player.dashCoolTime = 0.52f;
     }
 
     public override void Exit()

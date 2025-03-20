@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class ArrowFireState : ArrowState
@@ -14,6 +13,7 @@ public class ArrowFireState : ArrowState
     public override void Enter()
     {
         base.Enter();
+
         arrow.trailRenderer.enabled = true;
 
         firePos = arrow.transform.position;

@@ -1,9 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
 using System.Collections;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -47,12 +45,16 @@ public class Arrow : MonoBehaviour
             if (value)
             {
                 gameObject.layer = LayerMask.NameToLayer("ArrowFast");
+                hitWallCol.layer = LayerMask.NameToLayer("ArrowFast");
                 lightParticle.Play();
                 impulseSource.GenerateImpulse();
                 GenerateLightning();
             }
             else
+            {
                 gameObject.layer = LayerMask.NameToLayer("Arrow");
+                hitWallCol.layer = LayerMask.NameToLayer("ArrowWall");
+            }
             _isFast = value;
         }
     }
@@ -67,7 +69,7 @@ public class Arrow : MonoBehaviour
     public Sprite normal;
     public GameObject shadow;
     #endregion
-
+    public GameObject hitWallCol;
     public GameObject hitRing;
     public GameObject lightning;
     public Volume lightningVol { get; private set; }

@@ -23,7 +23,7 @@ public class FallFloor : MonoBehaviour
 
     private void Start()
     {
-        fallTime = 1000f;
+        fallTime = 10f;
 
         fallDelTime = 0f;
         outerRingPositions = new List<Vector3Int>();
@@ -85,48 +85,9 @@ public class FallFloor : MonoBehaviour
 
     private void DestroyTile(float t, Tilemap tilemap, Vector3Int pos)
     {
-
-        Matrix4x4 originalMatrix = tilemap.GetTransformMatrix(pos);
-        Sequence seq = DOTween.Sequence();
-
-        Vector3 offset = Vector3.zero;
-        seq.Join(
-            DOTween.Shake(
-                getter: () => offset,
-                setter: (Vector3 newOffset) =>
-                {
-                    offset = newOffset;
-                    var newMatrix = originalMatrix * Matrix4x4.Translate(offset);
-                    tilemap.SetTransformMatrix(pos, newMatrix);
-                },
-                duration: 3f,
-                strength: new Vector3(0.2f, 0.2f, 0f),
-                vibrato: 10,
-                randomness: 90f,
-                fadeOut: true
-            )
-            .OnComplete(() =>
-            {
-                float scale = 1f;
-                DOTween.To(
-                    () => scale,
-                    (float newScale) =>
-                    {
-                        scale = newScale;
-                        Matrix4x4 scaledMatrix = originalMatrix * Matrix4x4.Scale(Vector3.one * scale);
-                        tilemap.SetTransformMatrix(pos, scaledMatrix);
-                    },
-                    0f,
-                    1f  // duration
-                )
-                .SetEase(Ease.InCubic)
-                .OnComplete(() =>
-                {
-                    tilemap.SetTile(pos, null);
-                    tilemap.DOKill(true);
-                });
-            })
-        );
+        tilemap.SetTile(pos, null);
+        
+        
     }
 
     private IEnumerator MoveColWall(float t)

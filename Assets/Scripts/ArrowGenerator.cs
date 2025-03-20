@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class ArrowGenerator : MonoBehaviour
 {

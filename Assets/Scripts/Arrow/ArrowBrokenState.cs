@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 
 public class ArrowBrokenState : ArrowState
@@ -34,7 +33,7 @@ public class ArrowBrokenState : ArrowState
         base.Update();
         ArrowRotate();
         destroyTime += Time.deltaTime;
-        if (destroyTime >= 1f)
+        if (destroyTime >= 2f)
         {
             destroyTime = 0f;
             arrow.waveGenerator.transform.position = arrow.transform.position;

@@ -10,6 +10,8 @@ public class ArrowStopState : ArrowState
     public override void Enter()
     {
         base.Enter();
+        arrow.InitArrow();
+        arrow.col.isTrigger = true;
     }
 
     public override void Exit()
@@ -26,8 +28,6 @@ public class ArrowStopState : ArrowState
         float speedDist = speedDif.sqrMagnitude;
         float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 5f, 0.8f);
         arrow.rb.AddForce(speedAmount * speedDif.normalized);
-        if (arrow.rb.velocity.sqrMagnitude < 0.2f)
-            arrow.col.isTrigger = true;
     }
 
     public override void Update()

@@ -1,5 +1,6 @@
 
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb { get; private set; }
     private PlayerInput playerInput;
-    private InputControls inputActions;
+    //private InputControls inputActions;
     private Player player;
 
     #region Move
@@ -18,8 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float velPower = 0.87f;
     [SerializeField] private float frictionAmount = 0.22f;
     private Vector2 inputVec;
-    private float moveDeadArea = 0.25f;
-    private Gamepad gamepad;
+    private float moveDeadArea = 0.7f;
+    public Gamepad gamepad { get; private set; }
     #endregion
 
     #region Dash
@@ -87,59 +88,55 @@ public class PlayerController : MonoBehaviour
         }
     }
     private float fireTrigger = 0;
-    public float recoil = 3f;
+    public float recoil = 18f;
     #endregion
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        inputActions = new InputControls();
 
-        if (playerInput.defaultActionMap == "Player1")
-        {
-            inputActions.Player1.Enable();
-            inputActions.Player1.Move.performed += OnMove;
-            inputActions.Player1.Dash.performed += OnDash;
-            inputActions.Player1.Aim.performed += OnAim;
-            inputActions.Player1.Fire.performed += OnFirePerformed;
-            inputActions.Player1.Fire.canceled += OnFireCanceled;
-        }
-        else if (playerInput.defaultActionMap == "Player2")
-        {
-            inputActions.Player2.Enable();
-            inputActions.Player2.Move.performed += OnMove;
-            inputActions.Player2.Move.canceled += OnMoveCanceled;
-            inputActions.Player2.Dash.performed += OnDash;
-            inputActions.Player2.Aim.performed += OnAim;
-            inputActions.Player2.Fire.performed += OnFirePerformed;
-            inputActions.Player2.Fire.canceled += OnFireCanceled;
-        }
+        var players = FindObjectsOfType<Player>();
+        player = players.FirstOrDefault(p => p.playerIndex == playerInput.playerIndex);
+        player.controller = this;
+        rb = player.GetComponent<Rigidbody2D>();
+
+        //inputActions = new InputControls();
+        //if (playerInput.defaultActionMap == "Player1")
+        //{
+        //    inputActions.Player1.Enable();
+        //    inputActions.Player1.Move.performed += OnMove;
+        //    inputActions.Player1.Dash.performed += OnDash;
+        //    inputActions.Player1.Aim.performed += OnAim;
+        //    inputActions.Player1.Fire.performed += OnFirePerformed;
+        //    inputActions.Player1.Fire.canceled += OnFireCanceled;
+        //}
+        //else if (playerInput.defaultActionMap == "Player2")
+        //{
+        //    inputActions.Player2.Enable();
+        //    inputActions.Player2.Move.performed += OnMove;
+        //    inputActions.Player2.Move.canceled += OnMoveCanceled;
+        //    inputActions.Player2.Dash.performed += OnDash;
+        //    inputActions.Player2.Aim.performed += OnAim;
+        //    inputActions.Player2.Fire.performed += OnFirePerformed;
+        //    inputActions.Player2.Fire.canceled += OnFireCanceled;
+        //}
     }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        player = GetComponent<Player>();
         gamepad = Gamepad.current;
     }
 
     private void Update()
     {
-        // make sure stick will read zero
-        if (playerInput.defaultActionMap == "Player1")
-        {
-            Vector2 leftStick = gamepad.leftStick.ReadValue();
-            if (leftStick.magnitude < 0.1f)
-                inputVec = Vector2.zero;
-        }
     }
 
     private void OnDestroy()
     {
-        if (playerInput.defaultActionMap == "Player1")
-            inputActions.Player1.Disable();
-        else if (playerInput.defaultActionMap == "Player2")
-            inputActions.Player2.Disable();
+        //if (playerInput.defaultActionMap == "Player1")
+        //    inputActions.Player1.Disable();
+        //else if (playerInput.defaultActionMap == "Player2")
+        //    inputActions.Player2.Disable();
     }
 
     #region MoveFunc
@@ -167,7 +164,7 @@ public class PlayerController : MonoBehaviour
         // Friction
         Vector2 v = rb.velocity;
         float amount = Mathf.Min(v.sqrMagnitude, frictionAmount);
-        if (v.magnitude > 0.2f)
+        if (v.magnitude > 0.5f)
             rb.AddForce(-v * amount, ForceMode2D.Impulse);
         else
             rb.velocity = Vector2.zero;
@@ -176,9 +173,10 @@ public class PlayerController : MonoBehaviour
     #region DashFunc
     public void PlayerDashIn()
     {
-        Vector2 direction = rb.velocity.normalized;
-        float dashAmount = Mathf.Pow(rb.velocity.sqrMagnitude * dashInDcc, dashPower);
-        rb.AddForce(dashAmount * -direction);
+        Vector2 direction = Vector2.zero - rb.velocity.normalized;
+        float vel = Mathf.Clamp(rb.velocity.sqrMagnitude, 0, 20f);
+        float dashAmount = Mathf.Pow(vel * dashInDcc, dashPower);
+        rb.AddForce(dashAmount * direction);
     }
 
     public void PlayerDashTime()
@@ -209,7 +207,7 @@ public class PlayerController : MonoBehaviour
         float movement = Mathf.Pow(speedDist * 28, 0.82f);
         rb.AddForce(movement * speedDif.normalized);
 
-        Arrow arrow = GetComponent<Player>().arrow;
+        Arrow arrow = player.arrow;
         if (arrow)
             recentAimVec = arrow.aimDirection;
     }
@@ -223,45 +221,52 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    private void OnMove(InputAction.CallbackContext context)
+    private void OnMove(InputValue value)
     {
-        inputVec = context.ReadValue<Vector2>();
-        if (inputVec.magnitude > moveDeadArea)
+        Vector2 moveArea = value.Get<Vector2>();
+        if (moveArea.magnitude > moveDeadArea)
+        {
+            inputVec = moveArea;
             recentInputVec = inputVec;
+        }
+        else
+        {
+            inputVec = Vector2.zero;
+        }
     }
 
-    private void OnMoveCanceled(InputAction.CallbackContext context)
+    //private void OnMoveCanceled(InputAction.CallbackContext context)
+    //{
+    //    inputVec = Vector2.zero;
+    //}
+
+    private void OnDash(InputValue value)
     {
-        inputVec = Vector2.zero;
+        dashTrigger = value.Get<float>();
     }
 
-    private void OnDash(InputAction.CallbackContext context)
+    private void OnAim(InputValue value)
     {
-        dashTrigger = context.ReadValue<float>();
-    }
-
-    private void OnAim(InputAction.CallbackContext context)
-    {
-        Vector2 tmp = context.ReadValue<Vector2>();
+        Vector2 tmp = value.Get<Vector2>();
         if (tmp.magnitude > 0.5f)
             aimVec = tmp;
-        if (playerInput.defaultActionMap == "Player2")
+        if (tmp.magnitude > 1.1f)
         {
-            Vector2 p = GetComponentInParent<Player>().transform.position;
+            Vector2 p = player.transform.position;
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = Camera.main.nearClipPlane;
             Vector3 Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
             Vector2 Worldpos2D = new Vector2(Worldpos.x, Worldpos.y);
-            aimVec = (Worldpos2D- p).normalized;
+            aimVec = (Worldpos2D - p).normalized;
         }
     }
 
-    private void OnFirePerformed(InputAction.CallbackContext context)
+    private void OnCharge(InputValue value)
     {
         fireTrigger = 0;
-        fireReady = context.ReadValue<float>();
+        fireReady = value.Get<float>();
     }
-    private void OnFireCanceled(InputAction.CallbackContext context)
+    private void OnFire(InputValue value)
     {
         fireReady = 0;
         fireTrigger = 1;

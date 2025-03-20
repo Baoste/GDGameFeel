@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +48,7 @@ public class PlayerAimState : PlayerState
         if (controller.isFire)
             stateMachine.ChangeState(player.fireState);
         // dash stop aiming
-        if (controller.isDashing)
+        if (controller.isDashing && player.dashCoolTime <= 0f)
         {
             player.arrow.InitArrow();
             player.canAim = false;

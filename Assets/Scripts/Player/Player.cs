@@ -1,8 +1,7 @@
 using Cinemachine;
 using System.Collections;
-using System.Security.Claims;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 
 public class Player : MonoBehaviour
@@ -23,7 +22,7 @@ public class Player : MonoBehaviour
 
     public Animator animator {  get; private set; }
     public CinemachineImpulseSource impulseSource { get; private set; }
-    public PlayerController controller { get; private set; }
+    public PlayerController controller;
     public AudioManager audioManager { get; private set; }
     private float fixedDeltaTime;
     private TwistGenerator twistGenerator;
@@ -34,6 +33,8 @@ public class Player : MonoBehaviour
 
     #region State
     public bool canAim;
+    [SerializeField] public int playerIndex;
+    public float dashCoolTime;
     #endregion
 
     #region Combine
@@ -49,8 +50,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        controller = GetComponent<PlayerController>();
-
         stateMachine = new PlayerStateMachine();
         idleState = new PlayerIdleState(stateMachine, this, "isIdle");
         moveState = new PlayerMoveState(stateMachine, this, "isMove");
@@ -72,6 +71,7 @@ public class Player : MonoBehaviour
 
         canAim = true;
         forceField.enabled = false;
+        dashCoolTime = 0f;
 
         stateMachine.Initialize(idleState);
     }
@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
         arrow = GetComponentInChildren<Arrow>();
+
+        dashCoolTime -= Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -110,7 +112,7 @@ public class Player : MonoBehaviour
 
     public void DashFreeze()
     {
-        StartCoroutine(TimeFreeze(0.05f));
+        StartCoroutine(TimeFreeze(0.03f));
     }
     
     private IEnumerator TimeFreeze(float t)

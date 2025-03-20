@@ -14,12 +14,12 @@ public class PlayerState
         this.stateMachine = stateMachine;
         this.player = player;
         this.animatorName = animatorName;
-        this.controller = player.controller;
     }
 
     public virtual void Enter()
     {
         player.animator.SetBool(animatorName, true);
+        this.controller = player.controller;
     }
 
 

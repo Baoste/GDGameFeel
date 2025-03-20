@@ -33,7 +33,7 @@ public class PlayerMoveState : PlayerState
         base.Update();
         if (!controller.isMoving())
             stateMachine.ChangeState(player.idleState);
-        if (controller.isDashing)
+        if (controller.isDashing && player.dashCoolTime <= 0f)
             stateMachine.ChangeState(player.dashInState);
     }
 }
