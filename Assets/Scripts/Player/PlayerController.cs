@@ -271,5 +271,13 @@ public class PlayerController : MonoBehaviour
         fireReady = 0;
         fireTrigger = 1;
         player.canAim = true;
+
+        SetGamepadMotor(0);
+    }
+
+    public void SetGamepadMotor(float f)
+    {
+        if (gamepad != null)
+            gamepad.SetMotorSpeeds(f, f);
     }
 }

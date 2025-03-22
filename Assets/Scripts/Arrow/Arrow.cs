@@ -133,6 +133,8 @@ public class Arrow : MonoBehaviour
         {
             hitPlayer = hit;
             hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
+            if (lerpAmount > 0.5f)
+                SplitParts(hitPlayer);
             hit = null;
 
             audioManager.PlaySfx(audioManager.hitPlayer);
@@ -153,7 +155,7 @@ public class Arrow : MonoBehaviour
         IFragile fragile = collision.gameObject.GetComponent<IFragile>();
         if (fragile != null)
         {
-            audioManager.PlaySfx(audioManager.hitWall);
+            audioManager.PlaySfx(audioManager.wallBroken);
             impulseSource.GenerateImpulse();
             Vector3 hitPos = collision.GetContact(0).point;
 
@@ -211,10 +213,12 @@ public class Arrow : MonoBehaviour
         lerpAmount = Mathf.Pow(t, 2);
 
         lenToPlayer = 1.5f - lerpAmount;
-        fireForce = 60f + lerpAmount * 50f;
+        fireForce = 60f + lerpAmount * 40f;
         arrowLight.intensity = lerpAmount * 0.5f;
         flyTime = 0.5f + lerpAmount * 0.3f;
         player.controller.recoil = 3f + lerpAmount * 18f;
+
+        player.controller.SetGamepadMotor(lerpAmount / 2f);
     }
 
     public void InitArrow()
@@ -258,5 +262,14 @@ public class Arrow : MonoBehaviour
         shadowObj.transform.DOScaleX(1f, 0.9f).SetEase(Ease.InQuad);
         shadowObj.transform.DOScaleY(0.6f, 0.9f).SetEase(Ease.InQuad);
         Destroy(shadowObj, 1f);
+    }
+
+    private void SplitParts(Player player)
+    {
+        Color color = Color.white;
+        color.a = 0;
+        player.spriteTrans.GetComponent<SpriteRenderer>().color = color;
+        player.playerParts.DeadTrigger();
+        player.shadow.enabled = false;
     }
 }

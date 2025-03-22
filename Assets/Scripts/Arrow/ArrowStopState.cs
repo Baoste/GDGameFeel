@@ -33,8 +33,10 @@ public class ArrowStopState : ArrowState
     public override void Update()
     {
         base.Update();
-        if (arrow.getArrowPlayer)
+        if (arrow.getArrowPlayer && arrow.getArrowPlayer.arrowCount < 2)
         {
+            arrow.getArrowPlayer.arrowCount++;
+            arrow.audioManager.PlaySfx(arrow.audioManager.pickup);
             arrow.transform.parent = arrow.getArrowPlayer.transform;
             arrow.player = arrow.getArrowPlayer;
             stateMachine.ChangeState(arrow.aimState);

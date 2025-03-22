@@ -38,6 +38,8 @@ public class PlayerDeadState : PlayerState
             float speedDist = speedDif.sqrMagnitude;
             float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
             controller.rb.AddForce(speedAmount * speedDif.normalized);
+            
+            player.audioManager.MuteSfx();
         }
         if (deadPushTime > 2f)
             player.endMenu.SetActive(true);

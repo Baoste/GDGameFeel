@@ -26,9 +26,11 @@ public class Player : MonoBehaviour
     public AudioManager audioManager { get; private set; }
     private float fixedDeltaTime;
     private TwistGenerator twistGenerator;
+    public PlayerParts playerParts { get; private set; }
 
     #region Arrow
     public Arrow arrow;
+    public int arrowCount;
     #endregion
 
     #region State
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
     public GameObject blood;
     public ParticleSystem dustEffect;
     public ParticleSystemForceField forceField;
+    public SpriteRenderer shadow;
     #endregion
 
     private void Awake()
@@ -68,10 +71,12 @@ public class Player : MonoBehaviour
         impulseSource = GetComponent<CinemachineImpulseSource>();
         audioManager = FindObjectOfType<AudioManager>();
         twistGenerator = FindObjectOfType<TwistGenerator>();
+        playerParts = GetComponentInChildren<PlayerParts>();
 
         canAim = true;
         forceField.enabled = false;
         dashCoolTime = 0f;
+        arrowCount = 0;
 
         stateMachine.Initialize(idleState);
     }
@@ -106,7 +111,8 @@ public class Player : MonoBehaviour
     }
 
     public void GenerateBlood()
-    {       
+    {
+        audioManager.PlaySfx(audioManager.Explosion);
         Instantiate(blood, transform.position, Quaternion.identity);
     }
 

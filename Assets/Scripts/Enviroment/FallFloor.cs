@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,6 +12,10 @@ public class FallFloor : MonoBehaviour
     public Transform downCol;
     public Transform leftCol;
     public Transform rightCol;
+    public GameObject floorBrokenPrefab;
+    public Transform floorBrokenPool;
+    
+    private Queue<GameObject> floorBrokens;
 
     private Tilemap[] tilemaps;
     private List<Vector3Int> outerRingPositions;
@@ -21,6 +26,20 @@ public class FallFloor : MonoBehaviour
 
     private float moveDel = 1.6f;
 
+    private void Awake()
+    {
+        floorBrokens = new Queue<GameObject>();
+
+        for (int i = 0; i < 110; i++)
+        {
+            GameObject prefab = Instantiate(floorBrokenPrefab);
+            prefab.transform.parent = floorBrokenPool;
+            prefab.SetActive(false);
+            floorBrokens.Enqueue(prefab);
+        }
+        
+    }
+
     private void Start()
     {
         fallTime = 10f;
@@ -28,6 +47,7 @@ public class FallFloor : MonoBehaviour
         fallDelTime = 0f;
         outerRingPositions = new List<Vector3Int>();
         tilemaps = GetComponentsInChildren<Tilemap>();
+
     }
 
     private void Update()
@@ -41,7 +61,7 @@ public class FallFloor : MonoBehaviour
                 foreach (Tilemap tilemap in tilemaps)
                     DestroyTile(1f, tilemap, pos);
             }
-            StartCoroutine(MoveColWall(4f));
+            StartCoroutine(MoveColWall(0.1f));
             fallDelTime = 0f;
         }
     }
@@ -86,8 +106,19 @@ public class FallFloor : MonoBehaviour
     private void DestroyTile(float t, Tilemap tilemap, Vector3Int pos)
     {
         tilemap.SetTile(pos, null);
-        
-        
+
+        if (tilemap == floorTilemap)
+        {
+            Vector3 worldPos = tilemap.CellToWorld(pos) + new Vector3(tilemap.cellSize.x / 2f, tilemap.cellSize.y / 2f, 0f);
+            GameObject tmp = floorBrokens.Dequeue();
+
+            tmp.SetActive(true);
+            tmp.transform.position = worldPos;
+            tmp.transform.DORotate(new Vector3(0, 0, Random.Range(-20f, 20f)), 2f);
+            tmp.GetComponent<Animator>().SetBool("isPlay", true);
+
+            floorBrokens.Enqueue(tmp);
+        }
     }
 
     private IEnumerator MoveColWall(float t)

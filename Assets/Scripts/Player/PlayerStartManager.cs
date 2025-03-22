@@ -8,12 +8,19 @@ public class PlayerStartManager : MonoBehaviour
     public SpriteRenderer leftSp;
     public SpriteRenderer rightSp;
     public Canvas videoCanvas;
+    public FallFloor fallFloor;
 
     private int readyCount = 0;
+    private AudioManager audioManager;
 
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     private void OnPlayerJoined(PlayerInput newPlayer)
     {
+        audioManager.PlaySfx(audioManager.ready);
         readyCount += 1;
         leftSp.color = Color.green;
         if (readyCount == 2)
@@ -39,5 +46,6 @@ public class PlayerStartManager : MonoBehaviour
         Player[] players = FindObjectsOfType<Player>();
         foreach (Player p in players)
             p.enabled = true;
+        fallFloor.enabled = true;
     }
 }

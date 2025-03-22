@@ -9,11 +9,13 @@ public class WaveGenerator : MonoBehaviour
     private Material material;
     private static int wavDistFromCenter = Shader.PropertyToID("_WaveDistFromCenter");
     private SpriteRenderer sp;
+    private AudioManager audioManager;
 
     private void Awake()
     {
         material = GetComponent<SpriteRenderer>().material;
         sp = GetComponent<SpriteRenderer>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     public void CallShockWave()
     {

@@ -13,6 +13,7 @@ public class PlayerMoveState : PlayerState
         base.Enter();
         player.forceField.enabled = true;
         player.dustEffect.Play();
+        player.audioManager.PlayLoopSfx(player.playerIndex, player.audioManager.foot);
     }
 
     public override void Exit()
@@ -20,6 +21,7 @@ public class PlayerMoveState : PlayerState
         base.Exit();
         player.forceField.enabled = false;
         player.dustEffect.Stop();
+        player.audioManager.StopLoopSfx(player.playerIndex);
     }
 
     public override void FixedUpdate()

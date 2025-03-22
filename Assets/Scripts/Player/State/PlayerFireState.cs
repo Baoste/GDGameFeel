@@ -12,6 +12,7 @@ public class PlayerFireState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.arrowCount--;
         fireTime = 0;
         player.audioManager.PlaySfx(player.audioManager.fire);
         player.arrow.stateMachine.ChangeState(player.arrow.fireState);
@@ -20,6 +21,7 @@ public class PlayerFireState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        controller.SetGamepadMotor(0);
         controller.recoil = 3f;
     }
 

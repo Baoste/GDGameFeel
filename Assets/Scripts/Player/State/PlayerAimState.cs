@@ -13,13 +13,13 @@ public class PlayerAimState : PlayerState
     {
         base.Enter();
         aimTime = 0;
-        player.audioManager.PlayLoopSfx(player.audioManager.lightningReady);
+        player.audioManager.PlayLoopSfx(player.playerIndex, player.audioManager.lightningReady);
     }
 
     public override void Exit()
     {
         base.Exit();
-        player.audioManager.StopLoopSfx();
+        player.audioManager.StopLoopSfx(player.playerIndex);
     }
 
     public override void FixedUpdate()

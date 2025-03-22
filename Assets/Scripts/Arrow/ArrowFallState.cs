@@ -24,7 +24,6 @@ public class ArrowFallState : ArrowState
             arrow.col.isTrigger = true;
             arrow.rb.simulated = true;
             arrow.GetComponent<SpriteRenderer>().sprite = arrow.onfloor;
-            arrow.transform.rotation = Quaternion.identity;
             arrow.arrowLight.lightCookieSprite = arrow.onfloor;
 
             // effect
@@ -49,12 +48,14 @@ public class ArrowFallState : ArrowState
     {
         base.Update();
 
-        if (arrow.getArrowPlayer)
+        if (arrow.getArrowPlayer && arrow.getArrowPlayer.arrowCount < 2)
         {
             arrow.GetComponent<SpriteRenderer>().sprite = arrow.normal;
             arrow.arrowLight.lightCookieSprite = arrow.normal;
             arrow.arrowLight.intensity = 0f;
 
+            arrow.audioManager.PlaySfx(arrow.audioManager.pickup);
+            arrow.getArrowPlayer.arrowCount++;
             arrow.transform.parent = arrow.getArrowPlayer.transform;
             arrow.player = arrow.getArrowPlayer;
             stateMachine.ChangeState(arrow.aimState);

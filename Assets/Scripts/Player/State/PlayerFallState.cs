@@ -11,6 +11,7 @@ public class PlayerFallState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.audioManager.PlaySfx(player.audioManager.playerFall);
         player.endMenu.SetActive(true);
         if (player.arrow)
         {

@@ -4,9 +4,11 @@ using UnityEngine;
 public class Pickable : MonoBehaviour
 {
     private Arrow arrow;
+    private AudioManager audioManager;
     private void Start()
     {
         arrow = GetComponentInParent<Arrow>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
