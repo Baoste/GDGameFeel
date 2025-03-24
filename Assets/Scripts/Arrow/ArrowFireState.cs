@@ -14,6 +14,7 @@ public class ArrowFireState : ArrowState
     {
         base.Enter();
 
+        arrow.fireParticle.Play();
         arrow.trailRenderer.enabled = true;
 
         firePos = arrow.transform.position;

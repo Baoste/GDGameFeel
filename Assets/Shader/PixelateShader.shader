@@ -80,8 +80,8 @@ Shader "Custom/PixelateShader"
 				fixed4 col = tex2D(_MainTex, newUV);
 				
 				// scan line
-				//col.rb *= (sin(uv.y * _ScreenHeight)+1) * 0.5 + 1;
-				//col.g *= (cos(uv.y * _ScreenHeight)+1) * 0.5 + 1;
+				// col.rb *= step(0, sin(uv.y * _ScreenHeight)+1) * 0.5 + 1;
+				// col.g *= (sin(uv.y * _ScreenHeight)+1) * 0.5 + 1;
 				col.rgb *= step(0, sin(newUV.y * _ScreenHeight)) * 0.1 + 0.9;
 				
 				// dark corner

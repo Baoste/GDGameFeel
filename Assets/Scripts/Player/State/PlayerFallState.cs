@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerFallState : PlayerState
 {
+    private float deadPushTime;
+    private bool isPlayWinner;
     public PlayerFallState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -11,8 +13,12 @@ public class PlayerFallState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.audioManager.StopBGM();
+
+        deadPushTime = 0f;
+        isPlayWinner = false;
+
         player.audioManager.PlaySfx(player.audioManager.playerFall);
-        player.endMenu.SetActive(true);
         if (player.arrow)
         {
             player.arrow.transform.parent = player.transform.parent;
@@ -36,6 +42,13 @@ public class PlayerFallState : PlayerState
 
     public override void Update()
     {
-        base.Update();
+        deadPushTime += Time.deltaTime;
+        if (deadPushTime > 1.5f && !isPlayWinner)
+        {
+            isPlayWinner = true;
+            player.winnerCanvas.SetActive(true);
+            player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
+            player.endMenu.SetActive(true);
+        }
     }
 }

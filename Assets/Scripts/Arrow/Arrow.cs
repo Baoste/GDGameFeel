@@ -77,6 +77,7 @@ public class Arrow : MonoBehaviour
     public WaveGenerator waveGenerator { get; private set; }
     public AudioManager audioManager { get; private set; }
     public CinemachineImpulseSource impulseSource { get; private set; }
+    public ParticleSystem fireParticle;
 
     private void Awake()
     {
@@ -212,7 +213,7 @@ public class Arrow : MonoBehaviour
         }
         lerpAmount = Mathf.Pow(t, 2);
 
-        lenToPlayer = 1.5f - lerpAmount;
+        lenToPlayer = 1.5f - lerpAmount / 2;
         fireForce = 60f + lerpAmount * 40f;
         arrowLight.intensity = lerpAmount * 0.5f;
         flyTime = 0.5f + lerpAmount * 0.3f;

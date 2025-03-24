@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     #region Combine
     [Header("Need Combine")]
     public GameObject endMenu;
+    public GameObject winnerCanvas;
     public Transform spriteTrans;
     public GameObject shadowRight;
     public GameObject shadowLeft;

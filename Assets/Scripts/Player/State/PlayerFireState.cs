@@ -14,7 +14,10 @@ public class PlayerFireState : PlayerState
         base.Enter();
         player.arrowCount--;
         fireTime = 0;
-        player.audioManager.PlaySfx(player.audioManager.fire);
+        if (player.arrow.isFast)
+            player.audioManager.PlaySfx(player.audioManager.fireFast);
+        else
+            player.audioManager.PlaySfx(player.audioManager.fire);
         player.arrow.stateMachine.ChangeState(player.arrow.fireState);
     }
 

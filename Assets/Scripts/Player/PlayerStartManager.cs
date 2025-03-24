@@ -32,6 +32,7 @@ public class PlayerStartManager : MonoBehaviour
 
     private void GameStart()
     {
+        audioManager.PlayBGM();
         videoCanvas.gameObject.SetActive(false);
         leftSp.DOFade(0, 1f);
         rightSp.DOFade(0, 1f);

@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerDeadState : PlayerState
 {
     private float deadPushTime;
+
+    private bool isPlayWinner;
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -13,7 +15,10 @@ public class PlayerDeadState : PlayerState
     {
         base.Enter();
 
+        player.audioManager.StopBGM();
+
         deadPushTime = 0f;
+        isPlayWinner = false;
 
         player.GenerateBlood();
         // drop arrow
@@ -41,8 +46,13 @@ public class PlayerDeadState : PlayerState
             
             player.audioManager.MuteSfx();
         }
-        if (deadPushTime > 2f)
+        if (deadPushTime > 1.5f && !isPlayWinner)
+        {
+            isPlayWinner = true;
+            player.winnerCanvas.SetActive(true);
+            player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
             player.endMenu.SetActive(true);
+        }
 
     }
 

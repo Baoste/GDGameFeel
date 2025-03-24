@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip foot;
     public AudioClip pickup;
     public AudioClip fire;
+    public AudioClip fireFast;
     public AudioClip dash;
     public AudioClip playerFall;
     [Header("Arrow")]
@@ -28,11 +29,21 @@ public class AudioManager : MonoBehaviour
     public AudioClip lightningReady;
     public AudioClip lightning;
     public AudioClip Explosion;
+    public AudioClip floorFall;
 
     void Start()
     {
-        //BgmAudio.clip = bgm;
-        //BgmAudio.Play();
+        BgmAudio.clip = bgm;
+    }
+
+    public void PlayBGM()
+    {
+        BgmAudio.Play();
+    }
+
+    public void StopBGM()
+    {
+        BgmAudio.Stop();
     }
 
     public void PlaySfx(AudioClip clip)

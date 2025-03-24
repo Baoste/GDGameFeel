@@ -15,6 +15,7 @@ public class FallFloor : MonoBehaviour
     public GameObject floorBrokenPrefab;
     public Transform floorBrokenPool;
     
+    private AudioManager audioManager;
     private Queue<GameObject> floorBrokens;
 
     private Tilemap[] tilemaps;
@@ -47,6 +48,7 @@ public class FallFloor : MonoBehaviour
         fallDelTime = 0f;
         outerRingPositions = new List<Vector3Int>();
         tilemaps = GetComponentsInChildren<Tilemap>();
+        audioManager = FindObjectOfType<AudioManager>();
 
     }
 
@@ -55,6 +57,7 @@ public class FallFloor : MonoBehaviour
         fallDelTime += Time.deltaTime;
         if (fallDelTime >= fallTime)
         {
+            audioManager.PlaySfx(audioManager.floorFall);
             GetBoundTiles();
             foreach (Vector3Int pos in outerRingPositions)
             {
@@ -114,7 +117,9 @@ public class FallFloor : MonoBehaviour
 
             tmp.SetActive(true);
             tmp.transform.position = worldPos;
-            tmp.transform.DORotate(new Vector3(0, 0, Random.Range(-20f, 20f)), 2f);
+            tmp.transform.DORotate(new Vector3(0, 0, Random.Range(-30f, 30f)), 2f).SetEase(Ease.OutCubic);
+            Vector3 moveDir = worldPos.normalized;
+            tmp.transform.DOMove(worldPos + moveDir * Random.Range(1f, 3f), 3f).SetEase(Ease.OutCubic);
             tmp.GetComponent<Animator>().SetBool("isPlay", true);
 
             floorBrokens.Enqueue(tmp);
