@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     blitMaterial: {fileID: 2100000, guid: 82e3d4121b735244fa953ee096ae47a2, type: 2}
-    passEvent: 1000
+    passEvent: 600
 --- !u!114 &-2049194115305553784
 MonoBehaviour:
   m_ObjectHideFlags: 0

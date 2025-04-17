@@ -53,7 +53,8 @@ public class PixelPostProcessFeature : ScriptableRendererFeature
             var cmd = CommandBufferPool.Get(profilerTag);
 
             // 在 Pass 中获取 cameraColorTarget（请勿在 AddRenderPasses 里取）
-            var source = renderingData.cameraData.renderer.cameraColorTargetHandle;
+            var sourceHandle = renderingData.cameraData.renderer.cameraColorTargetHandle;
+            var source = sourceHandle.rt;
 
             // 1) 把源内容拷贝到临时RT
             cmd.Blit(source, tempRTIdentifier);
