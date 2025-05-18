@@ -137,6 +137,7 @@ public class PlayerController : MonoBehaviour
         //    inputActions.Player2.Fire.performed += OnFirePerformed;
         //    inputActions.Player2.Fire.canceled += OnFireCanceled;
         //}
+
         tilemap = GameObject.Find("Floor").GetComponent<Tilemap>();
         camera = Camera.main;
         Debug.Log(tilemap);
@@ -306,18 +307,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnRespawn(InputValue value)
     {
-
-        Debug.Log(value);
         spawnVector = value.Get<Vector2>();
     }
 
     public void PlayerRespawn()
     {
-        Debug.Log(player.isChoosing);
         if (!player.isChoosing) return;
 
         Vector3Int tmp = new Vector3Int(Mathf.RoundToInt(spawnVector[0]), Mathf.RoundToInt(spawnVector[1]), 0);
-
         if (tmp != Vector3Int.zero)
         {
             Vector3Int nextCell = selectedCell + tmp;
@@ -332,10 +329,8 @@ public class PlayerController : MonoBehaviour
     {
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         cameraData.SetRenderer(0);
-        Debug.Log("玩家已复活在: " + position);
         player.transform.position = position;
-        player.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
-        player.StartCoroutine(InvincibilityRoutine(player.invincibleDuration));
+        player.ShowPlayer();
         player.stateMachine.ChangeState(player.idleState);
     }
     private void OnSubmit(InputValue value)
@@ -351,18 +346,22 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 respawnWorldPos = tilemap.GetCellCenterWorld(selectedCell);
                 SpawnPlayer(respawnWorldPos);
-                player.isChoosing = false;
-
-                if (lastHighlightedCell.HasValue)
-                {
-                    tilemap.SetTileFlags(lastHighlightedCell.Value, TileFlags.None);
-                    tilemap.SetColor(lastHighlightedCell.Value, originalColor);
-                    lastHighlightedCell = null;
-                }
+                InitCell();
             }
             submitTrigger = 0.0f;
         }
 
+    }
+
+    public void InitCell()
+    {
+        player.isChoosing = false;
+        if (lastHighlightedCell.HasValue)
+        {
+            tilemap.SetTileFlags(lastHighlightedCell.Value, TileFlags.None);
+            tilemap.SetColor(lastHighlightedCell.Value, originalColor);
+            lastHighlightedCell = null;
+        }
     }
 
     private bool IsValidCell(Vector3Int cellPos)
@@ -385,27 +384,7 @@ public class PlayerController : MonoBehaviour
             lastHighlightedCell = cell;
         }
     }
-    private IEnumerator InvincibilityRoutine(float duration)
-    {
-        player.isInvincible = true;
 
-        SpriteRenderer sr = player.GetComponentInChildren<SpriteRenderer>();
-        float timer = 0f;
-
-        while (timer < duration)
-        {
-            // 简单闪烁效果
-            sr.color = new Color(1f, 1f, 1f, 0.5f); // 半透明
-            yield return new WaitForSeconds(0.2f);
-            sr.color = new Color(1f, 1f, 1f, 1f); // 不透明
-            yield return new WaitForSeconds(0.2f);
-
-            timer += 0.4f;
-        }
-
-        sr.color = new Color(1f, 1f, 1f, 1f); // 最终恢复正常
-        player.isInvincible = false;
-    }
     public Vector3Int GetSelectedCell()
     {
         return selectedCell;

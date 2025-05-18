@@ -1,41 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
+
 
 public class PlayerRespawnState : PlayerState
 {
     private float selectTimer = 0.2f;
-    private TMP_Text countdownText;
+    //private TMP_Text countdownText;
     private float countdown = 3f;
     private bool isCountdownStarted = false;
 
     public PlayerRespawnState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
+
     public override void Enter()
     {
-        
-        Debug.Log("enterRespawnState");
         base.Enter();
+        player.isInvincible = true;
         player.isChoosing = true;
 
-        countdownText = GameObject.Find("CountDownText" + player.playerIndex).GetComponent<TMP_Text>();
-        countdownText.gameObject.SetActive(false);
+        //countdownText = GameObject.Find("CountDownText" + player.playerIndex).GetComponent<TMP_Text>();
+        //countdownText.text = "";
         isCountdownStarted = false;
+
+        var cameraData = Camera.main.GetUniversalAdditionalCameraData();
+        cameraData.SetRenderer(0);
     }
 
     public override void Exit()
     {
         base.Exit();
+        //player.isInvincible = false;
+        player.audioManager.PlayBGM();
+        player.InvincibilityRoutine(player.invincibleDuration);
     }
     public override void Update()
     {
-                Debug.Log(isCountdownStarted);
         base.Update();
+        player.StartCoroutine(RespawnCountDown());
+
         selectTimer -= Time.deltaTime;
 
         if (!isCountdownStarted && selectTimer < 0)
@@ -52,21 +58,31 @@ public class PlayerRespawnState : PlayerState
     }
     private IEnumerator ShowRespawnCountdownAndSpawn()
     {
-        countdownText.gameObject.SetActive(true);
 
         float timeLeft = countdown;
         while (timeLeft > 0)
         {
-            countdownText.text = Mathf.CeilToInt(timeLeft).ToString();
+            //countdownText.text = Mathf.CeilToInt(timeLeft).ToString();
             yield return new WaitForSeconds(1f);
             timeLeft -= 1f;
         }
 
-        countdownText.gameObject.SetActive(false);
+        //countdownText.text = "";
 
         Vector3Int selectedCell = player.controller.GetSelectedCell();
         Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
         player.controller.SpawnPlayer(player.transform.position);
         isCountdownStarted = false;
+    }
+
+    private IEnumerator RespawnCountDown()
+    {
+        yield return new WaitForSeconds(3f);
+
+        Vector3Int selectedCell = player.controller.GetSelectedCell();
+        Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
+        player.controller.SpawnPlayer(respawnWorldPos);
+        isCountdownStarted = false;
+        player.controller.InitCell();
     }
 }

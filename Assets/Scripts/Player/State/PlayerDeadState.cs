@@ -16,6 +16,7 @@ public class PlayerDeadState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.isInvincible = true;
 
         player.audioManager.StopBGM();
 
@@ -36,6 +37,7 @@ public class PlayerDeadState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        //player.isInvincible = false;
     }
 
     public override void FixedUpdate()
@@ -51,7 +53,7 @@ public class PlayerDeadState : PlayerState
                 float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
                 controller.rb.AddForce(speedAmount * speedDif.normalized);
 
-                player.audioManager.MuteSfx();
+                //player.audioManager.MuteSfx();
             }
 
             if (deadPushTime > 1.5f && !isPlayWinner)
@@ -63,10 +65,8 @@ public class PlayerDeadState : PlayerState
             }
             if(deadPushTime > 3f)
             {
-                Debug.Log("deadpushtime>3f");
                 player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ReturnCam();
-                player.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-                Debug.Log("readytochangestate");
+                player.HidePlayer();
                 stateMachine.ChangeState(player.respawnState);
             }
         }
@@ -79,7 +79,7 @@ public class PlayerDeadState : PlayerState
                 float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
                 controller.rb.AddForce(speedAmount * speedDif.normalized);
 
-                player.audioManager.MuteSfx();
+                //player.audioManager.MuteSfx();
             }
 
             if (deadPushTime > 1.5f && !isPlayWinner)

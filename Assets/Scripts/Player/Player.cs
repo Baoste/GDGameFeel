@@ -1,4 +1,5 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -142,5 +143,48 @@ public class Player : MonoBehaviour
 
         Time.timeScale = 1;
         Time.fixedDeltaTime = fixedDeltaTime;
+    }
+
+    public void HidePlayer()
+    {
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+            sr.enabled = false;   
+    }
+
+    public void ShowPlayer()
+    {
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+            sr.enabled = true;
+        playerParts.Init();
+    }
+
+    public void InvincibilityRoutine(float duration)
+    {
+        // player.isInvincible = true;
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+
+        sr.DOFade(0f, 0.2f)  // 透明
+          .SetLoops(15, LoopType.Yoyo) // 无限次闪烁
+          .SetEase(Ease.Linear)
+          .OnComplete(() =>
+          {
+              sr.DOKill();
+              sr.DOFade(1f, 0.1f);
+              isInvincible = false;
+          });
+
+        //while (timer < duration)
+        //{
+        //    // 简单闪烁效果
+        //    sr.color = new Color(1f, 1f, 1f, 0.5f); // 半透明
+        //    yield return new WaitForSeconds(0.2f);
+        //    sr.color = new Color(1f, 1f, 1f, 1f); // 不透明
+        //    yield return new WaitForSeconds(0.2f);
+
+        //    timer += 0.4f;
+        //}
+
+        //sr.color = new Color(1f, 1f, 1f, 1f); // 最终恢复正常
+        //isInvincible = false;
     }
 }

@@ -130,7 +130,7 @@ public class Arrow : MonoBehaviour
         Arrow arrow = collision.gameObject.GetComponent<Arrow>();
 
         // player dead
-        if (hit != null && hit.stateMachine.currentState != hit.deadState && hit.stateMachine.currentState != hit.respawnState)
+        if (hit != null && !hit.isInvincible)
         {
             hitPlayer = hit;
             hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
@@ -198,6 +198,7 @@ public class Arrow : MonoBehaviour
         //audioManager.SfxAudio.enabled = false;
         impulseSource.m_DefaultVelocity = Vector3.one * 2f;
         impulseSource.GenerateImpulse();
+        timeFreezeCoroutine = null;
 
         //var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         //cameraData.SetRenderer(0);
