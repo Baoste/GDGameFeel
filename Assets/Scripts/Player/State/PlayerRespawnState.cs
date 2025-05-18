@@ -40,9 +40,18 @@ public class PlayerRespawnState : PlayerState
     public override void Update()
     {
         base.Update();
-        player.StartCoroutine(RespawnCountDown());
 
         selectTimer -= Time.deltaTime;
+        countdown -= Time.deltaTime;
+
+        if (countdown <= 0)
+        {
+            Vector3Int selectedCell = player.controller.GetSelectedCell();
+            Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
+            player.controller.SpawnPlayer(respawnWorldPos);
+            isCountdownStarted = false;
+            player.controller.InitCell();
+        }
 
         if (!isCountdownStarted && selectTimer < 0)
         {
@@ -52,7 +61,7 @@ public class PlayerRespawnState : PlayerState
             if (!player.isChoosing) // 说明已提交成功
             {
                 isCountdownStarted = true;
-                player.StartCoroutine(ShowRespawnCountdownAndSpawn());
+                //player.StartCoroutine(ShowRespawnCountdownAndSpawn());
             }
         }
     }

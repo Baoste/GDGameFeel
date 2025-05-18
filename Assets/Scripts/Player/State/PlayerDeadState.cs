@@ -8,7 +8,6 @@ public class PlayerDeadState : PlayerState
 
     private bool isPlayWinner;
 
-    private int deathCount;
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -25,7 +24,7 @@ public class PlayerDeadState : PlayerState
 
         player.GenerateBlood();
 
-        deathCount = deathCount + 1;
+        player.deathCount.Value = player.deathCount.Value + 1;
         // drop arrow
         if (player.arrow)
         {
@@ -44,7 +43,7 @@ public class PlayerDeadState : PlayerState
     {
         deadPushTime += Time.fixedDeltaTime;
 
-        if (deathCount < 5)
+        if (player.deathCount.Value < 5)
         {
             if (deadPushTime > 0.4f)
             {
@@ -70,7 +69,7 @@ public class PlayerDeadState : PlayerState
                 stateMachine.ChangeState(player.respawnState);
             }
         }
-        if (deathCount > 4)
+        if (player.deathCount.Value > 4)
         {
             if (deadPushTime > 0.4f)
             {

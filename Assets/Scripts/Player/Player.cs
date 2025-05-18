@@ -1,8 +1,10 @@
 using Cinemachine;
 using DG.Tweening;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class Player : MonoBehaviour
@@ -35,6 +37,9 @@ public class Player : MonoBehaviour
 
     public bool isChoosing = false;
 
+    public ReactiveProperty<int> deathCount = new(0);
+    //public int deathCount = 0;
+
     #region Arrow
     public Arrow arrow;
     public int arrowCount;
@@ -57,6 +62,7 @@ public class Player : MonoBehaviour
     public ParticleSystem dustEffect;
     public ParticleSystemForceField forceField;
     public SpriteRenderer shadow;
+    public TMP_Text enemyScoreText;
     #endregion
 
     private void Awake()
@@ -88,6 +94,11 @@ public class Player : MonoBehaviour
         arrowCount = 0;
 
         stateMachine.Initialize(idleState);
+
+        deathCount.Subscribe((v) =>
+        {
+            enemyScoreText.text = v.ToString();
+        });
     }
 
     void Update()
@@ -163,6 +174,7 @@ public class Player : MonoBehaviour
         // player.isInvincible = true;
         SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
 
+        sr.DOFade(1f, 0.1f);
         sr.DOFade(0f, 0.2f)  // 透明
           .SetLoops(15, LoopType.Yoyo) // 无限次闪烁
           .SetEase(Ease.Linear)
