@@ -14,7 +14,9 @@ public class Pickable : MonoBehaviour
     {
         if (collision != null)
         {
-            arrow.getArrowPlayer = collision.gameObject.GetComponent<Player>();
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player?.stateMachine.currentState != player?.deadState)
+                arrow.getArrowPlayer = collision.gameObject.GetComponent<Player>();
         }
     }
 

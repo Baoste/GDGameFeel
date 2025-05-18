@@ -47,7 +47,7 @@ public class PlayerFallState : PlayerState
         {
             isPlayWinner = true;
             player.winnerCanvas.SetActive(true);
-            player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
+            //player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
             player.endMenu.SetActive(true);
         }
     }

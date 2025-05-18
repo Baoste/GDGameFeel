@@ -7,6 +7,8 @@ public class PlayerDeadState : PlayerState
     private float deadPushTime;
 
     private bool isPlayWinner;
+
+    private int deathCount;
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -21,6 +23,8 @@ public class PlayerDeadState : PlayerState
         isPlayWinner = false;
 
         player.GenerateBlood();
+
+        deathCount = deathCount + 1;
         // drop arrow
         if (player.arrow)
         {
@@ -37,23 +41,55 @@ public class PlayerDeadState : PlayerState
     public override void FixedUpdate()
     {
         deadPushTime += Time.fixedDeltaTime;
-        if (deadPushTime > 0.4f)
-        {
-            Vector2 speedDif = Vector2.zero - controller.rb.velocity;
-            float speedDist = speedDif.sqrMagnitude;
-            float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
-            controller.rb.AddForce(speedAmount * speedDif.normalized);
-            
-            player.audioManager.MuteSfx();
-        }
-        if (deadPushTime > 1.5f && !isPlayWinner)
-        {
-            isPlayWinner = true;
-            player.winnerCanvas.SetActive(true);
-            player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
-            player.endMenu.SetActive(true);
-        }
 
+        if (deathCount < 5)
+        {
+            if (deadPushTime > 0.4f)
+            {
+                Vector2 speedDif = Vector2.zero - controller.rb.velocity;
+                float speedDist = speedDif.sqrMagnitude;
+                float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
+                controller.rb.AddForce(speedAmount * speedDif.normalized);
+
+                player.audioManager.MuteSfx();
+            }
+
+            if (deadPushTime > 1.5f && !isPlayWinner)
+            {
+                //isPlayWinner = true;
+                //player.winnerCanvas.SetActive(true);
+                player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
+                //player.endMenu.SetActive(true);
+            }
+            if(deadPushTime > 3f)
+            {
+                Debug.Log("deadpushtime>3f");
+                player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ReturnCam();
+                player.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                Debug.Log("readytochangestate");
+                stateMachine.ChangeState(player.respawnState);
+            }
+        }
+        if (deathCount > 4)
+        {
+            if (deadPushTime > 0.4f)
+            {
+                Vector2 speedDif = Vector2.zero - controller.rb.velocity;
+                float speedDist = speedDif.sqrMagnitude;
+                float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
+                controller.rb.AddForce(speedAmount * speedDif.normalized);
+
+                player.audioManager.MuteSfx();
+            }
+
+            if (deadPushTime > 1.5f && !isPlayWinner)
+            {
+                isPlayWinner = true;
+                player.winnerCanvas.SetActive(true);
+                player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
+                player.endMenu.SetActive(true);
+            }
+        }
     }
 
     public override void Update()

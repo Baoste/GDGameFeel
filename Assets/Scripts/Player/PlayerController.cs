@@ -3,6 +3,9 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Tilemaps;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +13,15 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     //private InputControls inputActions;
     private Player player;
+
+    private Vector3Int selectedCell;
+    private Vector3Int? lastHighlightedCell = null;
+    private Color highlightColor = Color.yellow;
+    private Color originalColor = Color.white;
+
+    private Tilemap tilemap;
+    private new Camera camera;
+    
 
     #region Move
     [Header("Move")]
@@ -91,6 +103,11 @@ public class PlayerController : MonoBehaviour
     public float recoil = 18f;
     #endregion
 
+    #region Respawn
+    private float submitTrigger = 0.0f;
+    private Vector2 spawnVector = Vector2.zero;
+    #endregion
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -120,6 +137,12 @@ public class PlayerController : MonoBehaviour
         //    inputActions.Player2.Fire.performed += OnFirePerformed;
         //    inputActions.Player2.Fire.canceled += OnFireCanceled;
         //}
+        tilemap = GameObject.Find("Floor").GetComponent<Tilemap>();
+        camera = Camera.main;
+        Debug.Log(tilemap);
+        
+        selectedCell = tilemap.WorldToCell(camera.transform.position);
+        HighlightCell(selectedCell);
     }
 
     void Start()
@@ -279,5 +302,117 @@ public class PlayerController : MonoBehaviour
     {
         if (gamepad != null)
             gamepad.SetMotorSpeeds(f, f);
+    }
+
+    private void OnRespawn(InputValue value)
+    {
+
+        Debug.Log(value);
+        spawnVector = value.Get<Vector2>();
+    }
+
+    public void PlayerRespawn()
+    {
+        Debug.Log(player.isChoosing);
+        if (!player.isChoosing) return;
+
+        Vector3Int tmp = new Vector3Int(Mathf.RoundToInt(spawnVector[0]), Mathf.RoundToInt(spawnVector[1]), 0);
+
+        if (tmp != Vector3Int.zero)
+        {
+            Vector3Int nextCell = selectedCell + tmp;
+            if (IsValidCell(nextCell))
+            {
+                selectedCell = nextCell;
+                HighlightCell(selectedCell);
+            }
+        }
+    }
+    public void SpawnPlayer(Vector3 position)
+    {
+        var cameraData = Camera.main.GetUniversalAdditionalCameraData();
+        cameraData.SetRenderer(0);
+        Debug.Log("玩家已复活在: " + position);
+        player.transform.position = position;
+        player.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
+        player.StartCoroutine(InvincibilityRoutine(player.invincibleDuration));
+        player.stateMachine.ChangeState(player.idleState);
+    }
+    private void OnSubmit(InputValue value)
+    {
+        submitTrigger = value.Get<float>();
+    }
+
+    public void PlayerSubmit()
+    {
+        if (submitTrigger > 0.0f)
+        {
+            if (IsValidCell(selectedCell))
+            {
+                Vector3 respawnWorldPos = tilemap.GetCellCenterWorld(selectedCell);
+                SpawnPlayer(respawnWorldPos);
+                player.isChoosing = false;
+
+                if (lastHighlightedCell.HasValue)
+                {
+                    tilemap.SetTileFlags(lastHighlightedCell.Value, TileFlags.None);
+                    tilemap.SetColor(lastHighlightedCell.Value, originalColor);
+                    lastHighlightedCell = null;
+                }
+            }
+            submitTrigger = 0.0f;
+        }
+
+    }
+
+    private bool IsValidCell(Vector3Int cellPos)
+    {
+        TileBase tile = tilemap.GetTile(cellPos);
+        return tile != null;
+    }
+    private void HighlightCell(Vector3Int cell)
+    {
+        if (player.isChoosing == true)
+        {
+            if (lastHighlightedCell.HasValue)
+            {
+                tilemap.SetTileFlags(lastHighlightedCell.Value, TileFlags.None);
+                tilemap.SetColor(lastHighlightedCell.Value, originalColor);
+            }
+
+            tilemap.SetTileFlags(cell, TileFlags.None);
+            tilemap.SetColor(cell, highlightColor);
+            lastHighlightedCell = cell;
+        }
+    }
+    private IEnumerator InvincibilityRoutine(float duration)
+    {
+        player.isInvincible = true;
+
+        SpriteRenderer sr = player.GetComponentInChildren<SpriteRenderer>();
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            // 简单闪烁效果
+            sr.color = new Color(1f, 1f, 1f, 0.5f); // 半透明
+            yield return new WaitForSeconds(0.2f);
+            sr.color = new Color(1f, 1f, 1f, 1f); // 不透明
+            yield return new WaitForSeconds(0.2f);
+
+            timer += 0.4f;
+        }
+
+        sr.color = new Color(1f, 1f, 1f, 1f); // 最终恢复正常
+        player.isInvincible = false;
+    }
+    public Vector3Int GetSelectedCell()
+    {
+        return selectedCell;
+    }
+
+    public Tilemap GetTilemap()
+    {
+        return tilemap;
     }
 }
