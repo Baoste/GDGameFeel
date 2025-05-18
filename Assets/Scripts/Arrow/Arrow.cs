@@ -130,7 +130,7 @@ public class Arrow : MonoBehaviour
         Arrow arrow = collision.gameObject.GetComponent<Arrow>();
 
         // player dead
-        if (hit != null && hit.stateMachine.currentState != hit.deadState)
+        if (hit != null && hit.stateMachine.currentState != hit.deadState && hit.stateMachine.currentState != hit.respawnState)
         {
             hitPlayer = hit;
             hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
@@ -199,8 +199,8 @@ public class Arrow : MonoBehaviour
         impulseSource.m_DefaultVelocity = Vector3.one * 2f;
         impulseSource.GenerateImpulse();
 
-        var cameraData = Camera.main.GetUniversalAdditionalCameraData();
-        cameraData.SetRenderer(0);
+        //var cameraData = Camera.main.GetUniversalAdditionalCameraData();
+        //cameraData.SetRenderer(0);
     }
 
     public void ChargeUp(float t)

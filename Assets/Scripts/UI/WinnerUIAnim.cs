@@ -51,4 +51,10 @@ public class WinnerUIAnim : MonoBehaviour
             virtualCamera.m_Lens.OrthographicSize = 2;
         }
     }
+
+    public void ReturnCam()
+    {
+        virtualCamera.Follow = GameObject.Find("PlayerGroup").transform;
+        virtualCamera.m_Lens.OrthographicSize = 1;
+    }
 }

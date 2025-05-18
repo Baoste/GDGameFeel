@@ -12,6 +12,7 @@ public class ArrowStopState : ArrowState
         base.Enter();
         arrow.InitArrow();
         arrow.col.isTrigger = true;
+        arrow.rb.simulated = true;
     }
 
     public override void Exit()

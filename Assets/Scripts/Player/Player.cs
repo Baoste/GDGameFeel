@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public PlayerFireState fireState;
     public PlayerDeadState deadState;
     public PlayerFallState fallState;
+    public PlayerRespawnState respawnState;
     #endregion
 
     public Animator animator {  get; private set; }
@@ -27,6 +28,11 @@ public class Player : MonoBehaviour
     private float fixedDeltaTime;
     private TwistGenerator twistGenerator;
     public PlayerParts playerParts { get; private set; }
+
+    public bool isInvincible = false;//ÎÞµÐÊ±¼ä
+    public float invincibleDuration = 3f;
+
+    public bool isChoosing = false;
 
     #region Arrow
     public Arrow arrow;
@@ -65,6 +71,7 @@ public class Player : MonoBehaviour
         fireState = new PlayerFireState(stateMachine, this, "isFire");
         deadState = new PlayerDeadState(stateMachine, this, "isDead");
         fallState = new PlayerFallState(stateMachine, this, "isFall");
+        respawnState = new PlayerRespawnState(stateMachine, this, "isRespawn");
     }
     void Start()
     {
