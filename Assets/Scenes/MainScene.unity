@@ -22100,6 +22100,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1683441072}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &738380635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5853406485253287991, guid: 45267855cc62bcd428ce9d675840a85a, type: 3}
+  m_PrefabInstance: {fileID: 915069366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd983237f3e61e34483409cc7432741f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &784134678
 GameObject:
   m_ObjectHideFlags: 0
@@ -28565,7 +28576,7 @@ PrefabInstance:
     - target: {fileID: -7657986002144328283, guid: 6b971b3019903c14688f79b234a5ea1a, type: 3}
       propertyPath: platform
       value: 
-      objectReference: {fileID: 859029221}
+      objectReference: {fileID: 738380635}
     - target: {fileID: -7657986002144328283, guid: 6b971b3019903c14688f79b234a5ea1a, type: 3}
       propertyPath: triggeredSprite
       value: 
@@ -37797,12 +37808,9 @@ SceneRoots:
   - {fileID: 1955068967}
   - {fileID: 1602184317}
   - {fileID: 918071225}
-<<<<<<< HEAD
   - {fileID: 3168888854564939300}
   - {fileID: 1253876529}
   - {fileID: 915069366}
   - {fileID: 1402247754}
   - {fileID: 1322677452}
-=======
   - {fileID: 1735624182}
->>>>>>> 6fa10990eac20de00193aa6ac2efb1a4e5ac466d

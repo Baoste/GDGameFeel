@@ -25,7 +25,9 @@ public class PlayerFoot : MonoBehaviour
             Vector2 footPos = player.GetComponent<Collider2D>().bounds.min;
             Collider2D groundCheck = Physics2D.OverlapBox(footPos, new Vector2(0.8f, 0.1f), 0f, floorLayer);
             Debug.Log(groundCheck);
-            if (groundCheck == null)
+            if (groundCheck == null && player.stateMachine.currentState != player.dashingState
+                && player.stateMachine.currentState != player.dashInState
+                && player.stateMachine.currentState != player.dashOutState)
             {
                 player.stateMachine.ChangeState(player.fallState);
                 isFall = true;
