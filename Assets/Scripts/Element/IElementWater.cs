@@ -1,0 +1,4 @@
+
+public interface IElementWater : IElement
+{
+}

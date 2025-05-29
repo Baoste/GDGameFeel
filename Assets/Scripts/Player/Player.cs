@@ -62,7 +62,8 @@ public class Player : MonoBehaviour
     public ParticleSystem dustEffect;
     public ParticleSystemForceField forceField;
     public SpriteRenderer shadow;
-    public TMP_Text enemyScoreText;
+    public UIScore enemyScore;
+    public ScorePartGenrator partGenrator;
     #endregion
 
     private void Awake()
@@ -97,7 +98,7 @@ public class Player : MonoBehaviour
 
         deathCount.Subscribe((v) =>
         {
-            enemyScoreText.text = v.ToString();
+            enemyScore.scoreImage.sprite = enemyScore.scoreSprites[v];
         });
     }
 
@@ -159,7 +160,9 @@ public class Player : MonoBehaviour
     public void HidePlayer()
     {
         foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
-            sr.enabled = false;   
+            sr.enabled = false;
+        // generate small parts
+        partGenrator.GenerateScoreParts(transform);
     }
 
     public void ShowPlayer()

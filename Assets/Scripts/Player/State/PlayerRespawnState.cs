@@ -9,7 +9,7 @@ public class PlayerRespawnState : PlayerState
 {
     private float selectTimer = 0.2f;
     //private TMP_Text countdownText;
-    private float countdown = 3f;
+    private float countdown = 5f;
     private bool isCountdownStarted = false;
 
     public PlayerRespawnState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)

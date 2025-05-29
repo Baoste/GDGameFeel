@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
         tilemap = GameObject.Find("Floor").GetComponent<Tilemap>();
         camera = Camera.main;
-        Debug.Log(tilemap);
+        // Debug.Log(tilemap);
         
         selectedCell = tilemap.WorldToCell(camera.transform.position);
         HighlightCell(selectedCell);

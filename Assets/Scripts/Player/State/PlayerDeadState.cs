@@ -23,8 +23,6 @@ public class PlayerDeadState : PlayerState
         isPlayWinner = false;
 
         player.GenerateBlood();
-
-        player.deathCount.Value = player.deathCount.Value + 1;
         // drop arrow
         if (player.arrow)
         {
