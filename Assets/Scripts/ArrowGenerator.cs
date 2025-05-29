@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ArrowGenerator : MonoBehaviour
 {
-    public GameObject arrowPrefab;
+    public GameObject[] arrowPrefab;
     private const float GenerateAxisY = 20;
 
     void Start()
     {
         Vector3 pos = new Vector3(-10, GenerateAxisY, 0);
-        GenerateArrow(pos);
+        GenerateArrow(pos, 1);
         pos.x = 10;
-        GenerateArrow(pos);
+        GenerateArrow(pos, 3);
         pos.x = 0;
-        GenerateArrow(pos);
+        GenerateArrow(pos, 2);
     }
 
     // Update is called once per frame
@@ -23,10 +23,10 @@ public class ArrowGenerator : MonoBehaviour
         
     }
 
-    private void GenerateArrow(Vector3 pos)
+    private void GenerateArrow(Vector3 pos, int idx = 0)
     {
         pos.y = GenerateAxisY;
-        Instantiate(arrowPrefab, pos, Quaternion.Euler(new Vector3(0, 0, -90)));
+        Instantiate(arrowPrefab[idx], pos, Quaternion.Euler(new Vector3(0, 0, -90)));
     }
 
     public void DestroyArrow(GameObject obj, Vector3 pos)
@@ -38,6 +38,6 @@ public class ArrowGenerator : MonoBehaviour
     private IEnumerator GenerateAfterDestroy(Vector3 pos)
     {
         yield return new WaitForSeconds(1f);
-        GenerateArrow(pos);
+        GenerateArrow(pos, Random.Range(0, 4));
     }
 }

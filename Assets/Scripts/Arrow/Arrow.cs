@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 
-public class Arrow : MonoBehaviour
+public class Arrow : MonoBehaviour, IElement
 {
 
     #region stateMachine
@@ -77,9 +77,11 @@ public class Arrow : MonoBehaviour
     public WaveGenerator waveGenerator { get; private set; }
     public AudioManager audioManager { get; private set; }
     public CinemachineImpulseSource impulseSource { get; private set; }
+    public bool IsElementalEffectTriggered { get; set; } = false;
+
     public ParticleSystem fireParticle;
 
-    private void Awake()
+    protected void Awake()
     {
         player = GetComponentInParent<Player>();
 
@@ -91,7 +93,7 @@ public class Arrow : MonoBehaviour
         brokenState = new ArrowBrokenState(stateMachine, this, "isBroken");
     }
 
-    void Start()
+    protected void Start()
     {
         lenToPlayer = 1.5f;
         fireForce = 60f;
@@ -114,23 +116,28 @@ public class Arrow : MonoBehaviour
         stateMachine.Initialize(fallState);
     }
 
-    void Update()
+    protected void Update()
     {
         stateMachine.currentState.Update();
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         stateMachine.currentState.FixedUpdate();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        HandleCollision(collision);
+    }
+
+    protected virtual void HandleCollision(Collision2D collision)
     {
         hit = collision.gameObject.GetComponent<Player>();
         Arrow arrow = collision.gameObject.GetComponent<Arrow>();
 
         // player dead
-        if (hit != null && hit.stateMachine.currentState != hit.deadState && hit.stateMachine.currentState != hit.respawnState)
+        if (hit != null && !hit.isInvincible)
         {
             hitPlayer = hit;
             hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
@@ -151,7 +158,7 @@ public class Arrow : MonoBehaviour
             if (timeFreezeCoroutine == null)
                 timeFreezeCoroutine = StartCoroutine(TimeFreeze(2f, pos));
         }
-        
+
         // Ifragile
         IFragile fragile = collision.gameObject.GetComponent<IFragile>();
         if (fragile != null)
@@ -181,7 +188,7 @@ public class Arrow : MonoBehaviour
         }
     }
 
-    private IEnumerator TimeFreeze(float t, Vector3 pos)
+    protected IEnumerator TimeFreeze(float t, Vector3 pos)
     {
         waveGenerator.transform.position = pos;
         waveGenerator.CallShockWave();
@@ -198,6 +205,7 @@ public class Arrow : MonoBehaviour
         //audioManager.SfxAudio.enabled = false;
         impulseSource.m_DefaultVelocity = Vector3.one * 2f;
         impulseSource.GenerateImpulse();
+        timeFreezeCoroutine = null;
 
         //var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         //cameraData.SetRenderer(0);
@@ -272,5 +280,13 @@ public class Arrow : MonoBehaviour
         player.spriteTrans.GetComponent<SpriteRenderer>().color = color;
         player.playerParts.DeadTrigger();
         player.shadow.enabled = false;
+    }
+
+    public virtual bool ElementalEffectTriggered()
+    {
+        bool tmp = IsElementalEffectTriggered;
+        if (!IsElementalEffectTriggered)
+            IsElementalEffectTriggered = true;
+        return tmp;
     }
 }

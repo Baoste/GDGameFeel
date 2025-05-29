@@ -8,7 +8,6 @@ public class PlayerDeadState : PlayerState
 
     private bool isPlayWinner;
 
-    private int deathCount;
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -16,6 +15,7 @@ public class PlayerDeadState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.isInvincible = true;
 
         player.audioManager.StopBGM();
 
@@ -23,8 +23,6 @@ public class PlayerDeadState : PlayerState
         isPlayWinner = false;
 
         player.GenerateBlood();
-
-        deathCount = deathCount + 1;
         // drop arrow
         if (player.arrow)
         {
@@ -36,13 +34,14 @@ public class PlayerDeadState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        //player.isInvincible = false;
     }
 
     public override void FixedUpdate()
     {
         deadPushTime += Time.fixedDeltaTime;
 
-        if (deathCount < 5)
+        if (player.deathCount.Value < 5)
         {
             if (deadPushTime > 0.4f)
             {
@@ -51,7 +50,7 @@ public class PlayerDeadState : PlayerState
                 float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
                 controller.rb.AddForce(speedAmount * speedDif.normalized);
 
-                player.audioManager.MuteSfx();
+                //player.audioManager.MuteSfx();
             }
 
             if (deadPushTime > 1.5f && !isPlayWinner)
@@ -63,14 +62,12 @@ public class PlayerDeadState : PlayerState
             }
             if(deadPushTime > 3f)
             {
-                Debug.Log("deadpushtime>3f");
                 player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ReturnCam();
-                player.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-                Debug.Log("readytochangestate");
+                player.HidePlayer();
                 stateMachine.ChangeState(player.respawnState);
             }
         }
-        if (deathCount > 4)
+        if (player.deathCount.Value > 4)
         {
             if (deadPushTime > 0.4f)
             {
@@ -79,7 +76,7 @@ public class PlayerDeadState : PlayerState
                 float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
                 controller.rb.AddForce(speedAmount * speedDif.normalized);
 
-                player.audioManager.MuteSfx();
+                //player.audioManager.MuteSfx();
             }
 
             if (deadPushTime > 1.5f && !isPlayWinner)

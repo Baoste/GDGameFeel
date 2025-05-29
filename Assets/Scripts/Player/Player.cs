@@ -1,7 +1,10 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class Player : MonoBehaviour
@@ -34,6 +37,9 @@ public class Player : MonoBehaviour
 
     public bool isChoosing = false;
 
+    public ReactiveProperty<int> deathCount = new(0);
+    //public int deathCount = 0;
+
     #region Arrow
     public Arrow arrow;
     public int arrowCount;
@@ -56,6 +62,8 @@ public class Player : MonoBehaviour
     public ParticleSystem dustEffect;
     public ParticleSystemForceField forceField;
     public SpriteRenderer shadow;
+    public UIScore enemyScore;
+    public ScorePartGenrator partGenrator;
     #endregion
 
     private void Awake()
@@ -87,6 +95,11 @@ public class Player : MonoBehaviour
         arrowCount = 0;
 
         stateMachine.Initialize(idleState);
+
+        deathCount.Subscribe((v) =>
+        {
+            enemyScore.scoreImage.sprite = enemyScore.scoreSprites[v];
+        });
     }
 
     void Update()
@@ -142,5 +155,51 @@ public class Player : MonoBehaviour
 
         Time.timeScale = 1;
         Time.fixedDeltaTime = fixedDeltaTime;
+    }
+
+    public void HidePlayer()
+    {
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+            sr.enabled = false;
+        // generate small parts
+        partGenrator.GenerateScoreParts(transform);
+    }
+
+    public void ShowPlayer()
+    {
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+            sr.enabled = true;
+        playerParts.Init();
+    }
+
+    public void InvincibilityRoutine(float duration)
+    {
+        // player.isInvincible = true;
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+
+        sr.DOFade(1f, 0.1f);
+        sr.DOFade(0f, 0.2f)  // 透明
+          .SetLoops(15, LoopType.Yoyo) // 无限次闪烁
+          .SetEase(Ease.Linear)
+          .OnComplete(() =>
+          {
+              sr.DOKill();
+              sr.DOFade(1f, 0.1f);
+              isInvincible = false;
+          });
+
+        //while (timer < duration)
+        //{
+        //    // 简单闪烁效果
+        //    sr.color = new Color(1f, 1f, 1f, 0.5f); // 半透明
+        //    yield return new WaitForSeconds(0.2f);
+        //    sr.color = new Color(1f, 1f, 1f, 1f); // 不透明
+        //    yield return new WaitForSeconds(0.2f);
+
+        //    timer += 0.4f;
+        //}
+
+        //sr.color = new Color(1f, 1f, 1f, 1f); // 最终恢复正常
+        //isInvincible = false;
     }
 }

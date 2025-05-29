@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5201404453013068752}
   - component: {fileID: 1804265420875204058}
   m_Layer: 0
-  m_Name: ArrowShaow
+  m_Name: ArrowShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
