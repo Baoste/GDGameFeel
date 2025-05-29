@@ -10,7 +10,6 @@ public class PlayerIdleState : PlayerState
 
     public override void Enter()
     {
-        Debug.Log("enterIdlestate");
         base.Enter();
     }
 

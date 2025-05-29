@@ -34,7 +34,7 @@ public class PlayerRespawnState : PlayerState
     }
     public override void Update()
     {
-                Debug.Log(isCountdownStarted);
+        //Debug.Log(isCountdownStarted);
         base.Update();
         selectTimer -= Time.deltaTime;
 

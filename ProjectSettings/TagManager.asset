@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - Player0
   - Player1
+  - TrapFloor
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Floor
   - Stain
   - Arrow
   - EdgeWall
