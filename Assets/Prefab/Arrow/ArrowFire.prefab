@@ -15374,8 +15374,8 @@ MonoBehaviour:
   player: {fileID: 0}
   getArrowPlayer: {fileID: 0}
   aimDirection: {x: 0, y: 0}
-  onfloor: {fileID: 21300000, guid: 0c3e74356e0c2ef438fcf4ba1b6da840, type: 3}
-  normal: {fileID: 21300000, guid: 996be8bca500a7942a1b061e39405376, type: 3}
+  onfloor: {fileID: -2080817013, guid: 853180d0de490d24b91623a2d3b9dd6a, type: 3}
+  normal: {fileID: -1236579113, guid: 853180d0de490d24b91623a2d3b9dd6a, type: 3}
   shadow: {fileID: 3522772616461735594, guid: 378ecfc9aa5903640ae5e456a54d5c6d, type: 3}
   hitWallCol: {fileID: 8202232348089389764}
   hitRing: {fileID: 130516750523225467, guid: 5e99ec71810b55f4d950fc0a2476a3ae, type: 3}

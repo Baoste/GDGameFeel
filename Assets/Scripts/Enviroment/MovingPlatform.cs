@@ -1,31 +1,53 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Transform targetPoint;
     public LeverTrigger trigger;
     public Sprite untriggeredSprite;
     public float moveSpeed = 2f;
     private bool isMoving = false;
 
-    public void StartMoving()
+    private MapMarker mapMarker;
+    private List<Vector3> targetPoints;
+    private int movingIndex = 0;    // Index of the current target point
+    private int movingDirction = 1;
+
+    private void Start()
     {
-        isMoving = true;
+        mapMarker = GetComponent<MapMarker>();
+        targetPoints = new List<Vector3>();
+        foreach (var pos in mapMarker.markerPositions)
+        {
+            targetPoints.Add(transform.position + pos);
+        }
     }
 
-    private void Update()
+    public void StartMoving()
     {
-        if (isMoving)
+        if (!isMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, moveSpeed * Time.deltaTime);
+            if (movingIndex >= targetPoints.Count - 1)
+            {
+                movingDirction = -1; // Change direction to reverse
+            }
+            else if (movingIndex <= 0)
+            {
+                movingDirction = 1; // Change direction to forward
+            }
+            movingIndex = movingIndex + movingDirction;
 
-            if (Vector3.Distance(transform.position, targetPoint.position) < 0.01f)
+            transform.DOMove(targetPoints[movingIndex], moveSpeed)
+            .SetEase(Ease.InCubic)
+            .OnComplete(() =>
             {
                 isMoving = false;
+                trigger.isTriggered = false;
                 trigger.GetComponent<SpriteRenderer>().sprite = untriggeredSprite;
-            }
+            });
         }
     }
 }

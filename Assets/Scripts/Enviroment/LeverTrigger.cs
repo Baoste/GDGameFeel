@@ -7,7 +7,7 @@ public class LeverTrigger : MonoBehaviour
     public MovingPlatform platform;
     public Sprite triggeredSprite;
     private SpriteRenderer spriteRenderer;
-    private bool isTriggered = false;
+    public bool isTriggered = false;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

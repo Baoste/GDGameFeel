@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 102ff9c2a6a527f4c8d3d6ddd87a839e
+guid: 853180d0de490d24b91623a2d3b9dd6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shuzi_0
+      name: jian_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
-        width: 30
-        height: 30
+        y: 540
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04b9214807a7e2e48bbd0a58dd31454c
-      internalID: -1547843339
+      spriteID: 0d6bc403ab69f1b4397cfd5e04326222
+      internalID: 104589629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_1
+      name: jian_1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 30
-        width: 30
-        height: 30
+        x: 180
+        y: 540
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4240d2fe808cde46bb760bea381aa71
-      internalID: 609794284
+      spriteID: 82a59123e85082a46960e4de7e97d600
+      internalID: -244772961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_2
+      name: jian_2
       rect:
         serializedVersion: 2
-        x: 60
-        y: 30
-        width: 30
-        height: 30
+        x: 360
+        y: 540
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe65e8a3cfa518245b2fa89f9a01f92d
-      internalID: 794627847
+      spriteID: 8b3f560789a83884488dcad02eb29576
+      internalID: -1708032106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_3
+      name: jian_3
       rect:
         serializedVersion: 2
-        x: 90
-        y: 30
-        width: 30
-        height: 30
+        x: 540
+        y: 540
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,62 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 021241f6c2fb9884caf74d5fbc938bb2
-      internalID: -1976382405
+      spriteID: ec2643d04acc36c42bea30e1c26e084d
+      internalID: 866859796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_4
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 30
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07f8836e2b3ab11428e052a601af3e61
-      internalID: -1629391448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shuzi_5
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 30
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2912dc4658072ae478766321faa5b517
-      internalID: 2120027003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shuzi_6
+      name: jian_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 30
-        height: 30
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cdb6bd10263f1e46ad07ad8fb9d773c
-      internalID: 1126400399
+      spriteID: 9e0322468a9c10d4d8f5dfb6fbfa561f
+      internalID: 1137085563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_7
+      name: jian_5
       rect:
         serializedVersion: 2
-        x: 30
-        y: 0
-        width: 30
-        height: 30
+        x: 180
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d97d0e32ea67e549a5fbbfb9c7e1801
-      internalID: -758729660
+      spriteID: a5b5b4bfa60fe34469f6b63ea21259f2
+      internalID: 849923996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_8
+      name: jian_6
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 30
-        height: 30
+        x: 360
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ac38ad0e18f0b14599c94b8f39cb7ac
-      internalID: -149149203
+      spriteID: a66e7533d85ea9e43b426ec17019048d
+      internalID: -1236579113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_9
+      name: jian_7
       rect:
         serializedVersion: 2
-        x: 90
-        y: 0
-        width: 30
-        height: 30
+        x: 540
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d0697e9c123fec4993cbf3c11f7fd75
-      internalID: 1707249398
+      spriteID: 906f7195f15cde14db811ad98dbe5b62
+      internalID: -2080817013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_10
+      name: jian_8
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 30
-        height: 30
+        x: 0
+        y: 180
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b8c95192a04a440bd1735d3e51ca33
-      internalID: -1589189372
+      spriteID: 8992343ca8fd6df4db37dd32ec4188ff
+      internalID: -747071355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shuzi_11
+      name: jian_9
       rect:
         serializedVersion: 2
-        x: 150
-        y: 0
-        width: 30
-        height: 30
+        x: 180
+        y: 180
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd1bd2c2bf05d884fbbd1848b6a97159
-      internalID: 1297896260
+      spriteID: 9e4049afa33d75848a060770221e2e5c
+      internalID: -342077267
       vertices: []
       indices: 
       edges: []
@@ -359,18 +317,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shuzi_0: -1547843339
-      shuzi_1: 609794284
-      shuzi_10: -1589189372
-      shuzi_11: 1297896260
-      shuzi_2: 794627847
-      shuzi_3: -1976382405
-      shuzi_4: -1629391448
-      shuzi_5: 2120027003
-      shuzi_6: 1126400399
-      shuzi_7: -758729660
-      shuzi_8: -149149203
-      shuzi_9: 1707249398
+      jian_0: 104589629
+      jian_1: -244772961
+      jian_2: -1708032106
+      jian_3: 866859796
+      jian_4: 1137085563
+      jian_5: 849923996
+      jian_6: -1236579113
+      jian_7: -2080817013
+      jian_8: -747071355
+      jian_9: -342077267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
