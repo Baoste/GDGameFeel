@@ -14,12 +14,12 @@ public class PlayerController : MonoBehaviour
     //private InputControls inputActions;
     private Player player;
 
-    private Vector3Int selectedCell;
+    public Vector3Int selectedCell { get; private set; }
     private Vector3Int? lastHighlightedCell = null;
-    private Color highlightColor = Color.red;
+    private Color highlightColor;
     private Color originalColor = Color.white;
 
-    private Tilemap tilemap;
+    public Tilemap tilemap { get; private set; }
     private new Camera camera;
     
 
@@ -104,7 +104,21 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Respawn
-    private float submitTrigger = 0.0f;
+    public bool isSubmit
+    {
+        get
+        {
+            bool v = submitTrigger > 0;
+            if (v)
+                submitTrigger = 0;
+            return v;
+        }
+        private set
+        {
+            submitTrigger = value ? 1 : 0;
+        }
+    }
+    private float submitTrigger = 0;
     private Vector2 spawnVector = Vector2.zero;
     #endregion
 
@@ -116,6 +130,7 @@ public class PlayerController : MonoBehaviour
         player = players.FirstOrDefault(p => p.playerIndex == playerInput.playerIndex);
         player.controller = this;
         rb = player.GetComponent<Rigidbody2D>();
+        highlightColor = player.playerColor;
 
         //inputActions = new InputControls();
         //if (playerInput.defaultActionMap == "Player1")
@@ -140,19 +155,16 @@ public class PlayerController : MonoBehaviour
 
         tilemap = GameObject.Find("Floor").GetComponent<Tilemap>();
         camera = Camera.main;
-        // Debug.Log(tilemap);
-        
-        //selectedCell = tilemap.WorldToCell(transform.position);
-        //HighlightCell(selectedCell);
+
+        if (player.playerIndex == 0)
+            selectedCell = new Vector3Int(-1, -1, 0);
+        else
+            selectedCell = new Vector3Int(-0, -1, 0);
     }
 
     void Start()
     {
         gamepad = Gamepad.current;
-    }
-
-    private void Update()
-    {
     }
 
     private void OnDestroy()
@@ -305,6 +317,8 @@ public class PlayerController : MonoBehaviour
             gamepad.SetMotorSpeeds(f, f);
     }
 
+    #region Respawn
+
     private void OnRespawn(InputValue value)
     {
         spawnVector = value.Get<Vector2>();
@@ -315,9 +329,15 @@ public class PlayerController : MonoBehaviour
         if (!player.isChoosing) return;
 
         Vector3Int tmp = new Vector3Int(Mathf.RoundToInt(spawnVector[0]), Mathf.RoundToInt(spawnVector[1]), 0);
+        HighlightCell(selectedCell);
         if (tmp != Vector3Int.zero)
         {
             Vector3Int nextCell = selectedCell + tmp;
+            if (!IsValidCell(nextCell))
+                nextCell = selectedCell + 4 * tmp;
+            if (!IsValidCell(nextCell))
+                nextCell = selectedCell + 5 * tmp;
+
             if (IsValidCell(nextCell))
             {
                 selectedCell = nextCell;
@@ -325,8 +345,13 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     public void SpawnPlayer(Vector3 position)
     {
+        if (player.playerIndex == 0)
+            selectedCell = new Vector3Int(-1, -1, 0);
+        else
+            selectedCell = new Vector3Int(-0, -1, 0);
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         cameraData.SetRenderer(0);
         player.transform.position = position;
@@ -340,7 +365,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerSubmit()
     {
-        if (submitTrigger > 0.0f)
+        if (isSubmit)
         {
             if (IsValidCell(selectedCell))
             {
@@ -348,9 +373,7 @@ public class PlayerController : MonoBehaviour
                 SpawnPlayer(respawnWorldPos);
                 InitCell();
             }
-            submitTrigger = 0.0f;
         }
-
     }
 
     public void InitCell()
@@ -386,13 +409,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public Vector3Int GetSelectedCell()
-    {
-        return selectedCell;
-    }
+    #endregion
 
-    public Tilemap GetTilemap()
-    {
-        return tilemap;
-    }
 }

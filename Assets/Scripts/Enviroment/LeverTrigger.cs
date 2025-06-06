@@ -15,7 +15,8 @@ public class LeverTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isTriggered && other.CompareTag("PlayerFoot"))
+        Arrow arrow = other.GetComponent<Arrow>();
+        if (!isTriggered && (other.CompareTag("PlayerFoot") || arrow != null))
         {
             isTriggered = true;
             spriteRenderer.sprite = triggeredSprite;

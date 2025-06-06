@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Tilemaps;
 
 
 public class Arrow : MonoBehaviour, IElement
@@ -65,12 +66,17 @@ public class Arrow : MonoBehaviour, IElement
     public ArrowGenerator arrowGenerator { get; private set; }
     #endregion
 
+    protected Tilemap tilemap;
+    protected LayerMask floorLayer;
+    public bool isOutFloor = false;
+
     [Header("Combine")]
     #region GenerateFall
     public Sprite onfloor;
     public Sprite normal;
     public GameObject shadow;
     #endregion
+
     public GameObject hitWallCol;
     public GameObject hitRing;
     public GameObject lightning;
@@ -113,6 +119,8 @@ public class Arrow : MonoBehaviour, IElement
         audioManager = FindObjectOfType<AudioManager>();
         waveGenerator = FindObjectOfType<WaveGenerator>();
         lightningVol = GameObject.FindGameObjectWithTag("GlobalVol").GetComponent<Volume>();
+        tilemap = GameObject.Find("Floor").GetComponent<Tilemap>();
+        floorLayer = LayerMask.GetMask("Floor");
 
         generatePos = transform.position + Vector3.down * 20f;
 
@@ -291,5 +299,23 @@ public class Arrow : MonoBehaviour, IElement
         if (!IsElementalEffectTriggered)
             IsElementalEffectTriggered = true;
         return tmp;
+    }
+
+    public virtual bool ExamFloor()
+    {
+        Vector3Int cell = tilemap.WorldToCell(transform.position);
+
+        if (tilemap.GetTile(cell) == null)
+        {
+            Vector2 footPosL = GetComponent<Collider2D>().bounds.min;
+            Vector2 footPosR = GetComponent<Collider2D>().bounds.max;
+            Collider2D groundCheckL = Physics2D.OverlapBox(footPosL, new Vector2(0.8f, 0.1f), 0f, floorLayer);
+            Collider2D groundCheckR = Physics2D.OverlapBox(footPosR, new Vector2(-0.8f, -0.1f), 0f, floorLayer);
+            if (groundCheckL == null && groundCheckR == null)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

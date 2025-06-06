@@ -55,6 +55,8 @@ public class Player : MonoBehaviour
 
     #region Combine
     [Header("Need Combine")]
+    public Color playerColor;
+    public Color enemyColor;
     public GameObject endMenu;
     public GameObject winnerCanvas;
     public Transform spriteTrans;
@@ -109,6 +111,7 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
         arrow = GetComponentInChildren<Arrow>();
+        arrowCount = GetComponentsInChildren<Arrow>().Length;
 
         dashCoolTime -= Time.deltaTime;
     }

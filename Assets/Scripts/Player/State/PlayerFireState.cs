@@ -12,7 +12,6 @@ public class PlayerFireState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.arrowCount--;
         fireTime = 0;
         if (player.arrow.isFast)
             player.audioManager.PlaySfx(player.audioManager.fireFast);

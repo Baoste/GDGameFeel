@@ -9,7 +9,7 @@ public class FireArea : MonoBehaviour
     void Start()
     {
         transform.localScale = Vector3.zero;
-        transform.DOScale(Vector3.one * 12f, 1.5f)
+        transform.DOScale(Vector3.one * 12f, .5f)
         .SetEase(Ease.InCubic)
         .OnComplete(() =>
         {

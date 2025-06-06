@@ -10487,6 +10487,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   col: {fileID: 0}
   arrowLight: {fileID: 0}
+  generatePos: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   getArrowPlayer: {fileID: 0}
   aimDirection: {x: 0, y: 0}

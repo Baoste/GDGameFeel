@@ -21,7 +21,7 @@ public class ArrowWind : Arrow, IElementWind
         if (isWater != null)
         {
             Arrow arrow = collision.gameObject.GetComponent<Arrow>();
-            if (!arrow.IsElementalEffectTriggered && !IsElementalEffectTriggered)
+            if (arrow != null && !arrow.IsElementalEffectTriggered && !IsElementalEffectTriggered)
             {
                 arrow.ElementalEffectTriggered();
                 ElementalEffectTriggered();

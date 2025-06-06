@@ -28,15 +28,21 @@ public class ArrowGenerator : MonoBehaviour
         Instantiate(arrowPrefab[idx], pos, Quaternion.Euler(new Vector3(0, 0, -90)));
     }
 
-    public void DestroyArrow(GameObject obj, Vector3 pos)
+    public void DestroyArrow(GameObject obj, Vector3 pos, bool initY = true)
     {
         Destroy(obj, 1f);
-        StartCoroutine(GenerateAfterDestroy(pos));
+        if (obj.GetComponent<Arrow>().isOutFloor)
+        {
+            pos = mapMarker.markerPositions[Random.Range(0, arrowPrefabIndex.Length)];
+            StartCoroutine(GenerateAfterDestroy(pos));
+        }
+        else
+            StartCoroutine(GenerateAfterDestroy(pos));
     }
 
-    private IEnumerator GenerateAfterDestroy(Vector3 pos)
+    private IEnumerator GenerateAfterDestroy(Vector3 pos, bool initY = true)
     {
         yield return new WaitForSeconds(1f);
-        GenerateArrow(pos, Random.Range(0, 4));
+        GenerateArrow(pos, Random.Range(1, 4), initY);
     }
 }

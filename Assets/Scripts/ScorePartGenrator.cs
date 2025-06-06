@@ -18,8 +18,7 @@ public class ScorePartGenrator : MonoBehaviour
         player = GetComponentInParent<Player>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         // Á£×ÓÑÕÉ«
-        //playerColor = player.GetComponentInChildren<SpriteRenderer>().color;
-        playerColor = Color.white;
+        playerColor = player.playerColor;
     }
 
     public void GenerateScoreParts(Vector3 pos)
@@ -29,20 +28,22 @@ public class ScorePartGenrator : MonoBehaviour
 
     private IEnumerator GenerateScorePartsCoroutine(Vector3 pos)
     {
-        float impulseForce = 0.01f;
+        float impulseForce = 0.02f;
         float delay = 0.03f;
 
         for (int i = 0; i < count; i++)
         {
             ScorePart scorePart = Instantiate(scorePartPrefab, pos, Quaternion.identity).GetComponent<ScorePart>();
             scorePart.color = playerColor;
-            Vector3 target = player.enemyScore.gameObject.transform.position;
-            scorePart.MoveToTarget(impulseSource, impulseForce, target);
+            Vector3 targetPos = player.enemyScore.gameObject.transform.position;
+            Color targetColor = player.enemyColor;
+            scorePart.MoveToTarget(impulseSource, impulseForce, targetPos, targetColor);
             impulseForce *= 1.2f;
 
             yield return new WaitForSeconds(delay);
         }
 
-        player.deathCount.Value = player.deathCount.Value + 1;
+        yield return new WaitForSeconds(1f);
+        player.deathCount.Value += 1;
     }
 }

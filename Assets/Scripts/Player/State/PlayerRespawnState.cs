@@ -22,12 +22,15 @@ public class PlayerRespawnState : PlayerState
         player.isInvincible = true;
         player.isChoosing = true;
 
-        selectTimer = 0.2f;
+        //selectTimer = 0.2f;
         countdown = 5f;
         isCountdownStarted = false;
 
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
         cameraData.SetRenderer(0);
+
+        // 清除空格状态
+        bool tmp = player.controller.isSubmit;
     }
 
     public override void Exit()
@@ -39,6 +42,7 @@ public class PlayerRespawnState : PlayerState
 
         player.transform.localScale = Vector3.one;
         player.playerFoot.isFall = false;
+        player.dashCoolTime = 0.5f;
     }
 
     public override void Update()
@@ -47,11 +51,12 @@ public class PlayerRespawnState : PlayerState
 
         selectTimer -= Time.deltaTime;
         countdown -= Time.deltaTime;
-
+        
+        // 冷却结束，自动复活 
         if (countdown <= 0)
         {
-            Vector3Int selectedCell = player.controller.GetSelectedCell();
-            Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
+            Vector3Int selectedCell = player.controller.selectedCell;
+            Vector3 respawnWorldPos = player.controller.tilemap.GetCellCenterWorld(selectedCell);
             player.controller.SpawnPlayer(respawnWorldPos);
             isCountdownStarted = false;
             player.controller.InitCell();
@@ -59,8 +64,8 @@ public class PlayerRespawnState : PlayerState
 
         if (!isCountdownStarted && selectTimer < 0)
         {
+            selectTimer = 0.1f;
             player.controller.PlayerRespawn();
-            selectTimer = 0.2f;
             player.controller.PlayerSubmit();
             if (!player.isChoosing)
             {
@@ -69,33 +74,34 @@ public class PlayerRespawnState : PlayerState
             }
         }
     }
-    private IEnumerator ShowRespawnCountdownAndSpawn()
-    {
 
-        float timeLeft = countdown;
-        while (timeLeft > 0)
-        {
-            //countdownText.text = Mathf.CeilToInt(timeLeft).ToString();
-            yield return new WaitForSeconds(1f);
-            timeLeft -= 1f;
-        }
+    //private IEnumerator ShowRespawnCountdownAndSpawn()
+    //{
 
-        //countdownText.text = "";
+    //    float timeLeft = countdown;
+    //    while (timeLeft > 0)
+    //    {
+    //        //countdownText.text = Mathf.CeilToInt(timeLeft).ToString();
+    //        yield return new WaitForSeconds(1f);
+    //        timeLeft -= 1f;
+    //    }
 
-        Vector3Int selectedCell = player.controller.GetSelectedCell();
-        Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
-        player.controller.SpawnPlayer(player.transform.position);
-        isCountdownStarted = false;
-    }
+    //    //countdownText.text = "";
 
-    private IEnumerator RespawnCountDown()
-    {
-        yield return new WaitForSeconds(3f);
+    //    Vector3Int selectedCell = player.controller.GetSelectedCell();
+    //    Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
+    //    player.controller.SpawnPlayer(player.transform.position);
+    //    isCountdownStarted = false;
+    //}
 
-        Vector3Int selectedCell = player.controller.GetSelectedCell();
-        Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
-        player.controller.SpawnPlayer(respawnWorldPos);
-        isCountdownStarted = false;
-        player.controller.InitCell();
-    }
+    //private IEnumerator RespawnCountDown()
+    //{
+    //    yield return new WaitForSeconds(3f);
+
+    //    Vector3Int selectedCell = player.controller.GetSelectedCell();
+    //    Vector3 respawnWorldPos = player.controller.GetTilemap().GetCellCenterWorld(selectedCell);
+    //    player.controller.SpawnPlayer(respawnWorldPos);
+    //    isCountdownStarted = false;
+    //    player.controller.InitCell();
+    //}
 }

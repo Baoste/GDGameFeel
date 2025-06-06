@@ -55,7 +55,6 @@ public class ArrowFallState : ArrowState
             arrow.arrowLight.intensity = 0f;
 
             arrow.audioManager.PlaySfx(arrow.audioManager.pickup);
-            arrow.getArrowPlayer.arrowCount++;
             arrow.transform.parent = arrow.getArrowPlayer.transform;
             arrow.player = arrow.getArrowPlayer;
             stateMachine.ChangeState(arrow.aimState);

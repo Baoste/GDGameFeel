@@ -18,15 +18,14 @@ public class PlayerFoot : MonoBehaviour
 
     private void Update()
     {
-        Vector3Int cell = tilemap.WorldToCell(player.transform.position);
-
+        Vector3Int cell = tilemap.WorldToCell(transform.position);
         if (tilemap.GetTile(cell) == null && !isFall)
         {
             Vector2 footPosL = player.GetComponent<Collider2D>().bounds.min;
-            Vector2 footPosR = player.GetComponent<Collider2D>().bounds.max;
+            //Vector2 footPosR = player.GetComponent<Collider2D>().bounds.max;
             Collider2D groundCheckL = Physics2D.OverlapBox(footPosL, new Vector2(0.8f, 0.1f), 0f, floorLayer);
-            Collider2D groundCheckR = Physics2D.OverlapBox(footPosR, new Vector2(-0.8f, -0.1f), 0f, floorLayer);
-            if (groundCheckL == null && groundCheckR == null && player.stateMachine.currentState != player.dashingState
+            //Collider2D groundCheckR = Physics2D.OverlapBox(footPosR, new Vector2(-0.8f, -0.1f), 0f, floorLayer);
+            if (groundCheckL == null && player.stateMachine.currentState != player.dashingState
                 && player.stateMachine.currentState != player.dashInState
                 && player.stateMachine.currentState != player.dashOutState)
             {
@@ -40,7 +39,7 @@ public class PlayerFoot : MonoBehaviour
     //{
     //    // 获取脚部位置（Collider2D 的左下角）
     //    Vector2 footPos = GetComponent<Collider2D>().bounds.min;
-    //    Vector2 boxSize = new Vector2(0.8f, 0.1f);
+    //    Vector2 boxSize = new Vector2(0.8f, 0.8f);
 
     //    // 设置 Gizmo 的颜色为绿色
     //    Gizmos.color = Color.blue;

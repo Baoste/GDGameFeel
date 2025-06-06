@@ -1,5 +1,7 @@
 
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ArrowStopState : ArrowState
 {
@@ -36,11 +38,18 @@ public class ArrowStopState : ArrowState
         base.Update();
         if (arrow.getArrowPlayer && arrow.getArrowPlayer.arrowCount < 2)
         {
-            arrow.getArrowPlayer.arrowCount++;
             arrow.audioManager.PlaySfx(arrow.audioManager.pickup);
             arrow.transform.parent = arrow.getArrowPlayer.transform;
             arrow.player = arrow.getArrowPlayer;
             stateMachine.ChangeState(arrow.aimState);
         }
+        if (!arrow.isOutFloor && !arrow.ExamFloor())
+        {
+            arrow.isOutFloor = true;
+            arrow.GetComponent<SpriteRenderer>().DOFade(0f, 0.5f);
+            arrow.arrowGenerator.DestroyArrow(arrow.gameObject, arrow.transform.position);
+        }
     }
+
+    
 }

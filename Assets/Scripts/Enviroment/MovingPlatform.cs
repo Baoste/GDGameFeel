@@ -1,7 +1,6 @@
+using Cinemachine;
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
@@ -16,8 +15,11 @@ public class MovingPlatform : MonoBehaviour
     private int movingIndex = 0;    // Index of the current target point
     private int movingDirction = 1;
 
+    private CinemachineImpulseSource impulseSource;
+
     private void Start()
     {
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         mapMarker = GetComponent<MapMarker>();
         targetPoints = new List<Vector3>();
         foreach (var pos in mapMarker.markerPositions)
@@ -41,9 +43,10 @@ public class MovingPlatform : MonoBehaviour
             movingIndex = movingIndex + movingDirction;
 
             transform.DOMove(targetPoints[movingIndex], moveSpeed)
-            .SetEase(Ease.InCubic)
+            .SetEase(Ease.InExpo)
             .OnComplete(() =>
             {
+                impulseSource.GenerateImpulse();
                 isMoving = false;
                 trigger.isTriggered = false;
                 trigger.GetComponent<SpriteRenderer>().sprite = untriggeredSprite;

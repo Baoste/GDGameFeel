@@ -1,6 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class ScorePart : MonoBehaviour
 {
@@ -16,22 +17,27 @@ public class ScorePart : MonoBehaviour
         transform.localScale = Vector3.zero;
     }
 
-    public void MoveToTarget(CinemachineImpulseSource impulseSource, float impulseForce, Vector3 target)
+    public void MoveToTarget(CinemachineImpulseSource impulseSource, float impulseForce, Vector3 targetPos, Color targetColor)
     {
         Vector2 randomDir = Random.insideUnitCircle.normalized;
-        Vector3 targetPos = transform.position + new Vector3(randomDir.x, randomDir.y, 0f) * Random.Range(0.5f, 1f);
-        transform.DOLocalMove(targetPos, 0.5f).SetEase(Ease.InCubic);
+        Vector3 tmpPos = transform.position + new Vector3(randomDir.x, randomDir.y, 0f) * Random.Range(0.5f, 1f);
+        transform.DOLocalMove(tmpPos, 0.5f).SetEase(Ease.InCubic);
 
-        transform.DOScale(Vector3.one * Random.Range(0.7f, 1f), 0.5f).SetEase(Ease.InCubic)
+        transform.DOScale(Vector3.one * Random.Range(0.7f, 1f), 0.5f)
+        .SetEase(Ease.InCubic)
         .OnComplete(() =>
         {
-            transform.DOMove(target, 0.5f)
+            sprite.DOColor(targetColor, 0.5f).SetEase(Ease.InCubic);
+
+            transform.DOMove(targetPos, 0.5f)
             .SetEase(Ease.InCubic)
             .OnComplete(() =>
             {
                 impulseSource.m_DefaultVelocity = Vector2.one * impulseForce;
                 impulseSource.GenerateImpulse();
                 sprite.color = Vector4.zero;
+                var main = particles.main;
+                main.startColor = targetColor;
                 particles.Play();
                 Destroy(gameObject, 1f);
             });

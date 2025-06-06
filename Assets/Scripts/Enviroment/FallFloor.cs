@@ -21,6 +21,7 @@ public class FallFloor : MonoBehaviour
     private Tilemap[] tilemaps;
     private List<Vector3Int> outerRingPositions;
     private BoundsInt bounds;
+    private int fallCount = 0;
 
     private float fallDelTime;
     private float fallTime;
@@ -43,7 +44,7 @@ public class FallFloor : MonoBehaviour
 
     private void Start()
     {
-        fallTime = 10f;
+        fallTime = 20f;
 
         fallDelTime = 0f;
         outerRingPositions = new List<Vector3Int>();
@@ -55,8 +56,9 @@ public class FallFloor : MonoBehaviour
     private void Update()
     {
         fallDelTime += Time.deltaTime;
-        if (fallDelTime >= fallTime)
+        if (fallDelTime >= fallTime && fallCount < 7)
         {
+            fallCount++;
             audioManager.PlaySfx(audioManager.floorFall);
             GetBoundTiles();
             foreach (Vector3Int pos in outerRingPositions)
