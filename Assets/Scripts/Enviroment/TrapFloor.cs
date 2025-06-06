@@ -4,7 +4,7 @@ using UnityEngine;
 public class TrapFloor : MonoBehaviour
 {
     //public float disappearDelay = 0.1f;
-    public float wobbleDuration = 0.5f;
+    public float wobbleDuration = 2.0f;
     public float sinkDistance = 0.5f;
     public float sinkDuration = 0.5f;
     public float respawnTime = 3f;
@@ -37,8 +37,9 @@ public class TrapFloor : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < wobbleDuration)
         {
-            float offsetX = Mathf.Sin(elapsed * 40f) * 0.05f;
-            transform.position = originalPosition + new Vector3(offsetX, 0, 0);
+            float offsetX = Random.Range(-0.05f, 0.05f) * Mathf.PerlinNoise(elapsed * 0.1f, 0);
+            float offsetY = Random.Range(-0.05f, 0.05f) * Mathf.PerlinNoise(0, elapsed * 0.1f);
+            transform.position = originalPosition + new Vector3(offsetX, offsetY, 0);
             elapsed += Time.deltaTime;
             yield return null;
         }

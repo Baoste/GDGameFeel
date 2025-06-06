@@ -9,6 +9,7 @@ public class PlayerStartManager : MonoBehaviour
     public SpriteRenderer rightSp;
     public Canvas videoCanvas;
     public FallFloor fallFloor;
+    public bool isDebug;    // Debug moudle
 
     private int readyCount = 0;
     private AudioManager audioManager;
@@ -23,7 +24,7 @@ public class PlayerStartManager : MonoBehaviour
         audioManager.PlaySfx(audioManager.ready);
         readyCount += 1;
         leftSp.color = Color.green;
-        if (readyCount == 2)
+        if (readyCount == 2 || isDebug)
         {
             rightSp.color = Color.green;
             GameStart();

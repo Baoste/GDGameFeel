@@ -24,6 +24,7 @@ public class Arrow : MonoBehaviour, IElement
     public Light2D arrowLight;
     private float fixedDeltaTime;
     private Coroutine timeFreezeCoroutine;
+    public Vector3 generatePos;
 
     #region state
     public Player player;
@@ -112,6 +113,8 @@ public class Arrow : MonoBehaviour, IElement
         audioManager = FindObjectOfType<AudioManager>();
         waveGenerator = FindObjectOfType<WaveGenerator>();
         lightningVol = GameObject.FindGameObjectWithTag("GlobalVol").GetComponent<Volume>();
+
+        generatePos = transform.position + Vector3.down * 20f;
 
         stateMachine.Initialize(fallState);
     }

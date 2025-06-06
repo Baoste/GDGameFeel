@@ -7,25 +7,24 @@ public class ArrowGenerator : MonoBehaviour
     public GameObject[] arrowPrefab;
     private const float GenerateAxisY = 20;
 
+    public int[] arrowPrefabIndex;
+    private MapMarker mapMarker;
+
     void Start()
     {
-        Vector3 pos = new Vector3(-10, GenerateAxisY, 0);
-        GenerateArrow(pos, 1);
-        pos.x = 10;
-        GenerateArrow(pos, 3);
-        pos.x = 0;
-        GenerateArrow(pos, 2);
+        mapMarker = GetComponent<MapMarker>();
+        for (int i = 0; i < arrowPrefabIndex.Length; i++)
+        {
+            GenerateArrow(transform.position + mapMarker.markerPositions[i], arrowPrefabIndex[i], false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GenerateArrow(Vector3 pos, int idx = 0, bool initY = true)
     {
-        
-    }
-
-    private void GenerateArrow(Vector3 pos, int idx = 0)
-    {
-        pos.y = GenerateAxisY;
+        if (initY)
+            pos.y = GenerateAxisY;
+        else
+            pos.y += GenerateAxisY;
         Instantiate(arrowPrefab[idx], pos, Quaternion.Euler(new Vector3(0, 0, -90)));
     }
 

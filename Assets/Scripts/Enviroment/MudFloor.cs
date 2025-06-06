@@ -15,6 +15,7 @@ public class MudFloor : MonoBehaviour
             if (player != null && player.controller != null)
             {
                 player.controller.moveSpeed = mudSpeed;
+                player.dashCoolTime = 999.0f;
             }
         }
     }
@@ -26,7 +27,8 @@ public class MudFloor : MonoBehaviour
             Player player = other.GetComponentInParent<Player>();
             if (player != null && player.controller != null)
             {
-                player.controller.moveSpeed = 9f; 
+                player.controller.moveSpeed = 9f;
+                player.dashCoolTime = 0.0f;
             }
         }
     }

@@ -16,7 +16,7 @@ public class ArrowFallState : ArrowState
         arrow.arrowLight.intensity = 0.5f;
         
         float axisX = arrow.transform.position.x;
-        Vector3 targetPos = new Vector3(axisX, 0, 0);
+        Vector3 targetPos = arrow.generatePos;
 
         arrow.GenerateShadow(targetPos + Vector3.down * 0.8f);
         arrow.transform.DOMove(targetPos, 1f).SetEase(Ease.InQuad).OnComplete(() =>

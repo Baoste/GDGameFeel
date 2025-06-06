@@ -22,10 +22,11 @@ public class PlayerFoot : MonoBehaviour
 
         if (tilemap.GetTile(cell) == null && !isFall)
         {
-            Vector2 footPos = player.GetComponent<Collider2D>().bounds.min;
-            Collider2D groundCheck = Physics2D.OverlapBox(footPos, new Vector2(0.8f, 0.1f), 0f, floorLayer);
-            Debug.Log(groundCheck);
-            if (groundCheck == null && player.stateMachine.currentState != player.dashingState
+            Vector2 footPosL = player.GetComponent<Collider2D>().bounds.min;
+            Vector2 footPosR = player.GetComponent<Collider2D>().bounds.max;
+            Collider2D groundCheckL = Physics2D.OverlapBox(footPosL, new Vector2(0.8f, 0.1f), 0f, floorLayer);
+            Collider2D groundCheckR = Physics2D.OverlapBox(footPosR, new Vector2(-0.8f, -0.1f), 0f, floorLayer);
+            if (groundCheckL == null && groundCheckR == null && player.stateMachine.currentState != player.dashingState
                 && player.stateMachine.currentState != player.dashInState
                 && player.stateMachine.currentState != player.dashOutState)
             {
@@ -34,4 +35,17 @@ public class PlayerFoot : MonoBehaviour
             }
         }
     }
+
+    //void OnDrawGizmos()
+    //{
+    //    // 获取脚部位置（Collider2D 的左下角）
+    //    Vector2 footPos = GetComponent<Collider2D>().bounds.min;
+    //    Vector2 boxSize = new Vector2(0.8f, 0.1f);
+
+    //    // 设置 Gizmo 的颜色为绿色
+    //    Gizmos.color = Color.blue;
+
+    //    // 在脚部位置绘制检测区域框（WireCube 是框架而不是填充的矩形）
+    //    Gizmos.DrawWireCube(footPos + boxSize / 2, boxSize); // 算上偏移量，使框架正确显示
+    //}
 }
