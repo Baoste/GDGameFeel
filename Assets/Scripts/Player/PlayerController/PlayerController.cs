@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3Int selectedCell;
     private Vector3Int? lastHighlightedCell = null;
-    private Color highlightColor = Color.yellow;
+    private Color highlightColor = Color.red;
     private Color originalColor = Color.white;
 
     private Tilemap tilemap;
@@ -142,8 +142,8 @@ public class PlayerController : MonoBehaviour
         camera = Camera.main;
         // Debug.Log(tilemap);
         
-        selectedCell = tilemap.WorldToCell(camera.transform.position);
-        HighlightCell(selectedCell);
+        //selectedCell = tilemap.WorldToCell(transform.position);
+        //HighlightCell(selectedCell);
     }
 
     void Start()
@@ -369,6 +369,7 @@ public class PlayerController : MonoBehaviour
         TileBase tile = tilemap.GetTile(cellPos);
         return tile != null;
     }
+
     private void HighlightCell(Vector3Int cell)
     {
         if (player.isChoosing == true)

@@ -2,10 +2,8 @@ using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerFallState : PlayerState
+public class PlayerFallState : PlayerDeadState
 {
-    private float deadPushTime;
-    private bool isPlayWinner;
     public PlayerFallState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
     }
@@ -13,10 +11,7 @@ public class PlayerFallState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.audioManager.StopBGM();
-
-        deadPushTime = 0f;
-        isPlayWinner = false;
+        generateScoreParticleTime = 1f;
 
         player.audioManager.PlaySfx(player.audioManager.playerFall);
         if (player.arrow)
@@ -34,6 +29,8 @@ public class PlayerFallState : PlayerState
 
     public override void FixedUpdate()
     {
+        base.FixedUpdate();
+
         Vector2 speedDif = Vector2.zero - controller.rb.velocity;
         float speedDist = speedDif.sqrMagnitude;
         float speedAmount = Mathf.Pow(Mathf.Abs(speedDist) * 24f, 0.9f);
@@ -42,13 +39,6 @@ public class PlayerFallState : PlayerState
 
     public override void Update()
     {
-        deadPushTime += Time.deltaTime;
-        if (deadPushTime > 1.5f && !isPlayWinner)
-        {
-            isPlayWinner = true;
-            player.winnerCanvas.SetActive(true);
-            //player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
-            player.endMenu.SetActive(true);
-        }
+        base.Update();
     }
 }

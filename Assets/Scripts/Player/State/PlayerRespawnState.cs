@@ -22,8 +22,8 @@ public class PlayerRespawnState : PlayerState
         player.isInvincible = true;
         player.isChoosing = true;
 
-        //countdownText = GameObject.Find("CountDownText" + player.playerIndex).GetComponent<TMP_Text>();
-        //countdownText.text = "";
+        selectTimer = 0.2f;
+        countdown = 5f;
         isCountdownStarted = false;
 
         var cameraData = Camera.main.GetUniversalAdditionalCameraData();
@@ -36,7 +36,11 @@ public class PlayerRespawnState : PlayerState
         //player.isInvincible = false;
         player.audioManager.PlayBGM();
         player.InvincibilityRoutine(player.invincibleDuration);
+
+        player.transform.localScale = Vector3.one;
+        player.playerFoot.isFall = false;
     }
+
     public override void Update()
     {
         base.Update();
@@ -58,7 +62,7 @@ public class PlayerRespawnState : PlayerState
             player.controller.PlayerRespawn();
             selectTimer = 0.2f;
             player.controller.PlayerSubmit();
-            if (!player.isChoosing) // ˵�����ύ�ɹ�
+            if (!player.isChoosing)
             {
                 isCountdownStarted = true;
                 //player.StartCoroutine(ShowRespawnCountdownAndSpawn());

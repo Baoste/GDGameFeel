@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.LowLevel;
 using UnityEngine.Rendering;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     public PlayerDashOutState dashOutState;
     public PlayerAimState aimState;
     public PlayerFireState fireState;
-    public PlayerDeadState deadState;
+    public PlayerKillState killState;
     public PlayerFallState fallState;
     public PlayerRespawnState respawnState;
     #endregion
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     private float fixedDeltaTime;
     private TwistGenerator twistGenerator;
     public PlayerParts playerParts { get; private set; }
+    public PlayerFoot playerFoot { get; private set; }
 
     public bool isInvincible = false;//ÎÞµÐÊ±¼ä
     public float invincibleDuration = 3f;
@@ -77,7 +79,7 @@ public class Player : MonoBehaviour
         dashOutState = new PlayerDashOutState(stateMachine, this, "isDash");
         aimState = new PlayerAimState(stateMachine, this, "isAim");
         fireState = new PlayerFireState(stateMachine, this, "isFire");
-        deadState = new PlayerDeadState(stateMachine, this, "isDead");
+        killState = new PlayerKillState(stateMachine, this, "isDead");
         fallState = new PlayerFallState(stateMachine, this, "isFall");
         respawnState = new PlayerRespawnState(stateMachine, this, "isRespawn");
     }
@@ -88,6 +90,7 @@ public class Player : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         twistGenerator = FindObjectOfType<TwistGenerator>();
         playerParts = GetComponentInChildren<PlayerParts>();
+        playerFoot = GetComponentInChildren<PlayerFoot>();
 
         canAim = true;
         forceField.enabled = false;
@@ -162,7 +165,7 @@ public class Player : MonoBehaviour
         foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
             sr.enabled = false;
         // generate small parts
-        partGenrator.GenerateScoreParts(transform);
+        partGenrator.GenerateScoreParts(transform.position);
     }
 
     public void ShowPlayer()

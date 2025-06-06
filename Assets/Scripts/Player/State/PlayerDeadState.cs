@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerDeadState : PlayerState
 {
-    private float deadPushTime;
-
-    private bool isPlayWinner;
+    protected float deadPushTime;
+    protected bool isPlayWinner;
+    protected float generateScoreParticleTime;
 
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, string animatorName) : base(stateMachine, player, animatorName)
     {
@@ -15,26 +15,18 @@ public class PlayerDeadState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        generateScoreParticleTime = 3f;
+
         player.isInvincible = true;
-
         player.audioManager.StopBGM();
-
         deadPushTime = 0f;
         isPlayWinner = false;
-
-        player.GenerateBlood();
-        // drop arrow
-        if (player.arrow)
-        {
-            player.arrow.transform.parent = player.transform.parent;
-            player.arrow.stateMachine.ChangeState(player.arrow.stopState);
-        }
     }
 
     public override void Exit()
     {
         base.Exit();
-        //player.isInvincible = false;
     }
 
     public override void FixedUpdate()
@@ -60,7 +52,8 @@ public class PlayerDeadState : PlayerState
                 player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ChangeWinnerSprite(player.playerIndex);
                 //player.endMenu.SetActive(true);
             }
-            if(deadPushTime > 3f)
+
+            if (deadPushTime > generateScoreParticleTime)
             {
                 player.winnerCanvas.GetComponentInChildren<WinnerUIAnim>().ReturnCam();
                 player.HidePlayer();

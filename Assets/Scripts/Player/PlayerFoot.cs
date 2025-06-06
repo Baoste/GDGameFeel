@@ -9,7 +9,7 @@ public class PlayerFoot : MonoBehaviour
     public LayerMask floorLayer;
     private Player player;
     private Collider2D trapFloorCollider;
-    private bool isFall;
+    public bool isFall;
     private void Start()
     {
         player = GetComponentInParent<Player>();

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowGenerator : MonoBehaviour
 {
     public GameObject[] arrowPrefab;
-    private const float GenerateAxisY = 20;
+    private const float GenerateAxisY = 20f;
 
     public int[] arrowPrefabIndex;
     private MapMarker mapMarker;

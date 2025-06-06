@@ -19,7 +19,7 @@ public class ScorePart : MonoBehaviour
     public void MoveToTarget(CinemachineImpulseSource impulseSource, float impulseForce, Vector3 target)
     {
         Vector2 randomDir = Random.insideUnitCircle.normalized;
-        Vector3 targetPos = new Vector3(randomDir.x, randomDir.y, 0f) * Random.Range(0.5f, 1f);
+        Vector3 targetPos = transform.position + new Vector3(randomDir.x, randomDir.y, 0f) * Random.Range(0.5f, 1f);
         transform.DOLocalMove(targetPos, 0.5f).SetEase(Ease.InCubic);
 
         transform.DOScale(Vector3.one * Random.Range(0.7f, 1f), 0.5f).SetEase(Ease.InCubic)

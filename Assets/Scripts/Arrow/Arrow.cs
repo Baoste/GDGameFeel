@@ -143,7 +143,7 @@ public class Arrow : MonoBehaviour, IElement
         if (hit != null && !hit.isInvincible)
         {
             hitPlayer = hit;
-            hitPlayer.stateMachine.ChangeState(hitPlayer.deadState);
+            hitPlayer.stateMachine.ChangeState(hitPlayer.killState);
             if (lerpAmount > 0.5f)
                 SplitParts(hitPlayer);
             hit = null;
