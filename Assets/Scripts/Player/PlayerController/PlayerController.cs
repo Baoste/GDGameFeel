@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
     public Tilemap tilemap { get; private set; }
     public List<Tilemap> walls { get; private set; }
-    private new Camera camera;
     
 
     #region Move
@@ -122,6 +121,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 spawnVector = Vector2.zero;
     #endregion
 
+    public GameObject pauseCanvas { get; private set; }
+    private bool isPause;
+    private float pauseTrigger = 0;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -164,12 +167,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        camera = Camera.main;
-
         if (player.playerIndex == 0)
             selectedCell = new Vector3Int(-1, -1, 0);
         else
             selectedCell = new Vector3Int(-0, -1, 0);
+
+        pauseCanvas = GameObject.Find("Canvas").transform.Find("Pause").gameObject;
+        isPause = false;
     }
 
     void Start()
@@ -430,6 +434,28 @@ public class PlayerController : MonoBehaviour
             tilemap.SetColor(cell, highlightColor);
             lastHighlightedCell = cell;
             player.transform.position = tilemap.GetCellCenterWorld(selectedCell);
+        }
+    }
+
+    #endregion
+
+    #region Pause
+    private void OnPause(InputValue value)
+    {
+        pauseTrigger = value.Get<float>();
+        if (pauseTrigger > 0)
+        {
+            isPause = !isPause;
+            if (isPause)
+            {
+                Time.timeScale = 0f;
+                pauseCanvas.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                pauseCanvas.SetActive(false);
+            }
         }
     }
 
