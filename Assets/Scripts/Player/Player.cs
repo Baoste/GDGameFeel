@@ -111,6 +111,10 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
         arrow = GetComponentInChildren<Arrow>();
+        if (arrow != null)
+        {
+            arrow.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        }
         arrowCount = GetComponentsInChildren<Arrow>().Length;
 
         dashCoolTime -= Time.deltaTime;

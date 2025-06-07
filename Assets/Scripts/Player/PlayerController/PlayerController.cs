@@ -1,11 +1,10 @@
 
-using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Color originalColor = Color.white;
 
     public Tilemap tilemap { get; private set; }
+    public List<Tilemap> walls { get; private set; }
     private new Camera camera;
     
 
@@ -154,6 +154,16 @@ public class PlayerController : MonoBehaviour
         //}
 
         tilemap = GameObject.Find("Floor").GetComponent<Tilemap>();
+        walls = new List<Tilemap>();
+        foreach (GameObject wall in GameObject.FindGameObjectsWithTag("Wall"))
+        {
+            Tilemap tilemap = wall.GetComponent<Tilemap>();
+            if (tilemap != null)
+            {
+                walls.Add(tilemap);
+            }
+        }
+
         camera = Camera.main;
 
         if (player.playerIndex == 0)
@@ -332,17 +342,19 @@ public class PlayerController : MonoBehaviour
         HighlightCell(selectedCell);
         if (tmp != Vector3Int.zero)
         {
-            Vector3Int nextCell = selectedCell + tmp;
-            if (!IsValidCell(nextCell))
-                nextCell = selectedCell + 4 * tmp;
-            if (!IsValidCell(nextCell))
-                nextCell = selectedCell + 5 * tmp;
-
-            if (IsValidCell(nextCell))
+            for (int i = 1; i <= 6; i++)
             {
-                selectedCell = nextCell;
-                HighlightCell(selectedCell);
+                Vector3Int nextCell = selectedCell + i * tmp;
+                if (!IsValidCell(nextCell))
+                    continue;
+                else
+                {
+                    selectedCell = nextCell;
+                    HighlightCell(selectedCell);
+                    break;
+                }
             }
+
         }
     }
 
@@ -390,7 +402,18 @@ public class PlayerController : MonoBehaviour
     private bool IsValidCell(Vector3Int cellPos)
     {
         TileBase tile = tilemap.GetTile(cellPos);
-        return tile != null;
+        bool flag = true;
+        foreach (var wall in walls)
+        {
+            TileBase walltile = wall.GetTile(cellPos);
+            if (walltile != null)
+            {
+                flag = false;
+                break;
+            }
+        }
+        
+        return tile != null && flag;
     }
 
     private void HighlightCell(Vector3Int cell)
@@ -406,6 +429,7 @@ public class PlayerController : MonoBehaviour
             tilemap.SetTileFlags(cell, TileFlags.None);
             tilemap.SetColor(cell, highlightColor);
             lastHighlightedCell = cell;
+            player.transform.position = tilemap.GetCellCenterWorld(selectedCell);
         }
     }
 

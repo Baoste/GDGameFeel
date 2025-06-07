@@ -32,7 +32,7 @@ public class ArrowFireState : ArrowState
         base.Exit();
         if (arrow.isFast)
         {
-            arrow.arrowGenerator.DestroyArrow(arrow.gameObject, firePos);
+            // arrow.arrowGenerator.DestroyArrow(arrow.gameObject, firePos);
             arrow.InitArrow();
         }
     }

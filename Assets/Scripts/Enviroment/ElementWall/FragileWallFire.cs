@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FragileWallWind : FragileWall, IElementWind
+public class FragileWallFire : FragileWall, IElementFire
 {
-    public GameObject tornadoPrefab;
+    public GameObject fogPrefab;
     public GameObject fireArea;
 
     protected override void HandleCollision(Collision2D collision)
@@ -19,12 +19,12 @@ public class FragileWallWind : FragileWall, IElementWind
             {
                 arrow.ElementalEffectTriggered();
                 // ElementalEffectTriggered();
-                Instantiate(tornadoPrefab, collision.contacts[0].point, Quaternion.identity);
+                Instantiate(fogPrefab, collision.contacts[0].point, Quaternion.identity);
             }
         }
 
-        IElementFire isFire = collision.gameObject.GetComponent<IElementFire>();
-        if (isFire != null)
+        IElementWind isWind = collision.gameObject.GetComponent<IElementWind>();
+        if (isWind != null)
         {
             Arrow arrow = collision.gameObject.GetComponent<Arrow>();
             if (!arrow.IsElementalEffectTriggered)

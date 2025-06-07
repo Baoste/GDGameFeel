@@ -1,7 +1,6 @@
 using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class ScorePart : MonoBehaviour
 {

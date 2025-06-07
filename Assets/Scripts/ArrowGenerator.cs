@@ -1,5 +1,7 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class ArrowGenerator : MonoBehaviour
@@ -10,6 +12,27 @@ public class ArrowGenerator : MonoBehaviour
     public int[] arrowPrefabIndex;
     private MapMarker mapMarker;
 
+    private List<int> randomGenerateOrder = new List<int>();
+    private Queue<int> posQueue = new Queue<int>();
+    public int selfAddOrderIndex
+    {
+        get
+        {
+            int tmp = _generateOrderIndex;
+            if (++_generateOrderIndex >= randomGenerateOrder.Count)
+            {
+                ShuffleList(randomGenerateOrder);
+                _generateOrderIndex = 0;
+            }
+            return tmp;
+        }
+        set
+        {
+            _generateOrderIndex = value;
+        }
+    }
+    private int _generateOrderIndex = 0;
+
     void Start()
     {
         mapMarker = GetComponent<MapMarker>();
@@ -17,6 +40,12 @@ public class ArrowGenerator : MonoBehaviour
         {
             GenerateArrow(transform.position + mapMarker.markerPositions[i], arrowPrefabIndex[i], false);
         }
+
+        for (int i = 1; i < arrowPrefab.Length; i++)
+        {
+            randomGenerateOrder.Add(i);
+        }
+        ShuffleList(randomGenerateOrder);
     }
 
     private void GenerateArrow(Vector3 pos, int idx = 0, bool initY = true)
@@ -33,7 +62,7 @@ public class ArrowGenerator : MonoBehaviour
         Destroy(obj, 1f);
         if (obj.GetComponent<Arrow>().isOutFloor)
         {
-            pos = mapMarker.markerPositions[Random.Range(0, arrowPrefabIndex.Length)];
+            pos = GetAvailablePos();
             StartCoroutine(GenerateAfterDestroy(pos));
         }
         else
@@ -43,6 +72,34 @@ public class ArrowGenerator : MonoBehaviour
     private IEnumerator GenerateAfterDestroy(Vector3 pos, bool initY = true)
     {
         yield return new WaitForSeconds(1f);
-        GenerateArrow(pos, Random.Range(1, 4), initY);
+        GenerateArrow(pos, randomGenerateOrder[selfAddOrderIndex], initY);
+        posQueue.Dequeue();
+    }
+
+    private Vector3 GetAvailablePos()
+    {
+        for (int i = 0; i < mapMarker.markerPositions.Length; i++)
+        {
+            Vector3 pos = transform.position + mapMarker.markerPositions[i];
+            Collider2D isAvailable = Physics2D.OverlapCircle(pos, .25f, LayerMask.GetMask("Arrow"));
+            if (isAvailable == null && (posQueue.Count == 0 || !posQueue.Contains(i)))
+            {
+                posQueue.Enqueue(i);
+                return pos;
+            }
+        }
+        return transform.position + Vector3.zero;
+    }
+
+    private void ShuffleList<T>(IList<T> list)
+    {
+        int count = list.Count;
+        for (int i = 0; i < count - 1; i++)
+        {
+            int randIndex = Random.Range(i, count);
+            T temp = list[i];
+            list[i] = list[randIndex];
+            list[randIndex] = temp;
+        }
     }
 }

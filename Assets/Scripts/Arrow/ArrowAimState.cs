@@ -28,6 +28,7 @@ public class ArrowAimState : ArrowState
     public override void Exit()
     {
         base.Exit();
+        arrow.GetComponent<SpriteRenderer>().sortingOrder = 1;
     }
 
     public override void FixedUpdate()

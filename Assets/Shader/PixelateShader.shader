@@ -77,6 +77,8 @@ Shader "Custom/PixelateShader"
 					newUV = uv + float2((1-tx)*2*abs(uv.x-0.5), (1-ty)*2*abs(uv.y-0.5));
 				}
 
+				// float pixelHeight = _ScreenHeight / 3.14159265 * 2;
+				// newUV.y = floor(newUV.y * pixelHeight) / pixelHeight;
 				fixed4 col = tex2D(_MainTex, newUV);
 				
 				// scan line

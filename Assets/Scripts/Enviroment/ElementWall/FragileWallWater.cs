@@ -15,7 +15,7 @@ public class FragileWallWater : FragileWall, IElementWater
         if (isFire != null)
         {
             Arrow arrow = collision.gameObject.GetComponent<Arrow>();
-            if (!arrow.IsElementalEffectTriggered && !IsElementalEffectTriggered)
+            if (!arrow.IsElementalEffectTriggered)
             {
                 arrow.ElementalEffectTriggered();
                 // ElementalEffectTriggered();
@@ -27,7 +27,7 @@ public class FragileWallWater : FragileWall, IElementWater
         if (isWind != null)
         {
             Arrow arrow = collision.gameObject.GetComponent<Arrow>();
-            if (!arrow.IsElementalEffectTriggered && !IsElementalEffectTriggered)
+            if (!arrow.IsElementalEffectTriggered)
             {
                 arrow.ElementalEffectTriggered();
                 Instantiate(tornadoPrefab, collision.contacts[0].point, Quaternion.identity);

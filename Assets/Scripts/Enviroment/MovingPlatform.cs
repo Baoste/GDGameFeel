@@ -53,4 +53,21 @@ public class MovingPlatform : MonoBehaviour
             });
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerFoot"))
+        {
+            Player player = collision.GetComponentInParent<Player>();
+            player.transform.parent = transform;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerFoot"))
+        {
+            Player player = collision.GetComponentInParent<Player>();
+            player.transform.parent = transform.parent.parent;
+        }
+    }
 }

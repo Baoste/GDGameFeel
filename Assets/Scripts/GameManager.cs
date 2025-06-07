@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public void StartGame()
     {
-        StartCoroutine(WaitForSeconds(1f));
+        StartCoroutine(WaitForSecondsToStartGame(1f));
+    }
+    private IEnumerator WaitForSecondsToStartGame(float t)
+    {
+        yield return new WaitForSeconds(t);
+        SceneManager.LoadScene("MapScene");
     }
 
     public void ExitGame()
@@ -29,10 +35,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("StartScene");
     }
 
-    private IEnumerator WaitForSeconds(float t)
+
+    public void StartLevel(string number)
+    {
+        StartCoroutine(WaitForSecondsToStartLevel(1f, number));
+    }
+    private IEnumerator WaitForSecondsToStartLevel(float t, string number)
     {
         yield return new WaitForSeconds(t);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Level" + number + "Scene");
     }
 
     void OnApplicationQuit()

@@ -18,7 +18,7 @@ public class ArrowFallState : ArrowState
         float axisX = arrow.transform.position.x;
         Vector3 targetPos = arrow.generatePos;
 
-        arrow.GenerateShadow(targetPos + Vector3.down * 0.8f);
+        arrow.GenerateShadow(targetPos + Vector3.down * 0.5f);
         arrow.transform.DOMove(targetPos, 1f).SetEase(Ease.InQuad).OnComplete(() =>
         {
             arrow.col.isTrigger = true;
@@ -58,6 +58,12 @@ public class ArrowFallState : ArrowState
             arrow.transform.parent = arrow.getArrowPlayer.transform;
             arrow.player = arrow.getArrowPlayer;
             stateMachine.ChangeState(arrow.aimState);
+        }
+        if (arrow.rb.simulated && !arrow.isOutFloor && !arrow.ExamFloor())
+        {
+            arrow.isOutFloor = true;
+            arrow.GetComponent<SpriteRenderer>().DOFade(0f, 0.5f);
+            arrow.arrowGenerator.DestroyArrow(arrow.gameObject, arrow.transform.position);
         }
     }
 

@@ -37,8 +37,8 @@ public class TrapFloor : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < wobbleDuration)
         {
-            float offsetX = Random.Range(-0.05f, 0.05f) * Mathf.PerlinNoise(elapsed * 0.1f, 0);
-            float offsetY = Random.Range(-0.05f, 0.05f) * Mathf.PerlinNoise(0, elapsed * 0.1f);
+            float offsetX = Random.Range(-0.1f, 0.1f) * Mathf.PerlinNoise(elapsed * 0.1f, 0);
+            float offsetY = Random.Range(-0.1f, 0.1f) * Mathf.PerlinNoise(0, elapsed * 0.1f);
             transform.position = originalPosition + new Vector3(offsetX, offsetY, 0);
             elapsed += Time.deltaTime;
             yield return null;

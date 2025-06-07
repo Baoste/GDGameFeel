@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerDeadState : PlayerState
@@ -84,5 +83,11 @@ public class PlayerDeadState : PlayerState
 
     public override void Update()
     {
+        // drop arrow
+        if (player.arrow)
+        {
+            player.arrow.transform.parent = player.transform.parent;
+            player.arrow.stateMachine.ChangeState(player.arrow.stopState);
+        }    
     }
 }

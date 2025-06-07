@@ -15,12 +15,6 @@ public class PlayerKillState : PlayerDeadState
         generateScoreParticleTime = 3f;
 
         player.GenerateBlood();
-        // drop arrow
-        if (player.arrow)
-        {
-            player.arrow.transform.parent = player.transform.parent;
-            player.arrow.stateMachine.ChangeState(player.arrow.stopState);
-        }
     }
 
     public override void Exit()

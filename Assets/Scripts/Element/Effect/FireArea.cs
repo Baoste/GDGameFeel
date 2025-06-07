@@ -27,7 +27,7 @@ public class FireArea : MonoBehaviour
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            player.controller.moveSpeed = 5f;
+            player.controller.moveSpeed = 3f;
             player.dashCoolTime = 9f;
         }
     }
