@@ -17862,7 +17862,7 @@ MonoBehaviour:
   - {fileID: 8791677023683582086, guid: 679dcde57bef6a249a895b0005023c84, type: 3}
   - {fileID: 8791677023683582086, guid: 7fa3b9cda510f814c92398208ac958d2, type: 3}
   - {fileID: 8791677023683582086, guid: ae62951544910a2449d02deae5f7504f, type: 3}
-  arrowPrefabIndex: 010000000200000003000000
+  arrowPrefabIndex: 0100000002000000030000000200000001000000
 --- !u!114 &711109858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17878,9 +17878,11 @@ MonoBehaviour:
   gizmoColor: {r: 1, g: 0, b: 0.8941579, a: 1}
   radius: 0.2
   markerPositions:
-  - {x: -8.81, y: 0, z: 0}
-  - {x: 8.81, y: 0, z: 0}
+  - {x: -10.5, y: 9.48, z: 0}
+  - {x: -10.5, y: -9.65, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 10.5, y: 9.59, z: 0}
+  - {x: 10.5, y: -9.58, z: 0}
 --- !u!1 &730823866
 GameObject:
   m_ObjectHideFlags: 0

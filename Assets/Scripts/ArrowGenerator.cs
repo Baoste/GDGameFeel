@@ -72,7 +72,7 @@ public class ArrowGenerator : MonoBehaviour
     private IEnumerator GenerateAfterDestroy(Vector3 pos, bool initY = true)
     {
         yield return new WaitForSeconds(1f);
-        GenerateArrow(pos, randomGenerateOrder[selfAddOrderIndex], initY);
+        GenerateArrow(pos, randomGenerateOrder[selfAddOrderIndex], false);
         posQueue.Dequeue();
     }
 

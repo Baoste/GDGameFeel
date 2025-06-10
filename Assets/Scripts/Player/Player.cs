@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
         // player.isInvincible = true;
         SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
 
-        sr.DOFade(1f, 0.1f);
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f); // 强制初始不透明
         sr.DOFade(0f, 0.2f)  // 透明
           .SetLoops(15, LoopType.Yoyo) // 无限次闪烁
           .SetEase(Ease.Linear)
