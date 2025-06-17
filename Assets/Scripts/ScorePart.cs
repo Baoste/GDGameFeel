@@ -16,7 +16,7 @@ public class ScorePart : MonoBehaviour
         transform.localScale = Vector3.zero;
     }
 
-    public void MoveToTarget(CinemachineImpulseSource impulseSource, float impulseForce, Vector3 targetPos, Color targetColor)
+    public void MoveToTarget(CinemachineImpulseSource impulseSource, float impulseForce, GameObject targetPos, Color targetColor)
     {
         Vector2 randomDir = Random.insideUnitCircle.normalized;
         Vector3 tmpPos = transform.position + new Vector3(randomDir.x, randomDir.y, 0f) * Random.Range(0.5f, 1f);
@@ -28,7 +28,7 @@ public class ScorePart : MonoBehaviour
         {
             sprite.DOColor(targetColor, 0.5f).SetEase(Ease.InCubic);
 
-            transform.DOMove(targetPos, 0.5f)
+            transform.DOMove(targetPos.transform.position, 0.5f)
             .SetEase(Ease.InCubic)
             .OnComplete(() =>
             {

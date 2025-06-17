@@ -44,7 +44,7 @@ public class WinnerUIAnim : MonoBehaviour
     public void ChangeWinnerSprite(int index)
     {
         image = GetComponent<Image>();
-        if (image.sprite == null)
+        //if (image.sprite == null)
         {
             image.sprite = winners[index];
             virtualCamera.Follow = players[index].transform;

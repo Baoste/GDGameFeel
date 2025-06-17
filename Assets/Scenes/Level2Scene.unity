@@ -137,7 +137,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -207,7 +207,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -381,7 +381,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -622,7 +622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -796,7 +796,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -866,7 +866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -931,7 +931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1001,7 +1001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1066,7 +1066,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1294,7 +1294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1359,7 +1359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1503,7 +1503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1573,7 +1573,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1642,7 +1642,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1717,7 +1717,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1787,7 +1787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1856,7 +1856,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -1993,7 +1993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -2234,7 +2234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -2299,7 +2299,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -7209,7 +7209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -7288,7 +7288,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -7358,7 +7358,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -7855,7 +7855,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -7925,7 +7925,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -7988,6 +7988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -8153,7 +8157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8228,7 +8232,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8298,7 +8302,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8373,7 +8377,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8443,7 +8447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8557,7 +8561,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8622,7 +8626,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8687,7 +8691,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8861,7 +8865,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -8931,7 +8935,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -9124,7 +9128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -9189,7 +9193,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -9264,7 +9268,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -9344,7 +9348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -9413,7 +9417,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12126,7 +12130,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12191,7 +12195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12261,7 +12265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12331,7 +12335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12405,7 +12409,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12470,7 +12474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12545,7 +12549,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12871,7 +12875,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -12936,7 +12940,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13005,7 +13009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13070,7 +13074,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13140,7 +13144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13210,7 +13214,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13275,7 +13279,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13396,7 +13400,7 @@ Transform:
   m_GameObject: {fileID: 445703383}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000029796071, y: -0.020487089, z: 6.105629e-10, w: 0.99979013}
-  m_LocalPosition: {x: 0.38313335, y: -0.12999937, z: -10.808183}
+  m_LocalPosition: {x: 0.3831338, y: -0.12999935, z: -10.808183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13436,7 +13440,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13501,7 +13505,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13576,7 +13580,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13641,7 +13645,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13706,7 +13710,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -13904,7 +13908,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -14496,7 +14500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -14559,6 +14563,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -14812,7 +14820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -14936,7 +14944,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15001,7 +15009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15188,7 +15196,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000029796071, y: -0.020487089, z: 6.105629e-10, w: 0.99979013}
-  m_LocalPosition: {x: 0.38313335, y: -0.12999937, z: -10.808183}
+  m_LocalPosition: {x: 0.3831338, y: -0.12999937, z: -10.808183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15238,7 +15246,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15387,7 +15395,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15457,7 +15465,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15522,7 +15530,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15597,7 +15605,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15796,7 +15804,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15866,7 +15874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -15931,7 +15939,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -16011,7 +16019,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -16080,7 +16088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -16149,7 +16157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -17538,7 +17546,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -17884,7 +17892,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -17949,7 +17957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18014,7 +18022,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18079,7 +18087,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18144,7 +18152,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18219,7 +18227,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18289,7 +18297,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18358,7 +18366,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18423,7 +18431,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18488,7 +18496,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18712,7 +18720,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18777,7 +18785,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -18849,6 +18857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -19076,7 +19088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19312,7 +19324,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19382,7 +19394,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19495,7 +19507,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19570,7 +19582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19640,7 +19652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19705,7 +19717,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19770,7 +19782,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19840,7 +19852,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -19989,7 +20001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25185,7 +25197,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25255,7 +25267,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25330,7 +25342,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25459,7 +25471,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25760,7 +25772,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25830,7 +25842,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25900,7 +25912,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -25970,7 +25982,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26146,7 +26158,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26216,7 +26228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26547,7 +26559,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26763,7 +26775,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26828,7 +26840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26898,7 +26910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -26963,7 +26975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27151,7 +27163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27216,7 +27228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27286,7 +27298,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27355,7 +27367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27434,7 +27446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27503,7 +27515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27577,7 +27589,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27642,7 +27654,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -27712,7 +27724,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28189,7 +28201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28269,7 +28281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28339,7 +28351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28404,7 +28416,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28469,7 +28481,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28728,7 +28740,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28798,7 +28810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28868,7 +28880,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -28938,7 +28950,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29003,7 +29015,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29066,6 +29078,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -29298,7 +29314,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29363,7 +29379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29433,7 +29449,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29498,7 +29514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29755,7 +29771,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29820,7 +29836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29932,7 +29948,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -29997,7 +30013,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30066,7 +30082,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30151,7 +30167,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30220,7 +30236,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30294,7 +30310,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30364,7 +30380,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30439,7 +30455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30509,7 +30525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30574,7 +30590,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30644,7 +30660,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30847,7 +30863,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -30965,7 +30981,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -31030,7 +31046,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -31263,7 +31279,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -31328,7 +31344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -31398,7 +31414,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -31467,7 +31483,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -36372,7 +36388,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -36442,7 +36458,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -36507,7 +36523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -36572,7 +36588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -36635,6 +36651,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -36699,7 +36719,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37083,6 +37103,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -37242,7 +37266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37311,7 +37335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37376,7 +37400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37446,7 +37470,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37527,7 +37551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37597,7 +37621,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37904,7 +37928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -37969,7 +37993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38251,7 +38275,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38484,7 +38508,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38549,7 +38573,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38619,7 +38643,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38693,7 +38717,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38768,7 +38792,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38838,7 +38862,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38912,7 +38936,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -38986,7 +39010,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39246,7 +39270,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39316,7 +39340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39381,7 +39405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39446,7 +39470,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39790,7 +39814,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39855,7 +39879,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -39997,7 +40021,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40066,7 +40090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40136,7 +40160,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40216,7 +40240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40281,7 +40305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40364,6 +40388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -40433,7 +40461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40502,7 +40530,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40904,7 +40932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -40969,7 +40997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41246,7 +41274,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41435,7 +41463,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41500,7 +41528,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41575,7 +41603,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41685,7 +41713,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41760,7 +41788,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41830,7 +41858,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41910,7 +41938,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -41975,7 +42003,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42045,7 +42073,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42110,7 +42138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42307,7 +42335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42641,7 +42669,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42706,7 +42734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42776,7 +42804,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -42951,7 +42979,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43021,7 +43049,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43096,7 +43124,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43161,7 +43189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43226,7 +43254,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43291,7 +43319,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43361,7 +43389,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43431,7 +43459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43506,7 +43534,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43571,7 +43599,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43636,7 +43664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43714,6 +43742,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027808887}
     m_Modifications:
+    - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
+      propertyPath: respawnTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4912746527526530403, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: m_Name
       value: TrapFloor
@@ -43783,7 +43815,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -43848,7 +43880,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44004,7 +44036,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44069,7 +44101,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44134,7 +44166,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44199,7 +44231,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44274,7 +44306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44344,7 +44376,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44409,7 +44441,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44474,7 +44506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44539,7 +44571,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44604,7 +44636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -44852,7 +44884,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -45018,7 +45050,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -45241,7 +45273,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -45306,7 +45338,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -45371,7 +45403,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -45734,7 +45766,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -45962,7 +45994,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -50920,7 +50952,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -50989,7 +51021,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -51059,7 +51091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -51124,7 +51156,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -51194,7 +51226,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -51259,7 +51291,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -51851,7 +51883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52218,7 +52250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52298,7 +52330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52373,7 +52405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52448,7 +52480,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52513,7 +52545,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52660,7 +52692,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52725,7 +52757,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52795,7 +52827,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52890,7 +52922,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -52959,7 +52991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -53029,7 +53061,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -53094,7 +53126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -53238,7 +53270,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -53303,7 +53335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration
@@ -53368,7 +53400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: respawnTime
-      value: 9999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1875846857999873360, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
       propertyPath: wobbleDuration

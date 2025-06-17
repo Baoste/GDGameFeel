@@ -35,7 +35,7 @@ public class ScorePartGenrator : MonoBehaviour
             scorePart.color = playerColor;
             Vector3 targetPos = player.enemyScore.gameObject.transform.position;
             Color targetColor = player.enemyColor;
-            scorePart.MoveToTarget(impulseSource, impulseForce, targetPos, targetColor);
+            scorePart.MoveToTarget(impulseSource, impulseForce, player.enemyScore.gameObject, targetColor);
             impulseForce *= 1.2f;
 
             yield return new WaitForSeconds(delay);
