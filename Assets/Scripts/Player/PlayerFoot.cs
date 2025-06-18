@@ -10,10 +10,12 @@ public class PlayerFoot : MonoBehaviour
     private Player player;
     private Collider2D trapFloorCollider;
     public bool isFall;
+    public float fallTime;
     private void Start()
     {
         player = GetComponentInParent<Player>();
         isFall = false;
+        fallTime = 0.0f;
     }
 
     private void Update()
@@ -21,16 +23,21 @@ public class PlayerFoot : MonoBehaviour
         Vector3Int cell = tilemap.WorldToCell(transform.position);
         if (tilemap.GetTile(cell) == null && !isFall)
         {
-            Vector2 footPosL = player.GetComponent<Collider2D>().bounds.min;
-            //Vector2 footPosR = player.GetComponent<Collider2D>().bounds.max;
-            Collider2D groundCheckL = Physics2D.OverlapBox(footPosL, new Vector2(0.8f, 0.1f), 0f, floorLayer);
-            //Collider2D groundCheckR = Physics2D.OverlapBox(footPosR, new Vector2(-0.8f, -0.1f), 0f, floorLayer);
-            if (groundCheckL == null && player.stateMachine.currentState != player.dashingState
-                && player.stateMachine.currentState != player.dashInState
-                && player.stateMachine.currentState != player.dashOutState)
+            fallTime += Time.deltaTime;
+            if (fallTime >= 0.3f)
             {
-                player.stateMachine.ChangeState(player.fallState);
-                isFall = true;
+                fallTime = 0.0f;
+                Vector2 footPosL = player.GetComponent<Collider2D>().bounds.min;
+                //Vector2 footPosR = player.GetComponent<Collider2D>().bounds.max;
+                Collider2D groundCheckL = Physics2D.OverlapBox(footPosL, new Vector2(0.8f, 0.1f), 0f, floorLayer);
+                //Collider2D groundCheckR = Physics2D.OverlapBox(footPosR, new Vector2(-0.8f, -0.1f), 0f, floorLayer);
+                if (groundCheckL == null && player.stateMachine.currentState != player.dashingState
+                    && player.stateMachine.currentState != player.dashInState
+                    && player.stateMachine.currentState != player.dashOutState)
+                {
+                    player.stateMachine.ChangeState(player.fallState);
+                    isFall = true;
+                }
             }
         }
     }

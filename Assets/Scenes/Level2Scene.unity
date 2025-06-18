@@ -18623,6 +18623,11 @@ MonoBehaviour:
   lightning: {fileID: 8300000, guid: ec34d4cdde1c2fc4b9d0dee863214946, type: 3}
   Explosion: {fileID: 8300000, guid: d85faf0b3a93e1c49924014d5ab0749f, type: 3}
   floorFall: {fileID: 8300000, guid: 032ccc977f6fa584eb6420901722b389, type: 3}
+  trapFloorFall: {fileID: 8300000, guid: d190cc4f0fd4f4f4fae9465bd156ab61, type: 3}
+  floorHit: {fileID: 8300000, guid: d64bed3df28457343b1b9d6b5b734cce, type: 3}
+  platMove: {fileID: 8300000, guid: bc30a804cd54b8a4cbe9d383d16a38a5, type: 3}
+  addScore: {fileID: 8300000, guid: fd7857feac555844a8db3d77eca58c56, type: 3}
+  generateScore: {fileID: 8300000, guid: 5aa2c34e7d74dcf4fb7da2c95da101ff, type: 3}
 --- !u!4 &613185724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7421008299889530310, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}
@@ -28730,6 +28735,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isFall: 0
+  fallTime: 0
 --- !u!1001 &1062328481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37776,6 +37782,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isFall: 0
+  fallTime: 0
 --- !u!4 &1377673066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7421008299889530310, guid: cbe9c9bec24b19a42bcd350b5c6cebf8, type: 3}

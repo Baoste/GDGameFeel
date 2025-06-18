@@ -6,12 +6,15 @@ public class ScorePart : MonoBehaviour
 {
     private ParticleSystem particles;
     private SpriteRenderer sprite;
+    private AudioManager audioManager;
     public Color color;
 
     private void Start()
     {
         particles = GetComponent<ParticleSystem>();
         sprite = GetComponent<SpriteRenderer>();
+        audioManager = FindObjectOfType<AudioManager>();
+
         sprite.color = color;
         transform.localScale = Vector3.zero;
     }
@@ -27,7 +30,7 @@ public class ScorePart : MonoBehaviour
         .OnComplete(() =>
         {
             sprite.DOColor(targetColor, 0.5f).SetEase(Ease.InCubic);
-
+            audioManager.PlaySfx(audioManager.platMove);
             transform.DOMove(targetPos.transform.position, 0.5f)
             .SetEase(Ease.InCubic)
             .OnComplete(() =>

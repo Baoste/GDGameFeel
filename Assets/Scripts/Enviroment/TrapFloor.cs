@@ -9,6 +9,7 @@ public class TrapFloor : MonoBehaviour
     public float sinkDuration = 0.5f;
     public float respawnTime = 3f;
 
+    private AudioManager audioManager;
     private SpriteRenderer spriteRenderer;
     private Collider2D floorCollider;
     private Vector3 originalPosition;
@@ -21,6 +22,7 @@ public class TrapFloor : MonoBehaviour
         floorCollider = GetComponent<Collider2D>();
         originalScale = transform.localScale;
         originalPosition = transform.position;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -47,6 +49,7 @@ public class TrapFloor : MonoBehaviour
         Vector3 targetPos = originalPosition - new Vector3(0f, sinkDistance, 0f);
         Vector3 targetScale = originalScale * 0.1f; 
         elapsed = 0f;
+        audioManager.PlaySfx(audioManager.trapFloorFall);
         while (elapsed < sinkDuration)
         {
             float t = elapsed / sinkDuration;

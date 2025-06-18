@@ -15,11 +15,13 @@ public class MovingPlatform : MonoBehaviour
     private int movingIndex = 0;    // Index of the current target point
     private int movingDirction = 1;
 
+    private AudioManager audioManager;
     private CinemachineImpulseSource impulseSource;
 
     private void Start()
     {
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        audioManager = FindObjectOfType<AudioManager>();
         mapMarker = GetComponent<MapMarker>();
         targetPoints = new List<Vector3>();
         foreach (var pos in mapMarker.markerPositions)
@@ -42,10 +44,12 @@ public class MovingPlatform : MonoBehaviour
             }
             movingIndex = movingIndex + movingDirction;
 
+            audioManager.PlaySfx(audioManager.platMove);
             transform.DOMove(targetPoints[movingIndex], moveSpeed)
             .SetEase(Ease.InExpo)
             .OnComplete(() =>
             {
+                audioManager.PlaySfx(audioManager.floorHit);
                 impulseSource.GenerateImpulse();
                 isMoving = false;
                 trigger.isTriggered = false;

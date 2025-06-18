@@ -9,12 +9,14 @@ public class ScorePartGenrator : MonoBehaviour
     private Player player;
     private int count = 10;
     private Color playerColor;
+    private AudioManager audioManager;
     public CinemachineImpulseSource impulseSource { get; private set; }
 
     void Start()
     {
         player = GetComponentInParent<Player>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        audioManager = FindObjectOfType<AudioManager>();
         // Á£×ÓÑÕÉ«
         playerColor = player.playerColor;
     }
@@ -28,6 +30,7 @@ public class ScorePartGenrator : MonoBehaviour
     {
         float impulseForce = 0.02f;
         float delay = 0.03f;
+        // audioManager.PlaySfx(audioManager.generateScore);
 
         for (int i = 0; i < count; i++)
         {
@@ -43,5 +46,6 @@ public class ScorePartGenrator : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         player.deathCount.Value += 1;
+        audioManager.PlaySfx(audioManager.addScore);
     }
 }

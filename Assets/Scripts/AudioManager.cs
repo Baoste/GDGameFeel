@@ -30,6 +30,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip lightning;
     public AudioClip Explosion;
     public AudioClip floorFall;
+    public AudioClip trapFloorFall;
+    public AudioClip floorHit;
+    public AudioClip platMove;
+    [Header("UI")]
+    public AudioClip addScore;
+    public AudioClip generateScore;
 
     void Start()
     {
